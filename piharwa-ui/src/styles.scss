@@ -2,11 +2,11 @@
  
 
 .text-dark {
-    color: #198754!important;
+    color: #00953E!important;
 }
 .navheight{
     height: 55px;
-    border-bottom: 2px solid #198754;
+    border-bottom: 2px solid #00953E;
 }
 #templatemo_main_nav a {
     color: #212934;
@@ -14,4 +14,48 @@
 }
 #templatemo_main_nav .navbar-nav {
     max-width: 451px;
+}
+.color_head_black{
+    font-size: 33px;
+    color: black;
+    font-weight: 400;
+}
+.color_head_green{
+    color: #00953E;
+    font-size: 33px;
+    font-weight: 400;
+}
+.text-muted {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    color: #4F4F4F !important;
+}
+.explore_button{
+    width: 216px;
+    height: 48px;
+    background: #00953E;
+    border-radius: 10.252px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.2358px;
+    line-height: 31px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    border: none;
+    margin-bottom: 36px;
+}
+.center{
+    text-align: center;
+}
+.bg-latest{
+    background: url(./assets/img/Rectangle.png);
+    color: azure;
+    font-weight: 600;
+    background-size: auto;
+}
+.tittle_sub{
+    color: #333333;
+    
 }

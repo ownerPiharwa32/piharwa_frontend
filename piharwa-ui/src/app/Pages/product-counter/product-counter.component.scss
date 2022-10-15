@@ -1,8 +1,18 @@
 .counter_wapper{
-    padding: 25px;
-    background: #198754;
+    padding: 9px;
     color: azure;
     font-weight: 600;
     margin: 52px;
     border-radius: 30px;
+    background: url(../../../assets/img/Vector.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 99%;
+    height: 105px;
+}
+
+
+.text-center {
+    text-align: center!important;
+    font-weight: 600 !important;
 }
