@@ -12,7 +12,7 @@ import { ProductCounterComponent } from './Pages/product-counter/product-counter
 import { ProductDecoreComponent } from './Pages/product-decore/product-decore.component';
 import { CustomerOpinionComponent } from './Pages/customer-opinion/customer-opinion.component';
 import { HeaderSliderComponent } from './Pages/header-slider/header-slider.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +24,12 @@ import { HeaderSliderComponent } from './Pages/header-slider/header-slider.compo
     ProductCounterComponent,
     ProductDecoreComponent,
     CustomerOpinionComponent,
-    HeaderSliderComponent
+    HeaderSliderComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
