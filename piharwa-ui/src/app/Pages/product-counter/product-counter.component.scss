@@ -1,18 +1,30 @@
 .counter_wapper{
-    padding: 9px;
+    padding: 10px;
+    margin: 35px 0px;
     color: azure;
     font-weight: 600;
-    margin: 52px;
     border-radius: 30px;
     background: url(../../../assets/img/Vector.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-size: 99%;
     height: 105px;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
 }
-
-
-.text-center {
+.text-center { 
     text-align: center!important;
     font-weight: 600 !important;
+}
+.mx70 {
+    max-width: 70%; 
+    margin: auto; 
+}
+.lineH40 {
+    line-height: 40px;
+}
+.lineH15 {
+    line-height: 15px; 
 }

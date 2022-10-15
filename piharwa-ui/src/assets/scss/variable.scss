@@ -1,41 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-// new color variable
-@import './assets/scss/variable'; 
-
 $col1: #00953E;
 $col2: #D61313;
 $col3: #333333;
 $col4: #828282;
-$col5: #4F4F4F;    
 // color classes
 .col1 {
-    color: $col1 !important;
+    color: $col1;
 }
 
 .col2 {
-    color: $col2 !important;
+    color: $col2; 
 }
 
 .col3 {
-    color: $col3 !important;
+    color: $col3;
 }
 
 .col4 {
-    color: $col4 !important;
+    color: $col4; 
 }
-
-.col5 {
-    color: $col5 !important;
-}
-
-// font style start
-
-// @font-face {
-//     font-family: Britania Ligatura;
-//     src: url(./assets/fonts/BritaniaLigatura-nRZmV.ttf); 
-// }
-
-// font style end 
 
 // fonts weight 
 $fw300: 300;
@@ -71,15 +53,10 @@ $fwbold: bold;
 }
 
 // font-size start 
-.fs12 {
-    font-size: 12px;
-}
-.fs13 {
-    font-size: 13px;  
-}
 .fs14 {
     font-size: 14px;
 }
+
 .fs15 {
     font-size: 15px;
 }
@@ -184,12 +161,6 @@ $fwbold: bold;
     font-size: 40px;
 }
 
-.fs48 {
-    font-size: 48px !important; 
-}   
-
-
-
 // font-size end 
 // button component start 
 .button {
@@ -214,8 +185,8 @@ $fwbold: bold;
 // font style start
 
 @font-face {
-    // font-family: Britania Ligatura;
-    // src: url(assets/fonts/BritaniaLigatura-nRZmV.ttf); 
+    font-family: Britania Ligatura;
+    src: url(assets/fonts/BritaniaLigatura-nRZmV.ttf); 
 }
 
 // font style end 
@@ -307,72 +278,4 @@ body {
 
 .fontStyle2 {
     font-family: Britania Ligatura !important; 
-}
-
-.text-dark {
-    color: $col1 !important;
-}
-
-.navheight {
-    height: 55px;
-    border-bottom: 2px solid $col1;
-}
-
-#templatemo_main_nav a {
-    color: #212934;
-    font-weight: 400 !important;
-}
-
-#templatemo_main_nav .navbar-nav {
-    max-width: 100%;
-}
-
-.color_head_black {
-    font-size: 33px;
-    color: black;
-    font-weight: 400;
-}
-
-.color_head_green {
-    color: $col1;
-    font-size: 33px;
-    font-weight: 400;
-}
-
-.text-muted {
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    text-transform: uppercase;
-    color: #4F4F4F !important;
-}
-
-.explore_button {
-    width: 216px;
-    height: 48px;
-    background: $col1;
-    border-radius: 10.252px;
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 19.2358px;
-    line-height: 31px;
-    text-transform: capitalize;
-    color: #FFFFFF;
-    border: none;
-    margin-bottom: 36px;
-}
-
-.center {
-    text-align: center;
-}
-
-.bg-latest {
-    background: url(./assets/img/Rectangle.png);
-    color: azure;
-    font-weight: 600;
-    background-size: auto;
-}
-
-.tittle_sub {
-    color: $col3;
 }
