@@ -1,13 +1,16 @@
-.footer_last{
+.topFooter {
+    background-color: white; 
+    padding: 35px 0;
+}
+.footerBottom {
     background: #00953E;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 16.49px !important;
-    line-height: 0px;
     letter-spacing: 0.08em;
     color: #FFFFFF;
-    padding: 10px;
+    padding: 18px 0;
 }
 #tempaltemo_footer a {
     color: #828282 !important;
@@ -20,11 +23,17 @@
     font-size: 17.5267px !important;
     letter-spacing: 0.08em;
     color: #00953E;
-}
-
+}  
 .footer_text{
     color: #828282;
     font-size: 15px !important;
-    /* font-weight: 400 !important; */
     margin-top: 14px;
+}
+.mx-75 { 
+    @media (min-width: 768px) {
+        max-width: 80%; 
+    }
+}
+.mr2 {
+    margin-right: 15px; 
 }
