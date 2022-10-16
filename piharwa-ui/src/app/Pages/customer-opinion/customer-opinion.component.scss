@@ -53,20 +53,14 @@
   color: orange;
 }
 
-.jumbotron-box {
-  height: 100px;
-  width: 100px;
-  background-color: white;
-  width: 576px;
-  height: 298px;
-  left: 871px;
-  /* top: 5680px; */
+.customerOpinion {
   background: #FFFFFF;
-  box-shadow: 0px 1px 8px rgb(0 0 0 / 15%);
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
+  width: 100%;
+  height: auto;
   color: black;
-  padding: 25px;
-  margin: 10px;
+  padding: 28px;  
 }
 
 .jumbotron_cutomerview {
