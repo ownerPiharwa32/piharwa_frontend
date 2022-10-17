@@ -181,12 +181,16 @@ $fwbold: bold;
 }
 
 .fs40 {
-    font-size: 40px;
+    font-size: 40px !important; 
 }
 
 .fs48 {
     font-size: 48px !important; 
-}   
+} 
+
+.fs100 {
+    font-size: 100px !important; 
+}  
 
 
 

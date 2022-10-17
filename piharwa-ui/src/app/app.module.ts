@@ -13,6 +13,7 @@ import { ProductDecoreComponent } from './Pages/product-decore/product-decore.co
 import { CustomerOpinionComponent } from './Pages/customer-opinion/customer-opinion.component';
 import { HeaderSliderComponent } from './Pages/header-slider/header-slider.component';
 import { FormsModule } from '@angular/forms';
+import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     ProductDecoreComponent,
     CustomerOpinionComponent,
     HeaderSliderComponent,
+    PortfolioComponent,
     
   ],
   imports: [
