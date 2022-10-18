@@ -14,6 +14,8 @@ import { CustomerOpinionComponent } from './Pages/customer-opinion/customer-opin
 import { HeaderSliderComponent } from './Pages/header-slider/header-slider.component';
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
+import { ProductListComponent } from './Pages/product-list/product-list.component';
+import { HomepageComponent } from './Pages/homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
     CustomerOpinionComponent,
     HeaderSliderComponent,
     PortfolioComponent,
+    ProductListComponent,
+    HomepageComponent,
     
   ],
   imports: [
