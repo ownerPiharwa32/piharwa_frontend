@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
+import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { HomepageComponent } from './Pages/homepage/homepage.component';
     PortfolioComponent,
     ProductListComponent,
     HomepageComponent,
+    ProductDetailsPageComponent,
     
   ],
   imports: [
