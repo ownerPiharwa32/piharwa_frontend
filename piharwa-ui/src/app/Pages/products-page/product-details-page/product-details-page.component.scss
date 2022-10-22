@@ -1,0 +1,143 @@
+.productDetails {
+    .productImg {
+        max-height: 550px;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            object-position: center center;
+            height: auto;
+        }
+    }
+
+    .productContain {
+        .priceInfo {
+            del {
+                color: #BDBDBD;
+            }
+        }
+
+        .mr-1 {
+            margin-right: 7px;
+        }
+
+        .productCount {
+            display: flex;
+
+            form {
+                border: solid 2px #B6DBCA;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 8px;
+                box-sizing: border-box;
+                overflow: hidden;
+
+                .qtyminus,
+                .qtyplus {
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: black;
+                }
+
+                input {
+                    min-height: 58px;
+                    width: 110px;
+                    outline: 0;
+                    border: none;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: black;
+                }
+            }
+        }
+
+        .deleveryStatus {
+            max-width: 250px;
+
+            .input-group {
+                .form-control {
+                    min-height: 48px;
+                    outline: 0;
+                    border: solid 1px #B6DBCA;
+                    font-size: 17px;
+                    font-weight: 500;
+                    color: black;
+                    border-radius: 7px 0px px 7px;
+
+                    &::placeholder {
+                        color: #BDBDBD;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        box-shadow: none !important;
+                    }
+                }
+
+                button.input-group-text {
+                    background: #00953E;
+                    color: white;
+                    border-radius: 0px 7px 7px 0px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    outline: 0;
+                }
+            }
+        }
+
+        .accorDians {
+            .accordion-item {
+                max-width: 600px;
+
+                .accordion-header {
+                    button {
+                        border: none;
+                        box-shadow: none !important;
+                        outline: 0;
+                        background-color: white !important;
+                        font-weight: 500;
+                        font-size: 21px;
+                        text-transform: uppercase;
+                        color: #333333;
+                        border-bottom: 1px solid #E0E0E0;
+                        padding: 20px 0px;
+                    }
+                }
+
+                .accordion-body {
+                    padding: 1rem 0rem;
+                }
+
+                .accordion-collapse {
+                    border: none;
+                    border-width: 0 0px;
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            padding-left: 40px;
+        }
+    }
+
+    .totalbyIT {
+        .flex-0 {
+            flex: 0 0 0; 
+        }
+        .cards {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            border: 0.788382px solid #E0E0E0;
+            border-radius: 7.88382px;
+            padding: 10px;
+        }
+        .minWidth {
+            min-width: 200px; 
+        }
+        .minWidth2 {
+            min-width: 350px; 
+        }
+    }
+}

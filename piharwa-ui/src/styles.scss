@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 // new color variable
-@import './assets/scss/variable'; 
+@import './assets/scss/variable';
 
 $col1: #00953E;
 $col2: #D61313;
 $col3: #333333;
 $col4: #828282;
-$col5: #4F4F4F;    
+$col5: #4F4F4F;
+
 // color classes
 .col1 {
     color: $col1 !important;
@@ -74,12 +75,15 @@ $fwbold: bold;
 .fs12 {
     font-size: 12px;
 }
+
 .fs13 {
-    font-size: 13px;  
+    font-size: 13px;
 }
+
 .fs14 {
     font-size: 14px;
 }
+
 .fs15 {
     font-size: 15px;
 }
@@ -181,16 +185,16 @@ $fwbold: bold;
 }
 
 .fs40 {
-    font-size: 40px !important; 
+    font-size: 40px !important;
 }
 
 .fs48 {
-    font-size: 48px !important; 
-} 
+    font-size: 48px !important;
+}
 
 .fs100 {
-    font-size: 100px !important; 
-}  
+    font-size: 100px !important;
+}
 
 
 
@@ -302,15 +306,15 @@ $fwbold: bold;
 // button component end 
 
 body {
-    font-family: 'Montserrat', sans-serif !important; 
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .fontStyle1 {
-    font-family: 'Montserrat', sans-serif !important; 
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .fontStyle2 {
-    font-family: Britania Ligatura !important; 
+    font-family: Britania Ligatura !important;
 }
 
 .text-dark {
@@ -363,7 +367,28 @@ body {
     text-transform: capitalize;
     color: #FFFFFF;
     border: none;
-    margin-bottom: 36px;
+    margin-bottom: 36px; 
+    &.xlSize {
+        min-height: 60px;     
+        border: solid 2px $col1; 
+        @media (min-width: 768px) { 
+            min-width: 300px; 
+            text-align: center; 
+        }
+    }
+    &.xSmalls {
+        min-height: 30px; 
+        padding-left: 15px;
+        padding-right: 15px;
+        width: auto; 
+        display: inline-block; 
+        font-size: 16px;
+        font-weight: 500; 
+    }
+}
+
+.pointer {
+    cursor: pointer; 
 }
 
 .center {
@@ -380,3 +405,26 @@ body {
 .tittle_sub {
     color: $col3;
 }
+
+.breadgeCumMenu {
+    padding: 35px 0;
+
+    ol.breadcrumb {  
+        margin-bottom: 0; 
+        li {
+            a {
+                text-decoration: none;
+                font-weight: 500;
+                color: #4F4F4F;
+            }
+
+            &.active {
+                a {
+                    font-weight: 600;
+                    color: #333333;  
+                }
+            }
+        }
+    }
+}
+

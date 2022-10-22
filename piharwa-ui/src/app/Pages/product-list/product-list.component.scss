@@ -5,11 +5,26 @@
 }
 
 .bredgedCums {
-    background: #000;
     min-height: 250px;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center; 
+	background-image: url('../../../assets/img/sliderinner.jpg'); 
+	background-size: cover;
+	background-position: bottom center; 
+	background-repeat: no-repeat; 
+	position: relative;
+	z-index: 99; 
+	&::before {
+		content: "";
+		background: rgba(0, 0, 0, 0.65); 
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: -1; 
+	}
 }
 
 .select_unmate {
@@ -256,7 +271,7 @@ form {
     &.inner {
         .card {   
             border: none;
-            span.circleStyles {
+            span.circleStyles { 
                 border-radius: 50%;
                 padding: 10px;
                 display: flex;
