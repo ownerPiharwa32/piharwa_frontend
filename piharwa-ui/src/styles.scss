@@ -387,12 +387,31 @@ body {
     }
 }
 
-.pointer {
+.pointer { 
     cursor: pointer; 
 }
 
 .center {
     text-align: center;
+}
+
+.checkBoxes {
+    .form-check-inline {
+        box-shadow: none !important; 
+        .form-check-input {
+            width: 18px;
+            height: 18px; 
+            border: 1px solid rgba(0, 0, 0, 50%); 
+            border-radius: 0px; 
+            &:checked {
+                background-color: #00953E;
+                border-color: #00953E;
+            }
+            &:hover, &:focus {
+                box-shadow: none !important; 
+            }
+        }
+    }
 }
 
 .bg-latest {
