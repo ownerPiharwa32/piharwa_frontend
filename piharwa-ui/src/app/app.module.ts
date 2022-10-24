@@ -17,6 +17,7 @@ import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
+import { CartComponent } from './Pages/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { ProductDetailsPageComponent } from './Pages/products-page/product-detai
     ProductListComponent,
     HomepageComponent,
     ProductDetailsPageComponent,
+    CartComponent,
     
   ],
   imports: [

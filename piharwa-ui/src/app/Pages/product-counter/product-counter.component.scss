@@ -13,6 +13,16 @@
     background-position: center;
     display: flex;
     align-items: center;
+    @media (max-width: 767px) {
+        background: #00953e;     
+        height: auto; 
+        .mx70 {
+            max-width: 100%;
+        }   
+        .col {
+            padding: 15px;
+        }
+    }
 }
 .text-center { 
     text-align: center!important;

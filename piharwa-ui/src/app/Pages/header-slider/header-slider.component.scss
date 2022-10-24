@@ -1,0 +1,26 @@
+#template-mo-zay-hero-carousel {
+    @media (max-width: 991px) {
+        .carousel-inner {
+            .carousel-item {
+                .order-lg-last {
+
+                }
+            }
+        }
+        a.carousel-control-prev {
+            i {
+                font-size: 1.5rem !important;
+            }
+        }
+        a.carousel-control-next {
+            i {
+                font-size: 1.5rem !important;
+            }
+        }
+        .carousel-indicators {
+            li {
+                display: none; 
+            }
+        }
+    }
+}

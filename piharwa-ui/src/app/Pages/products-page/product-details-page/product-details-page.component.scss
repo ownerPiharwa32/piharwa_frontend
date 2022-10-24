@@ -21,37 +21,6 @@
             margin-right: 7px;
         }
 
-        .productCount {
-            display: flex;
-
-            form {
-                border: solid 2px #B6DBCA;
-                padding-left: 15px;
-                padding-right: 15px;
-                border-radius: 8px;
-                box-sizing: border-box;
-                overflow: hidden;
-
-                .qtyminus,
-                .qtyplus {
-                    font-weight: 500;
-                    font-size: 24px;
-                    color: black;
-                }
-
-                input {
-                    min-height: 58px;
-                    width: 110px;
-                    outline: 0;
-                    border: none;
-                    text-align: center;
-                    font-weight: 500;
-                    font-size: 24px;
-                    color: black;
-                }
-            }
-        }
-
         .deleveryStatus {
             max-width: 250px;
 

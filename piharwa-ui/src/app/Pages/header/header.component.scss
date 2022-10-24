@@ -1,8 +1,13 @@
 .topHeader {
+    position: relative;
     border-bottom: solid 2px #00953E;
     min-height: 100px;
     display: flex;
     align-items: center;
+
+    @media (max-width: 767px) {
+        min-height: auto;
+    }
 
     .input-group {
         max-width: 300px;
@@ -47,12 +52,34 @@
     .navbarRight {
         a.nav-icon {
             margin-left: 40px;
+
+            @media (max-width: 767px) {
+                margin-left: 15px;
+
+                span.fontStyle1 {
+                    font-size: 15px;
+                }
+
+                i {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
 
 .bottomHeader {
     border-bottom: solid 1px #dedede;
+
+    button.navbar-toggler {
+        outline: 0;
+
+        &:hover,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
     nav.shadow {
         box-shadow: none !important;
     }
@@ -83,11 +110,12 @@
                     font-size: 18px !important;
                     line-height: 24px;
                     color: #333333 !important;
-                    padding: 10px 15px; 
+                    padding: 10px 15px;
+
                     &:hover,
                     &:focus {
-                        background-color: transparent !important; 
-                        box-shadow: none !important; 
+                        background-color: transparent !important;
+                        box-shadow: none !important;
                     }
                 }
             }
@@ -97,11 +125,43 @@
     #templatemo_main_nav a {
         font-weight: 500 !important;
     }
+
+    @media (max-width:991px) {
+        min-height: auto;
+    }
+}
+
+.bottomHeader {
+    @media (max-width: 991px) {
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #templatemo_main_nav {
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            top: 55px;
+            left: 0;
+            z-index: 99;
+            .navbar-nav {
+                border-bottom: solid 1px #ccc;
+                li.nav-item {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
 }
 
 .mm-auto {
     margin: auto !important;
 }
+
 .badgetop {
     background-color: #D61313;
     font-size: 10px;

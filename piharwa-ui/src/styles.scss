@@ -321,6 +321,10 @@ body {
     color: $col1 !important;
 }
 
+.text-black {
+    color: black !important;
+}
+
 .navheight {
     height: 55px;
     border-bottom: 2px solid $col1;
@@ -393,6 +397,37 @@ body {
 
 .center {
     text-align: center;
+}
+
+.productCount {
+    display: flex;
+
+    form {
+        border: solid 2px #B6DBCA;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .qtyminus,
+        .qtyplus {
+            font-weight: 500;
+            font-size: 24px;
+            color: black;
+        }
+
+        input {
+            min-height: 58px;
+            width: 110px;
+            outline: 0;
+            border: none;
+            text-align: center;
+            font-weight: 500;
+            font-size: 24px;
+            color: black;
+        }
+    }
 }
 
 .checkBoxes {

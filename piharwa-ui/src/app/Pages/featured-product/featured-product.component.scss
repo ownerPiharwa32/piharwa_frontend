@@ -1,7 +1,25 @@
 .featuresProducts {
+    @media (max-width: 767px) {
+        .row {
+            h1.fontStyle2 {
+                span {
+                    font-size: 32px !important;
+                }
+                &+p.lineH22 {  
+                    font-size: 15px;
+                }
+            }
+            .card {
+                .card-body {   
+                    .fs19 {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
     .card {
         border: none;
-
         .imgSet {
             position: relative;
             display: block;
