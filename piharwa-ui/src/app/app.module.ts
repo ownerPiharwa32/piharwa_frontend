@@ -17,6 +17,7 @@ import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { ProductDetailsPageComponent } from './Pages/products-page/product-detai
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
