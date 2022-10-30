@@ -18,6 +18,7 @@ import { ProductListComponent } from './Pages/product-list/product-list.componen
 import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
+import { NgImageSliderModule } from 'ng-image-slider'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,7 @@ import { CartComponent } from './Pages/cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
