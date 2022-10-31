@@ -12,28 +12,28 @@ export class ProductSliderComponent implements OnInit {
     ngOnInit(): void {
     }
     imageObject = [{
-        image: '../../../assets/img/gal1.png',
-        thumbImage: '../../../assets/img/gal1.png',
-        title: 'Product Slider'
+        image: '../../../assets/img/gal5.png',
+        thumbImage: '../../../assets/img/gal5.png',
+        title: 'Bar Accessories'
     }, {
         image: '../../../assets/img/gal2.png',
         thumbImage: '../../../assets/img/gal2.png',
-        title: 'Product Slider'
+        title: 'Lehnga'
+    }, {
+        image: '../../../assets/img/gal1.png',
+        thumbImage: '../../../assets/img/gal1.png',
+        title: 'Saree'
     }, {
         image: '../../../assets/img/gal3.png',
         thumbImage: '../../../assets/img/gal3.png',
-        title: 'Product Slider'
+        title: 'Glasswares'
     }, {
         image: '../../../assets/img/gal4.png',
-        thumbImage: '../../../assets/img/gal4.png',
-        title: 'Product Slider'
+        thumbImage: '../../../assets/img/gal4.png',  
+        title: 'Furnitures'
     }, {
-        image: '../../../assets/img/gal5.png',
-        thumbImage: '../../../assets/img/gal5.png',
-        title: 'Product Slider'
-    }, {
-        image: '../../../assets/img/gal6.png',
-        thumbImage: '../../../assets/img/gal6.png',
-        title: 'Product Slider'
+        image: '../../../assets/img/gal2.png',
+        thumbImage: '../../../assets/img/gal2.png',
+        title: 'Lehnga'
     }];
 }

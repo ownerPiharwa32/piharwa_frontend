@@ -371,28 +371,31 @@ body {
     text-transform: capitalize;
     color: #FFFFFF;
     border: none;
-    margin-bottom: 36px; 
+    margin-bottom: 36px;
+
     &.xlSize {
-        min-height: 60px;     
-        border: solid 2px $col1; 
-        @media (min-width: 768px) { 
-            min-width: 300px; 
-            text-align: center; 
+        min-height: 60px;
+        border: solid 2px $col1;
+
+        @media (min-width: 768px) {
+            min-width: 300px;
+            text-align: center;
         }
     }
+
     &.xSmalls {
-        min-height: 30px; 
+        min-height: 30px;
         padding-left: 15px;
         padding-right: 15px;
-        width: auto; 
-        display: inline-block; 
+        width: auto;
+        display: inline-block;
         font-size: 16px;
-        font-weight: 500; 
+        font-weight: 500;
     }
 }
 
-.pointer { 
-    cursor: pointer; 
+.pointer {
+    cursor: pointer;
 }
 
 .center {
@@ -432,18 +435,22 @@ body {
 
 .checkBoxes {
     .form-check-inline {
-        box-shadow: none !important; 
+        box-shadow: none !important;
+
         .form-check-input {
             width: 18px;
-            height: 18px; 
-            border: 1px solid rgba(0, 0, 0, 50%); 
-            border-radius: 0px; 
+            height: 18px;
+            border: 1px solid rgba(0, 0, 0, 50%);
+            border-radius: 0px;
+
             &:checked {
                 background-color: #00953E;
                 border-color: #00953E;
             }
-            &:hover, &:focus {
-                box-shadow: none !important; 
+
+            &:hover,
+            &:focus {
+                box-shadow: none !important;
             }
         }
     }
@@ -463,8 +470,9 @@ body {
 .breadgeCumMenu {
     padding: 35px 0;
 
-    ol.breadcrumb {  
-        margin-bottom: 0; 
+    ol.breadcrumb {
+        margin-bottom: 0;
+
         li {
             a {
                 text-decoration: none;
@@ -475,10 +483,56 @@ body {
             &.active {
                 a {
                     font-weight: 600;
-                    color: #333333;  
+                    color: #333333;
                 }
             }
         }
     }
 }
 
+.productCarousel {
+    .main-inner {
+        // position: relative;
+        // z-index: 99; 
+        // &:before {
+        //     content: "";
+        //     background-color: #2C2C2C;
+        //     opacity: 0.8;
+        //     width: 100%;
+        //     height: 100%;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;  
+        // }
+    }
+
+    .img-div.image-popup {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+        .caption {
+            font-family: Mislian;
+            font-size: 30px;
+            background-image: none !important; 
+        }
+    }
+
+    .custom-image-main {
+        img {
+            filter: grayscale(1);
+            border-radius: 0px !important;
+        }
+    }
+    .prev.icons.prev-icon {
+        background-color: transparent !important;
+        border-bottom: none !important;
+        opacity: 1 !important;
+        color: white !important;
+    }
+    .next.icons.next-icon {
+        background-color: transparent !important;
+        border-bottom: none !important;
+        opacity: 1 !important;
+        color: white !important;
+    }  
+}
