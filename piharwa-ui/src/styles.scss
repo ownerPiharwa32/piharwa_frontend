@@ -436,12 +436,15 @@ body {
 .checkBoxes {
     .form-check-inline {
         box-shadow: none !important;
+        margin-right: 10px;
 
         .form-check-input {
             width: 18px;
             height: 18px;
             border: 1px solid rgba(0, 0, 0, 50%);
             border-radius: 0px;
+            position: relative;
+            top: 3px;
 
             &:checked {
                 background-color: #00953E;
@@ -454,6 +457,14 @@ body {
             }
         }
     }
+}
+
+.w8 {
+    width: 8px;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .bg-latest {
@@ -513,7 +524,7 @@ body {
         .caption {
             font-family: Mislian;
             font-size: 30px;
-            background-image: none !important; 
+            background-image: none !important;
         }
     }
 
@@ -523,16 +534,87 @@ body {
             border-radius: 0px !important;
         }
     }
+
     .prev.icons.prev-icon {
         background-color: transparent !important;
         border-bottom: none !important;
         opacity: 1 !important;
         color: white !important;
     }
+
     .next.icons.next-icon {
         background-color: transparent !important;
         border-bottom: none !important;
         opacity: 1 !important;
         color: white !important;
-    }  
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cartLists {
+
+    // .borderBottom {
+    //     border-bottom: 1px solid #BDBDBD; 
+    //     padding-bottom: 20px;
+    //     margin-bottom: 20px;
+    // }
+    .productQuantity {
+        .cartImgBox {
+            max-height: 205px;
+            overflow: hidden;
+
+            &>img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+        }
+
+        .cartTextBox {
+            .checkBoxes {
+                .form-check-inline {
+                    margin-right: 8px;
+                    position: static;
+                    top: 3.5px;
+                }
+            }
+        }
+
+        .productCount {
+            form {
+                input {
+                    min-height: 40px;
+                    width: 30px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.orderSummary {
+    background-color:#F8FCFA; 
+    padding: 10px; 
+    border-radius: 8px; 
+    .summaryBtn {
+        .explore_button {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    .borderBottom2 {
+        border-bottom: 1px solid #E0E0E0;; 
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
 }

@@ -18,7 +18,10 @@ import { ProductListComponent } from './Pages/product-list/product-list.componen
 import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
-import { NgImageSliderModule } from 'ng-image-slider'; 
+import { NgImageSliderModule } from 'ng-image-slider';
+import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component'; 
+import { MaterialModule } from './others-files/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +39,12 @@ import { NgImageSliderModule } from 'ng-image-slider';
     HomepageComponent,
     ProductDetailsPageComponent,
     CartComponent,
+    AddAdressContactComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,NgImageSliderModule
+    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

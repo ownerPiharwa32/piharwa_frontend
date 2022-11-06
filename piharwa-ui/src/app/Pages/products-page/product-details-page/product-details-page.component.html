@@ -46,9 +46,9 @@
                     </div>
                     <div class="productCount align-items-center mb-4">
                         <form action="#" class="d-flex align-items-center">
-                            <div class="qtyminus pointer">-</div>
-                            <input type="text" name="quantity" value="1" class="qty">
-                            <div class="qtyplus pointer">+</div>
+                            <div (click)="decrement()" class="qtyminus pointer">-</div>
+                            <input min="0" type="text" name="quantity" value="{{counter}}" class="qty">
+                            <div  (click)="increment()" class="qtyplus pointer">+</div>
                         </form>
                         <div class="ms-4">
                             <button routerLink="/product-cart" class="explore_button xlSize mb-0">  
