@@ -22,6 +22,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component'; 
 import { MaterialModule } from './others-files/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoryListComponent } from './Pages/category/category-list/category-list.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +42,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductDetailsPageComponent,
     CartComponent,
     AddAdressContactComponent,
+    CategoryListComponent,
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpClientModule,
     AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule
   ],
   providers: [],

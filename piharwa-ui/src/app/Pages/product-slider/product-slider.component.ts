@@ -6,32 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-slider.component.scss']
 })
 export class ProductSliderComponent implements OnInit {
-
+    imageSrc = 'assets/img/products2.png'  ;
+    imageSrc2 = 'assets/img/gallery1.png'  
+    image3='assets/img/product.jpeg';
   constructor() { }
 
   ngOnInit(): void {
   }
   imageObject = [{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
+    image: 'ass',
+    thumbImage: this.imageSrc2,
     title: 'Hummingbirds are amazing creatures'
 }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg'
+    image: this.imageSrc,
+    thumbImage:  this.imageSrc,
 }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+    image: this.imageSrc,
+    thumbImage: this.imageSrc,
     title: 'Example with title.'
 },{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
+    image: this.imageSrc,
+    thumbImage:  this.image3,
     title: 'Hummingbirds are amazing creatures'
 }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
+    image: this.imageSrc,
+    thumbImage:  this.imageSrc2,
 }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+    image: this.imageSrc,
+    thumbImage:  this.image3,
     title: 'Example two with title.'
 }];
 }
