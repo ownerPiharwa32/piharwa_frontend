@@ -83,18 +83,18 @@
                     <!-- Start Featured Product -->
                     <section class="featuresProducts inner">
                         <div class="row mx80">
-                            <div class="col-12 col-md-3 mb-4">
-                                <div routerLink="/product-details"  class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet" routerLink="/product-details" >
-                                            <img src="../../../assets/img/pro1.png" class="card-img-top" alt="Icon"
+                            <div class="col-12 col-md-3 mb-4" *ngFor="let product of productList">
+                                <div  (click)="gotoDetailProduct(product._id)"  >                             )"  class="card h-100">
+                                    <a  class="d-block position-relative">
+                                        <div class="imgSet" >
+                                            <img src="{{product.productImg}}" class="card-img-top" alt="Icon"
                                                 class="img-fluid" />
                                         </div>
                                     </a>
                                     <div class="card-body px-0"> 
                                         <div class="row justify-content-between"> 
                                             <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
+                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}} (Set of {{product.OverallRating}})
                                                 </p>
                                             </div>
                                             <div class="heartIcon col-md-3 text-end">
@@ -105,161 +105,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro2.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                         
+                               
                             </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro3.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro4.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro1.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro2.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro3.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 mb-4">
-                                <div class="card h-100">
-                                    <a routerLink="/product-details" class="d-block position-relative">
-                                        <div class="imgSet">
-                                            <img src="../../../assets/img/pro4.png" class="card-img-top" alt="Icon"
-                                                class="img-fluid" />
-                                        </div>
-                                    </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
-                                            <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">Hanger Saree Wrap (Set of 3)
-                                                </p>
-                                            </div>
-                                            <div class="heartIcon col-md-3 text-end">
-                                                <span class="circleStyles"><img src="../../../assets/img/hearts.png"
-                                                        class="img-fluid" alt="Icon" /></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </section>
                     <!-- End Featured Product -->
                 </div>
