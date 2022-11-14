@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-details-page',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ProductDetailsPageComponent implements OnInit {
   public counter: number = 1;
 
-  constructor() { }
-
+  id!:any;
+  constructor(private route: ActivatedRoute) {}
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id')
+    console.log(this.id)
   }
   
   increment() {
