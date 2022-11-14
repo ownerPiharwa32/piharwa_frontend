@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-product-slider',
-  templateUrl: './product-slider.component.html',
-  styleUrls: ['./product-slider.component.scss']
+    selector: 'app-product-slider',
+    templateUrl: './product-slider.component.html',
+    styleUrls: ['./product-slider.component.scss']
 })
 export class ProductSliderComponent implements OnInit {
-    imageSrc = 'assets/img/products2.png'  ;
-    imageSrc2 = 'assets/img/gallery1.png'  
-    image3='assets/img/product.jpeg';
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-  imageObject = [{
-    image: 'ass',
-    thumbImage: this.imageSrc2,
-    title: 'Hummingbirds are amazing creatures'
-}, {
-    image: this.imageSrc,
-    thumbImage:  this.imageSrc,
-}, {
-    image: this.imageSrc,
-    thumbImage: this.imageSrc,
-    title: 'Example with title.'
-},{
-    image: this.imageSrc,
-    thumbImage:  this.image3,
-    title: 'Hummingbirds are amazing creatures'
-}, {
-    image: this.imageSrc,
-    thumbImage:  this.imageSrc2,
-}, {
-    image: this.imageSrc,
-    thumbImage:  this.image3,
-    title: 'Example two with title.'
-}];
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+    imageObject = [{
+        image: '../../../assets/img/gal5.png',
+        thumbImage: '../../../assets/img/gal5.png',
+        title: 'Bar Accessories'
+    }, {
+        image: '../../../assets/img/gal2.png',
+        thumbImage: '../../../assets/img/gal2.png',
+        title: 'Lehnga'
+    }, {
+        image: '../../../assets/img/gal1.png',
+        thumbImage: '../../../assets/img/gal1.png',
+        title: 'Saree'
+    }, {
+        image: '../../../assets/img/gal3.png',
+        thumbImage: '../../../assets/img/gal3.png',
+        title: 'Glasswares'
+    }, {
+        image: '../../../assets/img/gal4.png',
+        thumbImage: '../../../assets/img/gal4.png',  
+        title: 'Furnitures'
+    }, {
+        image: '../../../assets/img/gal2.png',
+        thumbImage: '../../../assets/img/gal2.png',
+        title: 'Lehnga'
+    }];
 }
