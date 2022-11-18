@@ -5,6 +5,7 @@ import { ProductListComponent } from './Pages/product-list/product-list.componen
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component';
+import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'product-details/:id', component: ProductDetailsPageComponent },
   {path: 'product-cart', component: CartComponent } ,
   {path: 'add-Address', component: AddAdressContactComponent } ,
+  {path: 'login', component: LoginPageComponent } ,
 
   
 ];

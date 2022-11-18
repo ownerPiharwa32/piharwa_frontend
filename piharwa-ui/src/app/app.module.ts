@@ -24,6 +24,7 @@ import { MaterialModule } from './others-files/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListComponent } from './Pages/category/category-list/category-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     AddAdressContactComponent,
     CategoryListComponent,
+    LoginPageComponent,
     
   ],
   imports: [
