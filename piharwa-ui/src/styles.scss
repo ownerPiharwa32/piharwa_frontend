@@ -177,7 +177,7 @@ $fwbold: bold;
 }
 
 .fs38 {
-    font-size: 38px;
+    font-size: 38px !important;
 }
 
 .fs39 {
@@ -196,7 +196,38 @@ $fwbold: bold;
     font-size: 100px !important;
 }
 
+// fonts weight 
+$fw300: 300;
+$fw400: 400;
+$fw500: 500;
+$fw600: 600;
+$fw700: 700;
+$fwbold: bold;
 
+// font weight classes
+.fw300 { 
+    font-weight: $fw300 !important;
+}
+
+.fw400 {
+    font-weight: $fw400 !important;
+}
+
+.fw500 {
+    font-weight: $fw500 !important;
+}
+
+.fw600 {
+    font-weight: $fw600 !important;
+}
+
+.fw700 {
+    font-weight: $fw700 !important;
+}
+
+.fwbold {
+    font-weight: $fwbold !important;
+}
 
 // font-size end 
 // button component start 
@@ -811,7 +842,7 @@ form {
     width: 100%;
   }
 }
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {  
   form {
     &.search_form_1 {
       input[type=submit] {
@@ -868,3 +899,71 @@ form {
 }
 
 // 13 nov end code scss 
+#mat-dialog-0 {
+    padding: 0 0;
+    overflow-x: hidden;
+    min-height: 570px; 
+    max-height: 570px;      
+    overflow-y: auto;    
+    .mat-dialog-content {
+        max-height: 100vh;  
+    }
+}
+.loginRegister {
+    .inputBox {
+        display: flex; 
+        flex-wrap: wrap; 
+        .w45 {  
+            flex: 45%;
+            background-color: #E2FCF0;  
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 570px;   
+            @media (max-width: 767px) {
+                flex: 100%;
+                min-height: auto;
+            }
+        }
+        .w55 {
+            flex: 55%;  
+            position: relative;
+            padding: 30px; 
+            .crossBtn {
+                img {
+                    position: absolute; 
+                    right: 15px; 
+                    top: 15px; 
+                }
+            }
+            @media (max-width: 767px) {
+                flex: 100%;
+                min-height: auto; 
+            }
+        }
+        .mat-form-field {
+            width: 100%;
+        }
+        button.mat-primary {
+            background-color: #00953E;
+            border-radius: 10.252px;
+            font-weight: 400 !important;
+            font-size: 16px;
+            min-height: 40px;         
+        }
+        &.login {
+            button.mat-stroked-button {
+                border: solid 1px #00953E; 
+                border-radius: 10.252px;          
+                font-weight: 400 !important;
+                color: #00953E; 
+                font-size: 16px;
+                min-height: 40px; 
+            }
+        }
+    }
+}
+.pointer {
+    cursor: pointer; 
+}
+// Login Register start css  

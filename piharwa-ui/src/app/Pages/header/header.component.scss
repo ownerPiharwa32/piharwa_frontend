@@ -51,7 +51,8 @@
 
     .navbarRight {
         a.nav-icon {
-            margin-left: 40px;
+            margin-left: 40px; 
+            cursor: pointer; 
 
             @media (max-width: 767px) {
                 margin-left: 15px;
