@@ -10,7 +10,8 @@ export interface DialogData {
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-
+  view ='login';
+  viewReg ="register"
   constructor(
     public dialogRef: MatDialogRef<LoginPageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
