@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../product-list/product.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -10,12 +11,23 @@ export class ProductDetailsPageComponent implements OnInit {
   public counter: number = 1;
 
   id!:any;
-  constructor(private route: ActivatedRoute) {}
+  productData: any;
+  constructor(private route: ActivatedRoute,public productService :ProductService) {}
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')
-    console.log(this.id)
+    let id = this.route.snapshot.paramMap.get('id')
+    this.getProductDetials(id);
   }
   
+  getProductDetials(id:any) {
+    this.productService.productDetialsApi(id).subscribe((data) => this.getProductdetialsApi(data));
+  }
+  getProductdetialsApi(data:any){
+    if(data.status === true){
+      this.productData = data.data
+      console.log(this.productData);
+    }
+  }
+
   increment() {
     this.counter += 1;
   }

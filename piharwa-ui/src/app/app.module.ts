@@ -12,7 +12,7 @@ import { ProductCounterComponent } from './Pages/product-counter/product-counter
 import { ProductDecoreComponent } from './Pages/product-decore/product-decore.component';
 import { CustomerOpinionComponent } from './Pages/customer-opinion/customer-opinion.component';
 import { HeaderSliderComponent } from './Pages/header-slider/header-slider.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PortfolioComponent } from './Pages/portfolio/portfolio.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
@@ -49,6 +49,7 @@ import { LoginPageComponent } from './Pages/login/login-page/login-page.componen
   ],
   imports: [
     BrowserModule,HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule
   ],
   providers: [],

@@ -11,7 +11,10 @@ export class ProductService {
   ngOnInit() {
   
   }
-productListApi (data:any) {
+   productListApi (data:any) {
     return this.http.post(ApiConstants.apiURL + ApiConstants.productlist,data);
+   }
+   productDetialsApi (id:any) {
+    return this.http.get(ApiConstants.apiURL + ApiConstants.singleproduct+id);
    }
 }
