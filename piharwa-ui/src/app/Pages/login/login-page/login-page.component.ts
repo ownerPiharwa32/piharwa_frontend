@@ -19,6 +19,7 @@ export class LoginPageComponent implements OnInit {
   loginData: any;
   sginupForm!: FormGroup;
   loginForm!: FormGroup;
+  verifyOtpFlag: boolean = false;
 
 
   constructor( private formBuilder: FormBuilder, private snackBar: MatSnackBar,
@@ -35,6 +36,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.singupForm();
     this.loginFormData();
+    this.verifyOtpFlag = false;
   }
 
    checkPage(flag:any){
@@ -129,6 +131,7 @@ export class LoginPageComponent implements OnInit {
 
   otpDialog(data:any,name:any){
    console.log(data)
+   this.verifyOtpFlag = true;
   }
   verifyOtp(){
     let userData = {
@@ -167,12 +170,10 @@ export class LoginPageComponent implements OnInit {
   onLogin() {
     let userData = this.loginForm.value;
     console.log(userData);
-    if (this.loginForm.valid) {
       this.dataService.loginApi(userData).subscribe(
         (data) => this.logindialog(data),
         (err) => console.log(err)
       );
-    }
   }
 
   logindialog(data: any) {
@@ -181,7 +182,7 @@ export class LoginPageComponent implements OnInit {
       this.loginData = data;
       this.openSnackBar(data.message, 'Dismiss');
       this.loginForm.reset();
-      this.authService.sendToken( this.loginData.token);
+      this.authService.sendToken( this.loginData.accessToken);
       this.close()
       this.myRoute.navigateByUrl('/home');
     }
