@@ -13,11 +13,11 @@
             </div>
         </div>
         <div class="row mx80">
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 mb-4" *ngFor="let fproduct of featuredProduct">
                 <div class="card h-100">
                     <a href="shop-single.html" class="d-block position-relative">
                         <div class="imgSet">
-                            <img src="../../../assets/img/fe1.jpg" class="card-img-top" alt="Icon" class="img-fluid" />
+                            <img src="{{fproduct.productImg}}" class="card-img-top" alt="Icon" class="img-fluid" />
                         </div>
                         <div class="heartIcon">
                             <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
@@ -27,11 +27,12 @@
                         </div>
                     </a>
                     <div class="card-body ps-0 pr-0">
-                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
+                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">{{fproduct.productTitle}} (Set of 3)</p>
                         <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
             </div>
+            <!-- 
             <div class="col-12 col-sm-6 col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="shop-single.html" class="d-block position-relative">
@@ -48,7 +49,6 @@
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
             </div>
@@ -68,7 +68,6 @@
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
             </div>
@@ -87,7 +86,6 @@
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
             </div>
@@ -107,7 +105,6 @@
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
             </div>  
@@ -127,10 +124,9 @@
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="center">
