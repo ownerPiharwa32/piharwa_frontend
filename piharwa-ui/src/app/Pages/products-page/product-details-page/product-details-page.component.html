@@ -75,11 +75,11 @@
                     <div class="productCount align-items-center mb-4">
                         <form action="#" class="d-flex align-items-center">
                             <div (click)="decrement()" class="qtyminus pointer">-</div>
-                            <input min="0" type="text" name="quantity" value="{{counter}}" class="qty">
+                            <input min="0" type="text" name="quantity" value="{{quantity}}" class="qty">
                             <div (click)="increment()" class="qtyplus pointer">+</div>
                         </form>
                         <div class="ms-4">
-                            <button routerLink="/product-cart" class="explore_button xlSize mb-0">
+                            <button (click)="addtoCart(productData)"  class="explore_button xlSize mb-0">
                                 Add To Cart
                             </button>
                         </div>
@@ -104,8 +104,8 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        {{productData.productDescription}}
+                                    <div class="accordion-body" [innerHTML]="productData.productDescription" >
+                                        <!-- {{productData.productDescription}} -->
                                     </div>
                                 </div>
                             </div>
