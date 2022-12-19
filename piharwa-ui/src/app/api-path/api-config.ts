@@ -6,5 +6,6 @@ export const ApiConstants ={
       singleproduct:'api/v1/product/single-product/',
       registerApi:'api/v1/buyers/register',
       loginApi:'api/v1/buyers/login',
-      otpToken:'api/v1/buyers/verify/otp'
+      otpToken: 'api/v1/buyers/verify/otp',
+      listAddress: 'api/v1/buyer/list/address/details'
 }
