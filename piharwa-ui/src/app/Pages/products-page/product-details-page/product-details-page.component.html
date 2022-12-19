@@ -4,7 +4,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Lehengas</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="#">Floral Printed Organza Dress</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">{{productData.productTitle}}</a></li>
             </ol>
         </nav>
     </div>
@@ -17,7 +17,7 @@
                     <div>
                         <img src={{productData.productImg}} class="img-fluid w-100" alt="Icon" />
                     </div>
-                    
+
                 </div>
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -26,7 +26,7 @@
                                 <div class="col-md-3" *ngFor="let image of productData.thumbnailImgs ">
                                     <img src={{image}} class="d-block w-100 img-fluid" alt="Slider 1" />
                                 </div>
-                    
+
                             </div>
                         </div>
                         <!-- <div class="carousel-item">
@@ -49,8 +49,12 @@
                 <div class="productContain">
                     <h2 class="fs36 fw700 col3 mb-3">{{productData.productTitle}}</h2>
                     <div class="priceInfo">
-                        <del class="fs17 fw300 mb-2">₹ {{productData.price}}</del>
-                        <p class="fs24 fw600 col3">₹ {{productData.price}}</p>
+                        <del class="fs17 fw300 mb-2" *ngIf="productData.allowDiscount">₹ {{productData.price}}</del>
+                        <p class="fs24 fw600 col3">₹ 
+                            {{productData.allowDiscount === true ? productData.discountPrice : productData.price}}
+
+
+                        </p>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <span>
@@ -79,12 +83,12 @@
                             <div (click)="increment()" class="qtyplus pointer">+</div>
                         </form>
                         <div class="ms-4">
-                            <button (click)="addtoCart(productData)"  class="explore_button xlSize mb-0">
+                            <button (click)="addtoCart(productData)" class="explore_button xlSize mb-0">
                                 Add To Cart
                             </button>
                         </div>
                     </div>
-                    <div class="deleveryStatus mb-4">
+                    <!-- <div class="deleveryStatus mb-4">
                         <p class="fs17 fw400 col3 mb-2">Check Delivery</p>
                         <div class="input-group mb-2">
                             <input type="text" class="form-control" placeholder="Enter Pin Code"
@@ -92,7 +96,7 @@
                             <button class="input-group-text" id="basic-addon2">Check</button>
                         </div>
                         <p class="fs14 fw400 col1">Delivery by : <strong>30th Oct</strong></p>
-                    </div>
+                    </div> -->
                     <div class="accorDians">
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
@@ -104,7 +108,7 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body" [innerHTML]="productData.productDescription" >
+                                    <div class="accordion-body" [innerHTML]="productData.productDescription">
                                         <!-- {{productData.productDescription}} -->
                                     </div>
                                 </div>
