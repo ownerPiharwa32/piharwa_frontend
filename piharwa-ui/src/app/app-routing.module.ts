@@ -4,7 +4,7 @@ import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
-import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component';
+import { ListAddressComponent } from './Pages/list-address/list-address.component';
 import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'product', component: ProductListComponent },
   {path: 'product-details/:id', component: ProductDetailsPageComponent },
   {path: 'product-cart', component: CartComponent } ,
-  {path: 'add-Address', component: AddAdressContactComponent } ,
+  {path: 'list-Address', component: ListAddressComponent } ,
   {path: 'login', component: LoginPageComponent } ,
 
   

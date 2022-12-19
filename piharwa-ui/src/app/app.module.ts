@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListComponent } from './Pages/category/category-list/category-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
+import { ListAddressComponent } from './Pages/list-address/list-address.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { LoginPageComponent } from './Pages/login/login-page/login-page.componen
     AddAdressContactComponent,
     CategoryListComponent,
     LoginPageComponent,
+    ListAddressComponent,
     
   ],
   imports: [
