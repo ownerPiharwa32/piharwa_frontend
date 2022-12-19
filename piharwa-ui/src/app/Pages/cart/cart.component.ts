@@ -36,6 +36,6 @@ export class CartComponent implements OnInit {
     this.cartService.clearData();
   }
   toContinue(){
-   this.route.navigate(["/add-Address"]);
+   this.route.navigate(["/list-Address"]);
   }
 }
