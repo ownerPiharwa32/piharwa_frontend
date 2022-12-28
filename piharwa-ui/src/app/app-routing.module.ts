@@ -14,10 +14,10 @@ const routes: Routes = [
     path: '',
     component: WrongRouteComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'nopage'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'nopage'
+  // },
   {path: 'nopage', component: WrongRouteComponent },
 
   {path: 'home', component: HomepageComponent },
