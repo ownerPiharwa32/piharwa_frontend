@@ -23,9 +23,11 @@ import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress
 import { MaterialModule } from './others-files/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListComponent } from './Pages/category/category-list/category-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
-import { ListAddressComponent } from './Pages/list-address/list-address.component';
+import { ListAddressComponent } from './Pages/add-adress-contact/list-address/list-address.component';
+import { AddAddresComponent } from './Pages/add-adress-contact/manage-address/add-addres/add-addres.component';
+import { TokenService } from './Pages/token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,14 +49,16 @@ import { ListAddressComponent } from './Pages/list-address/list-address.componen
     CategoryListComponent,
     LoginPageComponent,
     ListAddressComponent,
+    AddAddresComponent,
     
   ],
   imports: [
     BrowserModule,HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule
+    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
+    
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

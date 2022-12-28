@@ -48,7 +48,6 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   addtoCart(productData:any){
-   console.log(productData)
   let totalvalue= this.productData.price*this.quantity
   console.log(totalvalue)
    let productdata ={

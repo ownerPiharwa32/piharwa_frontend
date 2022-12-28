@@ -1,0 +1,71 @@
+h2.newTitles {
+    font-size: 40px;
+    font-weight: 600;
+    color: #4F4F4F;
+}
+
+h2.newTitles>span {
+    color: #00953E;
+}
+
+.color-green {
+    color: #00953E;
+}
+
+.sidebars {
+    background: #FFFFFF;
+    box-shadow: 0px 0.782878px 6.26303px rgba(0, 0, 0, 0.25);
+    border-radius: 7.82878px;
+}
+
+ul.list-unstyled li > button {
+    outline: 0 !important; 
+}
+
+ul.list-unstyled li ul li {
+    margin-left: 35px; ;
+    margin-bottom: 10px;
+}
+ul.list-unstyled li ul li > a.active {
+    color: #00953E !important;     
+}
+ul.list-unstyled li ul li > a {
+    text-decoration: none;
+}
+
+ul.list-unstyled li {
+    font-size: 17px;
+}
+.right-sidebar {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 40px 40px; 
+}
+.right-sidebar h4 {
+    color: #333333;
+    font-size: 25px; 
+    font-weight: 600; 
+    margin-bottom: 0; 
+}
+.right-sidebar a {
+    color: #00953E; 
+    font-size: 18px; 
+    font-weight: 600;    
+}
+.green-btn {
+    color: #00953E; 
+    border: solid 1px #00953E;              
+    text-decoration: none;  
+    padding: 6px 10px; 
+    font-size: 18px;
+    font-weight: 600;
+    padding: 13px 20px;
+    border-radius: 5px;
+}
+.text-none {
+    text-decoration: none;
+}
+.add-new-btn{
+    cursor: pointer;
+}

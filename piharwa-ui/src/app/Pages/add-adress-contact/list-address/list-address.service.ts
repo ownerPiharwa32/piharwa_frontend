@@ -14,4 +14,7 @@ export class ListAddressService {
    addressDetailsApi () {
     return this.http.get(ApiConstants.apiURL + ApiConstants.listAddress);
    }
+   saveAddress(data:any){
+    return this.http.post(ApiConstants.apiURL + ApiConstants.addaddress,data);
+   }
 }
