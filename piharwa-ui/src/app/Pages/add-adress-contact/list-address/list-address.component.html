@@ -39,12 +39,12 @@
             <a (click)="openAddAdressWindow()" class="add-new-btn text-none">+ Add New Address</a>
           </div>
           <div class="mb-4"></div>
-          <div class="lists-data">
+          <div class="lists-data" *ngFor="let addressList of address">
             <div class="row">
               <div class="col-md-9">
-                <p class="mb-1">405, Mahashweta Nagar, Ujjain, Madhya Pradesh</p>
-                <p class="mb-1">Near Kirti Mandir School,</p>
-                <p class="mb-1">456010,9874563210, 985632147</p>
+                <p *ngIf="addressList.default === true"><mat-icon>check_circle</mat-icon> </p>
+                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  ,{{addressList.landmark}}</p>
+                <p class="mb-1">{{addressList.city}} ,{{addressList.state}}, {{addressList.pincode}}, {{addressList.country}}</p>
               </div>
               <div class="col-md-3 text-end">
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -66,8 +66,10 @@
                   </mat-menu>
               </div>
             </div>
+          <br/>
+          <hr/>
           </div>
-          <div class="border-bottom mt-3 mb-3"></div>
+          <!-- <div class="border-bottom mt-3 mb-3"></div>
           <div class="lists-data">
             <div class="row">
               <div class="col-md-9">
@@ -78,7 +80,7 @@
               <div class="col-md-3 text-end"> 
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

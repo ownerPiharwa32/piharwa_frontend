@@ -11,6 +11,7 @@ import { ListAddressService } from './list-address.service';
 })
 export class ListAddressComponent implements OnInit {
   listAddress: any;
+  address: any;
 
   constructor(public listAddressService: ListAddressService, public router: Router,public dialog: MatDialog,) { }
 
@@ -24,8 +25,7 @@ export class ListAddressComponent implements OnInit {
 
   getAddressListApi(data: any) {
     if (data.status === true) {
-      // this.listAddress = data.data
-      console.log(data,"rrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+      this.address =data.data;
     }
 
   }
