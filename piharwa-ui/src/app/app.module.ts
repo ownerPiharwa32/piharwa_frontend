@@ -28,6 +28,7 @@ import { LoginPageComponent } from './Pages/login/login-page/login-page.componen
 import { ListAddressComponent } from './Pages/add-adress-contact/list-address/list-address.component';
 import { AddAddresComponent } from './Pages/add-adress-contact/manage-address/add-addres/add-addres.component';
 import { TokenService } from './Pages/token.service';
+import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { TokenService } from './Pages/token.service';
     LoginPageComponent,
     ListAddressComponent,
     AddAddresComponent,
+    WrongRouteComponent,
     
   ],
   imports: [

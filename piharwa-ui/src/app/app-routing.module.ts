@@ -7,12 +7,19 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { ListAddressComponent } from './Pages/add-adress-contact/list-address/list-address.component';
 import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
 import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component';
+import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomepageComponent,
+    component: WrongRouteComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'nopage'
+  },
+  {path: 'nopage', component: WrongRouteComponent },
+
   {path: 'home', component: HomepageComponent },
   {path: 'product', component: ProductListComponent },
   {path: 'product-details/:id', component: ProductDetailsPageComponent },
