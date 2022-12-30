@@ -51,15 +51,15 @@
                     <mat-icon>more_vert</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="makedefault(addressList)">
                       <mat-icon>check</mat-icon>
                       <span>Make Default</span>
                     </button>
-                    <button mat-menu-item >
-                      <mat-icon>delete</mat-icon>
+                    <button mat-menu-item (click)="deleteaddressWindow(addressList)">
+                      <mat-icon  >delete</mat-icon>
                       <span>Delete Address</span>
                     </button>
-                    <button mat-menu-item (click)="openEditAdressWindow()">
+                    <button mat-menu-item (click)="openEditAdressWindow(addressList)">
                       <mat-icon>edit</mat-icon>
                       <span>Edit Address</span>
                     </button>

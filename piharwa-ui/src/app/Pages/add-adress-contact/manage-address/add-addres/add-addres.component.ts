@@ -12,18 +12,22 @@ import { ListAddressService } from '../../list-address/list-address.service';
 })
 export class AddAddresComponent implements OnInit {
   addressForm!: FormGroup;
+  flag: any;
 
   constructor( private formBuilder: FormBuilder,public commonService:CommonService,
     private activatedRoute : ActivatedRoute,
     private dataService: ListAddressService,
     public dialogRef: MatDialogRef<AddAddresComponent>,
-    @Inject(MAT_DIALOG_DATA) data:any) {}
+    @Inject(MAT_DIALOG_DATA) public addressdata:any) {}
 
   close(): void {
     this.dialogRef.close();
   }
   ngOnInit(): void {
+    console.log(this.addressdata);
+    this.flag = this.addressdata.flag;
     this.addressCall()
+
   }
  
   public addressCall() {
@@ -69,12 +73,21 @@ export class AddAddresComponent implements OnInit {
         updateOn: 'change',
       }),
     });
-    // if(this.updateFlag === true){
-    //   this.sginupForm.controls['name'].setValue(this.updateValue.name);
-    // }
+    if(this.flag === 'edit'){
+      console.log(this.addressdata.value.firstName)
+      this.addressForm.controls['firstName'].setValue(this.addressdata.value.firstName);
+      this.addressForm.controls['lastName'].setValue(this.addressdata.value.lastName);
+      this.addressForm.controls['address_line_one'].setValue(this.addressdata.value.address_line_one);
+      this.addressForm.controls['address_line_two'].setValue(this.addressdata.value.address_line_two);
+      this.addressForm.controls['landmark'].setValue(this.addressdata.value.landmark);
+      this.addressForm.controls['city'].setValue(this.addressdata.value.city);
+      this.addressForm.controls['state'].setValue(this.addressdata.value.state);
+      this.addressForm.controls['country'].setValue(this.addressdata.value.country);
+      this.addressForm.controls['pincode'].setValue(this.addressdata.value.pincode);
+      this.addressForm.controls['mobileNo'].setValue(this.addressdata.value.mobileNo);
+
+    }
   }
-
-
   addAddress() {
     let userData = this.addressForm.value;
     console.log(userData);
@@ -86,12 +99,24 @@ export class AddAddresComponent implements OnInit {
 
   saveResponse(data: any) {
     if (data.status === true) {
-      console.log(data)
       this.commonService.openSnackBar(data.message, 'Dismiss');
+      this.dialogRef.close('yes');
       this.addressForm.reset();
     }
     if (data.status === false) {
       this.commonService.openSnackBar(data.message, 'Dismiss');
+      this.dialogRef.close('yes');
     }
+  }
+
+  updateAddress() {
+    let userData = this.addressForm.value;
+    userData.addressId = this.addressdata.value._id;
+    userData.default = true;
+    console.log(userData);
+      this.dataService.updateAddress(userData).subscribe(
+        (data) => this.saveResponse(data),
+        (err) => console.log(err)
+      );
   }
 }

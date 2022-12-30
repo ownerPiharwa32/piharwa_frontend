@@ -17,4 +17,11 @@ export class ListAddressService {
    saveAddress(data:any){
     return this.http.post(ApiConstants.apiURL + ApiConstants.addaddress,data);
    }
+   updateAddress(data:any){
+    return this.http.put(ApiConstants.apiURL + ApiConstants.updateAddress,data);
+   }
+   deleteaddress(addressid:any){
+    return this.http.delete(ApiConstants.apiURL + ApiConstants.deleteAddress+'/'+addressid);
+
+   }
 }

@@ -10,10 +10,10 @@
                     <div class="formUi">
                         <div class="row">
                           <form class="form"  [formGroup]="addressForm" novalidate class="form" autocomplete="off">
-                        
                             <div class="col-md-12 mb-3">
                                 <div class="d-flex mb-3">
-                                    <label class="text-black fs20 fw500">Add Address</label>
+                                    <label   *ngIf="flag && flag === 'save'" class="text-black fs20 fw500">Add Address</label>
+                                    <label  *ngIf="flag && flag === 'edit'" class="text-black fs20 fw500">update Address</label>
                                 </div>
                                 <mat-form-field appearance="fill" class="w-100">
                                     <mat-label>Country</mat-label>
@@ -72,7 +72,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="col-md-12">
-                                <div class="d-flex align-items-center mb-3">
+                                <!-- <div class="d-flex align-items-center mb-3">
                                     <div class="checkBoxes">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
@@ -80,12 +80,18 @@
                                         </div>
                                     </div>
                                     <h4 class="fs14 fw500 col3 mb-0">Save As Default</h4>
-                                </div>
-                                    <div class="summaryBtn">
+                                </div> -->
+                                    <div *ngIf="flag && flag === 'save'" class="summaryBtn">
                                         <button class="explore_button xlSize w-100 d-block"  (click)="addAddress()">
                                             Save Address
                                         </button>
-                                </div>
+                                   </div>
+
+                                   <div  *ngIf="flag && flag === 'edit'" class="summaryBtn">
+                                    <button class="explore_button xlSize w-100 d-block"  (click)="updateAddress()">
+                                        Update Address
+                                    </button>
+                               </div>
                             </div>
                        
                           </form>
