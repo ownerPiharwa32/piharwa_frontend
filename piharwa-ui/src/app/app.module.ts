@@ -31,6 +31,7 @@ import { TokenService } from './Pages/token.service';
 import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-popup.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
+import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { AboutUsComponent } from './Pages/about-us/about-us.component';
     WrongRouteComponent,
     DeletePopupComponent,
     AboutUsComponent,
+    PrivacyPolicyComponent,
     
   ],
   imports: [
