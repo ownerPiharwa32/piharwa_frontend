@@ -15,7 +15,7 @@
         <div class="cartLists">
             <div class="row">
                 <div class="col-md-8">  
-                    <div class="borderBottom">
+                    <!-- <div class="borderBottom">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="cartImgBox">
@@ -58,18 +58,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="borderBottom">
-                        <div class="row">
+                    </div> -->
+                    <div class="borderBottom" *ngFor="let cartitem of cartData">
+                        <div class="row" *ngIf="cartitem.productTitle != ''">
                             <div class="col-md-2">
                                 <div class="cartImgBox">
-                                    <img src="../../../assets/img/pro2.png" alt="User" class="img-fluid" />
+                                    <img src="{{cartitem.pimage}}" alt="User" class="img-fluid" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="cartTextBox">
-                                    <h3 class="mb-2 fs18 fw600 col3">Floral Printed Organza Pink</h3>
-                                    <div class="d-flex align-items-center mb-3">
+                                    <h3 class="mb-2 fs18 fw600 col3">{{cartitem.productTitle}}</h3>
+                                    <!-- <div class="d-flex align-items-center mb-3">
                                         <div class="checkBoxes">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
@@ -77,15 +77,15 @@
                                             </div>
                                         </div>
                                         <h4 class="fs14 fw500 col3 mb-0">Fall & Pico</h4>
-                                    </div>  
+                                    </div>   -->
                                 </div>
                                 <div class="productCount align-items-center">
                                     <form action="#" class="d-flex align-items-center">
-                                        <div class="qtyminus pointer">-</div>
-                                        <input type="text" name="quantity" value="2" class="qty">
-                                        <div class="qtyplus pointer">+</div>
+                                        <!-- <div class="qtyminus pointer">-</div> -->
+                                        <input type="text" name="quantity" value="{{cartitem.quantity}}" class="qty">
+                                        <!-- <div class="qtyplus pointer">+</div> -->
                                     </form>
-                                    <div class="deleteBtn ms-4 ps-1">
+                                    <div class="deleteBtn ms-4 ps-1"(click)="removeData(cartitem)" >
                                         <img src="../../../assets/img/delete.png" alt="User" width="17" height="20"
                                             class="img-fluid pointer" />
                                     </div>
@@ -93,11 +93,11 @@
                             </div>
                             <div class="col-md-4 text-end">
                                 <div class="priceList">
-                                    <div class="fs18 fw500 col3 mb-1">₹ 10,200.00</div>
-                                    <div class="fs18 fw500 col3 mb-4 pb-4">₹ 200.00</div>
+                                    <div class="fs18 fw500 col3 mb-1">₹ {{cartitem.price}}</div>
+                                    <!-- <div class="fs18 fw500 col3 mb-4 pb-4">₹ 200.00</div> -->
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="fs14 fw400 col3">Total Amount</div>
-                                        <div class="fs18 fw600 col1">₹ 10,400.00</div>
+                                        <div class="fs18 fw600 col1">₹ {{cartitem.price*cartitem.quantity}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -110,18 +110,18 @@
                         <div class="fs14 fw600 text-black mb-3">Subtotal</div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <div class="fs14 fw500 col5">Subtotal</div>
-                            <div class="fs14 fw600 col3">₹ 10,400.00</div>
+                            <div class="fs14 fw600 col3">₹{{this.subtotal}}</div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between borderBottom2">
+                        <!-- <div class="d-flex align-items-center justify-content-between borderBottom2">
                             <div class="fs14 fw500 col5">Shipping Cost</div>
                             <div class="fs14 fw600 col3">₹ 300.00</div>
-                        </div>
+                        </div> -->
                         <div class="d-flex align-items-center justify-content-between mb-5">
                             <div class="fs14 fw500 col5">Total</div>
-                            <div class="fs14 fw600 col3">₹ 36,100.00</div>
+                            <div class="fs14 fw600 col3">₹ {{this.subtotal}}</div>
                         </div>
                         <div class="summaryBtn">
-                            <button class="explore_button xlSize w-100 d-block">
+                            <button class="explore_button xlSize w-100 d-block" (click)="toContinue()"  >
                                 Continue To Shipping
                             </button>
                         </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProductService } from '../../product-list/product.service';
+import { CartService } from './cart-service/cart.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -8,14 +9,16 @@ import { ProductService } from '../../product-list/product.service';
   styleUrls: ['./product-details-page.component.scss']
 })
 export class ProductDetailsPageComponent implements OnInit {
-  public counter: number = 1;
+  public quantity: number = 1;
 
   id!:any;
   productData: any;
-  constructor(private route: ActivatedRoute,public productService :ProductService) {}
+  items: any;
+  constructor(private route: ActivatedRoute,public productService :ProductService,private cartService: CartService,public myRoute :Router) {}
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
     this.getProductDetials(id);
+    // this.items = this.cartService.getItems();
   }
   
   getProductDetials(id:any) {
@@ -29,18 +32,45 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   increment() {
-    this.counter += 1;
+    this.quantity += 1;
   }
 
   decrement() {
-    if(this.counter === 0){
-          this.counter=0
+    if(this.quantity === 0){
+          this.quantity=0
     }else {
-        this.counter -= 1;
+        this.quantity -= 1;
     }
   }
 
   reset() {
-    this.counter = 0;
+    this.quantity = 0;
+  }
+
+  addtoCart(productData:any){
+  let totalvalue= this.productData.price*this.quantity
+  console.log(totalvalue)
+   let productdata ={
+    _id :productData._id,
+    productTitle:productData.productTitle,
+    price:productData.price,
+    quantity:this.quantity,
+    total:totalvalue,
+    pimage:productData.productImg
+   }
+   this.cartService.addProductToCart(productdata);
+   this.myRoute.navigate(["/product-cart"]);
+  }
+  // deleteItem(item:any){
+  //   this.cartService.deleteItem(item);
+  //   let domItem  = document.getElementById(`cart-item`+item.product.id);
+  //   setTimeout(() =>{
+  //   domItem.classList.add('delete-style');
+  //   domItem.parentNode.removeChild(domItem);
+  //   },1000);
+
+  // }
+  addQty(item:any){
   }
 }
+// routerLink="/product-cart"

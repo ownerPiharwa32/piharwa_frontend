@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CategoryService } from '../category/category.service';
 import { LoginPageComponent } from '../login/login-page/login-page.component';
+import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,10 @@ import { LoginPageComponent } from '../login/login-page/login-page.component';
 export class HeaderComponent implements OnInit {
   categoryDataList: any;
 
-  constructor(public dialog: MatDialog,public categoryService:CategoryService,public router :Router) {}
+
+  cartData: any;
+
+  constructor(public dialog: MatDialog,public cartService :CartService,public router :Router,public categoryService:CategoryService) {}
 
   openLoginWindow() {
       const dialogRef = this.dialog.open(LoginPageComponent, {
@@ -27,6 +31,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoryList();
+    this.cartData = this.cartService.getItemData()
+    console.log(JSON.stringify(this.cartData));
   }
 
   getCategoryList() {
