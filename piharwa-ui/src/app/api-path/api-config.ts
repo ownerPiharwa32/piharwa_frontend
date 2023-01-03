@@ -5,5 +5,8 @@ export const ApiConstants ={
       singleproduct:'api/v1/product/single-product/',
       registerApi:'api/v1/buyers/register',
       loginApi:'api/v1/buyers/login',
-      otpToken:'api/v1/buyers/verify/otp'
+      otpToken:'api/v1/buyers/verify/otp',
+      mainCategoryList:'api/v1/main/category/list',
+      
+      // http://piharwa.co.in/api/v1/main/category/list
 }
