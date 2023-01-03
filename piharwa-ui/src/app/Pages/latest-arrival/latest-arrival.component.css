@@ -1,0 +1,75 @@
+.bg-latest {
+  padding-bottom: 35px;
+}
+
+.bg-latest .card {
+  border: none;
+}
+
+.bg-latest .card .card-body {
+  background-color: #eaf5f0 !important;
+}
+
+.bg-latest .card .imgSet {
+  position: relative;
+  display: block;
+  max-height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .bg-latest .mx80 {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+.bg-latest .heartIcon {
+  position: absolute;
+  right: 0;
+  bottom: -17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bg-latest .heartIcon span.circleStyles {
+  border-radius: 50%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 42px;
+  height: 42px;
+  background: white;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);
+}
+
+.bg-latest .heartIcon span.circleStyles:first-child {
+  margin-right: 18px;
+}
+
+.bg-latest .heartIcon span.circleStyles:last-child {
+  margin-right: 15px;
+}
+
+.lineH22 {
+  line-height: 22px !important;
+}
+
+.fontStyle1 {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.fontStyle2 {
+  font-family: Britania Ligatura !important;
+}
+/*# sourceMappingURL=latest-arrival.component.css.map */

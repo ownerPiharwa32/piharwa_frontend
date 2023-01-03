@@ -1,0 +1,52 @@
+.counter_wapper {
+  padding: 10px;
+  margin: 35px 0px;
+  color: azure;
+  font-weight: 600;
+  border-radius: 30px;
+  background: url(../../../assets/img/Vector.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 99%;
+  height: 105px;
+  background-size: contain;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  .counter_wapper {
+    background: #00953e;
+    height: auto;
+  }
+  .counter_wapper .mx70 {
+    max-width: 100%;
+  }
+  .counter_wapper .col {
+    padding: 15px;
+  }
+}
+
+.text-center {
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+.mx70 {
+  max-width: 70%;
+  margin: auto;
+}
+
+.lineH40 {
+  line-height: 40px;
+}
+
+.lineH15 {
+  line-height: 15px;
+}
+/*# sourceMappingURL=product-counter.component.css.map */

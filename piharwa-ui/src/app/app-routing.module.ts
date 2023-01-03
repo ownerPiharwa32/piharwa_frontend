@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
+import { AboutUsComponent } from './Pages/about-us/about-us.component'
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
@@ -18,16 +19,17 @@ const routes: Routes = [
   //   path: '**',
   //   redirectTo: 'nopage'
   // },
-  {path: 'nopage', component: WrongRouteComponent },
+  { path: 'nopage', component: WrongRouteComponent },
 
-  {path: 'home', component: HomepageComponent },
-  {path: 'product', component: ProductListComponent },
-  {path: 'product-details/:id', component: ProductDetailsPageComponent },
-  {path: 'product-cart', component: CartComponent } ,
-  {path: 'list-Address', component: ListAddressComponent } ,
-  {path: 'login', component: LoginPageComponent } ,
-  {path: 'addaddress', component: AddAdressContactComponent } ,
-  
+  { path: 'home', component: HomepageComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'productlist/:id', component: ProductListComponent },
+  { path: 'product-details/:id', component: ProductDetailsPageComponent },
+  { path: 'product-cart', component: CartComponent },
+  { path: 'list-Address', component: ListAddressComponent },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'addaddress', component: AddAdressContactComponent },
+
 ];
 
 @NgModule({

@@ -14,4 +14,8 @@ export class CategoryService {
   categoryListApi () {
     return this.http.get(ApiConstants.apiURL + ApiConstants.categorylist);
    }
+   mainCategoryListApi(){
+    return this.http.get(ApiConstants.apiURL + ApiConstants.mainCategoryList);
+
+   }
 }

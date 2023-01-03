@@ -1,0 +1,221 @@
+.col1 {
+  color: #00953E;
+}
+
+.col2 {
+  color: #D61313;
+}
+
+.col3 {
+  color: #333333;
+}
+
+.col4 {
+  color: #828282;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.fw400 {
+  font-weight: 400 !important;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.fwbold {
+  font-weight: bold !important;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs15 {
+  font-size: 15px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs17 {
+  font-size: 17px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs19 {
+  font-size: 19px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fs21 {
+  font-size: 21px;
+}
+
+.fs22 {
+  font-size: 22px;
+}
+
+.fs23 {
+  font-size: 23px;
+}
+
+.fs24 {
+  font-size: 24px;
+}
+
+.fs25 {
+  font-size: 25px;
+}
+
+.fs26 {
+  font-size: 26px;
+}
+
+.fs27 {
+  font-size: 27px;
+}
+
+.fs28 {
+  font-size: 28px;
+}
+
+.fs29 {
+  font-size: 29px;
+}
+
+.fs30 {
+  font-size: 30px;
+}
+
+.fs31 {
+  font-size: 31px;
+}
+
+.fs32 {
+  font-size: 32px;
+}
+
+.fs33 {
+  font-size: 33px;
+}
+
+.fs34 {
+  font-size: 34px;
+}
+
+.fs35 {
+  font-size: 35px;
+}
+
+.fs36 {
+  font-size: 36px;
+}
+
+.fs37 {
+  font-size: 37px;
+}
+
+.fs38 {
+  font-size: 38px;
+}
+
+.fs39 {
+  font-size: 39px;
+}
+
+.fs40 {
+  font-size: 40px;
+}
+
+.button {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border: 0;
+  padding: 7px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+.button img {
+  margin-top: -3px;
+}
+
+.button.editBtns {
+  padding: 7px 30px;
+  padding-right: 15px;
+}
+
+@font-face {
+  font-family: Britania Ligatura;
+  src: url(assets/fonts/BritaniaLigatura-nRZmV.ttf);
+}
+
+.primary {
+  color: white;
+  background-image: none;
+}
+
+.primary:active:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.primary.bigBtn {
+  min-width: 90px;
+  min-height: 48px;
+}
+
+.secondary {
+  background-image: none;
+  border-radius: 7px;
+}
+
+.secondary:active:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dark {
+  background-image: none;
+  border-radius: 7px;
+  color: white;
+}
+
+.dark:active:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.fontStyle1 {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.fontStyle2 {
+  font-family: Britania Ligatura !important;
+}
+/*# sourceMappingURL=variable.css.map */
