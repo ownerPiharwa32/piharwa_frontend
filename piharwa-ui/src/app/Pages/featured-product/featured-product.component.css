@@ -1,0 +1,79 @@
+@media (max-width: 767px) {
+  .featuresProducts .row h1.fontStyle2 span {
+    font-size: 32px !important;
+  }
+  .featuresProducts .row h1.fontStyle2 + p.lineH22 {
+    font-size: 15px;
+  }
+  .featuresProducts .row .card .card-body .fs19 {
+    font-size: 15px;
+  }
+}
+
+.featuresProducts .card {
+  border: none;
+}
+
+.featuresProducts .card .imgSet {
+  position: relative;
+  display: block;
+  max-height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .featuresProducts .mx80 {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+.featuresProducts .heartIcon {
+  position: absolute;
+  right: 0;
+  bottom: -17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.featuresProducts .heartIcon span.circleStyles {
+  border-radius: 50%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 42px;
+  height: 42px;
+  background: white;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);
+}
+
+.featuresProducts .heartIcon span.circleStyles:first-child {
+  margin-right: 18px;
+}
+
+.featuresProducts .heartIcon span.circleStyles:last-child {
+  margin-right: 15px;
+}
+
+.lineH22 {
+  line-height: 22px !important;
+}
+
+.fontStyle1 {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.fontStyle2 {
+  font-family: Britania Ligatura !important;
+}
+/*# sourceMappingURL=featured-product.component.css.map */

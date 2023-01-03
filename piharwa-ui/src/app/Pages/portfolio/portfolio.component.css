@@ -1,0 +1,27 @@
+.portfolios {
+  padding: 40px 0 60px;
+}
+
+.modal button.close {
+  right: 0;
+  outline: 0;
+}
+
+#gallery-lightbox img {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+#gallery-lightbox img:hover {
+  opacity: 0.9;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.mx80 {
+  max-width: 90%;
+  margin: auto;
+}
+/*# sourceMappingURL=portfolio.component.css.map */

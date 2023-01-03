@@ -1,0 +1,12 @@
+@media (max-width: 991px) {
+  #template-mo-zay-hero-carousel a.carousel-control-prev i {
+    font-size: 1.5rem !important;
+  }
+  #template-mo-zay-hero-carousel a.carousel-control-next i {
+    font-size: 1.5rem !important;
+  }
+  #template-mo-zay-hero-carousel .carousel-indicators li {
+    display: none;
+  }
+}
+/*# sourceMappingURL=header-slider.component.css.map */
