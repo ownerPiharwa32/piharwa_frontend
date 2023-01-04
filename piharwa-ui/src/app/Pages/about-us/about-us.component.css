@@ -1,0 +1,17 @@
+.about-us {
+  text-align: justify;
+  color: #8f8f8f;
+  font-family: serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.about-us h1 {
+  text-align: center;
+  color: #00953E;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
+/*# sourceMappingURL=about-us.component.css.map */

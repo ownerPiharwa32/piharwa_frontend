@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CategoryService } from '../category/category.service';
 import { ProductService } from './product.service';
 
@@ -10,18 +10,29 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   productList: any;
+  listId: any;
 
-  constructor(public productService :ProductService, public router :Router) { }
+  constructor(public productService :ProductService, public router :Router,private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.getProductList();
+    let id = this.route.snapshot.paramMap.get('id');
+    console.log(id)
+    this.route.params.subscribe(params => {
+      this.listId = params['id'];
+      console.log('The id of this route is: ', this.listId);
+      this.getProductList(id);
+
+    });
   }
-  getProductList() {
+
+  
+  getProductList(id:any) {
     let productdata={
       "page_no": 1,
       "no_record": 10,
       "productCategoryID": '',
-      "searchText": ''
+      "searchText": '',
+      "rootCatId":this.listId
     }
     this.productService.productListApi(productdata).subscribe((data) => this.getProductListApi(data));
   }

@@ -30,6 +30,8 @@ import { AddAddresComponent } from './Pages/add-adress-contact/manage-address/ad
 import { TokenService } from './Pages/token.service';
 import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-popup.component';
+import { AboutUsComponent } from './Pages/about-us/about-us.component';
+import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,8 @@ import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-po
     AddAddresComponent,
     WrongRouteComponent,
     DeletePopupComponent,
+    AboutUsComponent,
+    PrivacyPolicyComponent,
     
   ],
   imports: [

@@ -1,0 +1,47 @@
+.cartDetails .cartLists .borderBottom {
+  border-bottom: 1px solid #BDBDBD;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.cartDetails .cartLists .cartImgBox {
+  max-height: 205px;
+  overflow: hidden;
+}
+
+.cartDetails .cartLists .cartImgBox > img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cartDetails .cartLists .cartTextBox .checkBoxes .form-check-inline {
+  margin-right: 8px;
+  position: relative;
+  top: 3.5px;
+}
+
+.cartDetails .cartLists .productCount form input {
+  min-height: 40px;
+  width: 70px;
+  font-size: 16px;
+}
+
+.cartDetails .orderSummary {
+  background-color: #F8FCFA;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cartDetails .orderSummary .summaryBtn .explore_button {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cartDetails .orderSummary .borderBottom2 {
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+/*# sourceMappingURL=cart.component.css.map */
