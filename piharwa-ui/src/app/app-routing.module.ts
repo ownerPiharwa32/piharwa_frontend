@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './Pages/homepage/homepage.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
-import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component'
-import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component'
+import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
+import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
+import { ContactUsComponent } from './Pages/contact-us/contact-us.component'
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 import { ProductDetailsPageComponent } from './Pages/products-page/product-details-page/product-details-page.component';
 import { CartComponent } from './Pages/cart/cart.component';
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'addaddress', component: AddAdressContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
-  { path: 'shipping-policy', component: ShippingPolicyComponent }
+  { path: 'shipping-policy', component: ShippingPolicyComponent },
+  { path: 'contact-us', component: ContactUsComponent }
 ];
 
 @NgModule({
