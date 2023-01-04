@@ -34,6 +34,7 @@ import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
 import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
 import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
+import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy
     PrivacyPolicyComponent,
     TermsAndConditionsComponent,
     ShippingPolicyComponent,
+    ContactUsComponent,
     
   ],
   imports: [
