@@ -32,6 +32,8 @@ import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-popup.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
+import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
+import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,8 @@ import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.co
     DeletePopupComponent,
     AboutUsComponent,
     PrivacyPolicyComponent,
+    TermsAndConditionsComponent,
+    ShippingPolicyComponent,
     
   ],
   imports: [
