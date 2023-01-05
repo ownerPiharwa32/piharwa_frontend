@@ -33,6 +33,9 @@ import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-po
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
 import { TreeModule } from '@circlon/angular-tree-component';
+import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
+import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
+import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +62,9 @@ import { TreeModule } from '@circlon/angular-tree-component';
     DeletePopupComponent,
     AboutUsComponent,
     PrivacyPolicyComponent,
+    TermsAndConditionsComponent,
+    ShippingPolicyComponent,
+    ContactUsComponent,
     
   ],
   imports: [
