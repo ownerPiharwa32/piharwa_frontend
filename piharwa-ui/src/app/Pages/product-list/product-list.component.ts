@@ -16,10 +16,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    console.log(id)
+    // console.log(id)
     this.route.params.subscribe(params => {
       this.listId = params['id'];
-      console.log('The id of this route is: ', this.listId);
+      // console.log('The id of this route is: ', this.listId);
       this.getProductList(id);
 
     });
@@ -39,7 +39,7 @@ export class ProductListComponent implements OnInit {
   getProductListApi(data:any){
     if(data.status === true){
       this.productList = data.data.productList
-      console.log(this.productList);
+      // console.log(this.productList);
     }
 
   }

@@ -15,6 +15,7 @@ export const ApiConstants ={
       listAddress: 'api/v1/buyer/list/address/details',
       addaddress:'api/v1/buyer/add/address/details',
       updateAddress:'api/v1/buyer/edit/address/details',
-      deleteAddress:'api/v1/buyer/delete/address/details'
+      deleteAddress:'api/v1/buyer/delete/address/details',
+      profileApi:'api/v1/buyers/details'
       // /api/v1/buyer/delete/address/details/{addressId}
 }

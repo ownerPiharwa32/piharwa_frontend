@@ -14,7 +14,7 @@ export class CartService {
 
 
 addProductToCart(data:any) {
-  console.log(data)
+  // console.log(data)
       let item = data;
       if (this.getItemData() === null) {
         let cart = [];
@@ -55,7 +55,7 @@ addProductToCart(data:any) {
       totalPrice += cart[i].total;
     }
      totalPrice = totalPrice;
-    console.log(totalPrice);
+    // console.log(totalPrice);
     localStorage.setItem('subtotal', JSON.stringify(totalPrice));
   }
   getsubtotalData() {
@@ -147,7 +147,7 @@ addProductToCart(data:any) {
 //   //  //return this.items = 
 
   deleteItem(item:any){
-    console.log("Deleting : ",item);
+    // console.log("Deleting : ",item);
     let shopping_cart = this.getItemData();
     let index;
     for(let i in shopping_cart){
@@ -158,7 +158,7 @@ addProductToCart(data:any) {
       }
     }
     shopping_cart.splice(index, 1);
-    console.log("shopping_cart ", shopping_cart);
+    // console.log("shopping_cart ", shopping_cart);
     localStorage.setItem('userCart', JSON.stringify(shopping_cart));
     this.subtotal();
 

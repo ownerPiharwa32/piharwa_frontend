@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CategoryService } from '../category/category.service';
+import { CommonService } from '../common.service';
 import { LoginPageComponent } from '../login/login-page/login-page.component';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
 
@@ -15,8 +16,10 @@ export class HeaderComponent implements OnInit {
 
 
   cartData: any;
+  profileLData: any;
 
-  constructor(public dialog: MatDialog,public cartService :CartService,public router :Router,public categoryService:CategoryService) {}
+  constructor(public dialog: MatDialog,public cartService :CartService,public router :Router,public categoryService:CategoryService,
+    public commonService:CommonService) {}
 
   openLoginWindow() {
       const dialogRef = this.dialog.open(LoginPageComponent, {
@@ -33,11 +36,27 @@ export class HeaderComponent implements OnInit {
     this.getCategoryList();
     this.cartData = this.cartService.getItemData()
     console.log(JSON.stringify(this.cartData));
+    this.getProfileList();
+  }
+
+  getProfileList() {
+    this.commonService.profileApi().subscribe((data) => this.profileDataList(data));
+  }
+  profileDataList(data:any){
+    // console.log(data)
+    if(data.status === true){
+      this.profileLData= data.data;
+      // console.log(this.profileLData);
+      this.commonService.ProfileDataAll = this.profileLData;
+      this.commonService.ProfileData.emit(this.profileLData)
+    }
   }
 
   getCategoryList() {
     this.categoryService.mainCategoryListApi().subscribe((data) => this.getCategoryDataList(data));
   }
+  
+
   getCategoryDataList(data:any){
     console.log(data)
     if(data.status === true){
@@ -49,4 +68,6 @@ export class HeaderComponent implements OnInit {
     console.log(id)
       this.router.navigate(['/productlist',id]);
     }
+
+
 }

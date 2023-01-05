@@ -9,9 +9,9 @@
                                 <div class="select_unmate">
                                     <select name="">
                                         <option value="">All Categories </option>
-                                        <option value="1">Select option 1</option>
+                                        <!-- <option value="1">Select option 1</option>
                                         <option value="2">Select option 2</option>
-                                        <option value="3">Select option 3</option>
+                                        <option value="3">Select option 3</option> -->
                                     </select>
                                 </div>
                                 <input type="search" placeholder="Search for products" name="s" value="">
@@ -33,8 +33,8 @@
                 <div class="col-md-3">
                     <div class="productSidebar">
                         <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Product Categories</h3>
-                        <app-category-list></app-category-list>
-                        <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Filter By Price</h3>
+                        <app-category-list [productlistId]="listId"></app-category-list>
+                        <!-- <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Filter By Price</h3>
                         <div class="pricingSlider">
                             <label for="customRange3" class="form-label">Example range</label>
                             <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
@@ -65,7 +65,7 @@
                                     <div><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -94,13 +94,14 @@
                                     <div class="card-body px-0"> 
                                         <div class="row justify-content-between"> 
                                             <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}} (Set of {{product.OverallRating}})
+                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}} 
+                                                    <!-- (Set of {{product.OverallRating}}) -->
                                                 </p>
                                             </div>
-                                            <div class="heartIcon col-md-3 text-end">
+                                            <!-- <div class="heartIcon col-md-3 text-end">
                                                 <span class="circleStyles"><img src="../../../assets/img/hearts.png"
                                                         class="img-fluid" alt="Icon" /></span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>

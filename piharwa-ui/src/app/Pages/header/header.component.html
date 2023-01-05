@@ -25,7 +25,7 @@
                     </a>
                     <a class="nav-icon position-relative text-decoration-none"  (click)="openLoginWindow()">
                         <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
-                        <span class="ms-3 fs23 fw500 col3 fontStyle1">Hidd, Akshat</span>
+                        <span class="ms-3 fs21 fw500 col3 fontStyle1" *ngIf="profileLData">{{profileLData.firstName}} {{profileLData.lastName}}</span>
                     </a>
                 </div>
             </div>

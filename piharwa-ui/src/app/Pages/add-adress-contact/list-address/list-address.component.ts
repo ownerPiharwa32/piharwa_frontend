@@ -43,7 +43,7 @@ export class ListAddressComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       this.getAddressList();
     });  
 }
@@ -58,13 +58,13 @@ openEditAdressWindow(addressList:any) {
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    // console.log('The dialog was closed');
     this.getAddressList();
   });  
 }
 makedefault(addressList:any){
 addressList.default = true;
-console.log(addressList)
+// console.log(addressList)
 this.listAddressService.updateAddress(addressList).subscribe(
   (data) => this.saveResponse(data),
   (err) => console.log(err)
@@ -90,7 +90,7 @@ if (data.status === false) {
     }
   });
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    // console.log('The dialog was closed');
     if(result === 'yes'){
       this.deleteAddress(addressList);
     }
@@ -98,7 +98,7 @@ if (data.status === false) {
  }
  deleteAddress(addressList:any){
   addressList.default = true;
-  console.log(addressList)
+  // console.log(addressList)
   this.listAddressService.deleteaddress(addressList._id).subscribe(
     (data) => this.saveResponse(data),
     (err) => console.log(err)

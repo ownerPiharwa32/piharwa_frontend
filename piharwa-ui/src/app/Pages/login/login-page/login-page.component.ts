@@ -169,7 +169,7 @@ export class LoginPageComponent implements OnInit {
   }
   onLogin() {
     let userData = this.loginForm.value;
-    console.log(userData);
+    // console.log(userData);
       this.dataService.loginApi(userData).subscribe(
         (data) => this.logindialog(data),
         (err) => console.log(err)

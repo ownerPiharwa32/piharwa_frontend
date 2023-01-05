@@ -32,6 +32,7 @@ import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { DeletePopupComponent } from './Pages/common-page/delete-popup/delete-popup.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.component';
+import { TreeModule } from '@circlon/angular-tree-component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { PrivacyPolicyComponent } from './Pages/privacy-policy/privacy-policy.co
   ],
   imports: [
     BrowserModule,HttpClientModule,
+    TreeModule,
     ReactiveFormsModule,
     AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
     

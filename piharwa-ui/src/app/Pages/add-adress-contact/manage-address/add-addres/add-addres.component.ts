@@ -24,7 +24,7 @@ export class AddAddresComponent implements OnInit {
     this.dialogRef.close();
   }
   ngOnInit(): void {
-    console.log(this.addressdata);
+    // console.log(this.addressdata);
     this.flag = this.addressdata.flag;
     this.addressCall()
 
@@ -74,7 +74,7 @@ export class AddAddresComponent implements OnInit {
       }),
     });
     if(this.flag === 'edit'){
-      console.log(this.addressdata.value.firstName)
+      // console.log(this.addressdata.value.firstName)
       this.addressForm.controls['firstName'].setValue(this.addressdata.value.firstName);
       this.addressForm.controls['lastName'].setValue(this.addressdata.value.lastName);
       this.addressForm.controls['address_line_one'].setValue(this.addressdata.value.address_line_one);
@@ -90,7 +90,7 @@ export class AddAddresComponent implements OnInit {
   }
   addAddress() {
     let userData = this.addressForm.value;
-    console.log(userData);
+    // console.log(userData);
       this.dataService.saveAddress(userData).subscribe(
         (data) => this.saveResponse(data),
         (err) => console.log(err)
@@ -113,7 +113,7 @@ export class AddAddresComponent implements OnInit {
     let userData = this.addressForm.value;
     userData.addressId = this.addressdata.value._id;
     userData.default = true;
-    console.log(userData);
+    // console.log(userData);
       this.dataService.updateAddress(userData).subscribe(
         (data) => this.saveResponse(data),
         (err) => console.log(err)

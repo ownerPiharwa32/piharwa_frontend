@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
   }
   getCartData(){
     this.cartData = this.cartService.getItemData()
-    console.log(this.cartData);
+    // console.log(this.cartData);
   }
   removeData(data:any) {
     this.cartService.deleteItem(data);

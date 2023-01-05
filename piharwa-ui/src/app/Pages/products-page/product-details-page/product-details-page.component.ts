@@ -27,7 +27,7 @@ export class ProductDetailsPageComponent implements OnInit {
   getProductdetialsApi(data:any){
     if(data.status === true){
       this.productData = data.data
-      console.log(this.productData);
+      // console.log(this.productData);
     }
   }
 
@@ -49,7 +49,7 @@ export class ProductDetailsPageComponent implements OnInit {
 
   addtoCart(productData:any){
   let totalvalue= this.productData.price*this.quantity
-  console.log(totalvalue)
+  // console.log(totalvalue)
    let productdata ={
     _id :productData._id,
     productTitle:productData.productTitle,
