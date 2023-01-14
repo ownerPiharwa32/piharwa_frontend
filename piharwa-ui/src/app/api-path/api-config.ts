@@ -3,6 +3,7 @@ export const ApiConstants ={
       
       categorylist: 'api/v1/category/list',
       featuredProducts: 'api/v1/product/featured-product/list',
+      latestArrivals: 'api/v1/product/latest-arrival/list',
       productlist:'api/v1/product/list',
       singleproduct:'api/v1/product/single-product/',
       registerApi:'api/v1/buyers/register',
