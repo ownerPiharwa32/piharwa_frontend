@@ -3,6 +3,11 @@
   width: 800px;
   padding: 40px;
 }
+.noitem{
+	font-size: 23px;
+color: mediumvioletred;
+font-weight: 800;
+}
 
 .bredgedCums {
     min-height: 250px;
@@ -89,7 +94,7 @@
         }
     }
 }
-form {
+div {
 	&.search_form_2 {
 		height: 50px;
         display: flex;
@@ -138,7 +143,7 @@ form {
             background: #00953E;
             border-radius: 0px 21px 21px 21px;
             margin-left: -23px;
-            z-index: 9;
+            // z-index: 9;
 		}
 		.icon_select_mate {
 			position: absolute;
@@ -291,4 +296,5 @@ form {
             }
         }
     }
+
 }

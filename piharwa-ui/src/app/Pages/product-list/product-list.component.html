@@ -5,7 +5,7 @@
                 <div class="col-md-6 m-auto">
                     <div class="site-search">
                         <div class="product_search">
-                            <form class="search_form_2" role="search" method="get" action="#">
+                            <div class="search_form_2" >
                                 <div class="select_unmate">
                                     <select name="">
                                         <option value="">All Categories </option>
@@ -14,18 +14,20 @@
                                         <option value="3">Select option 3</option> -->
                                     </select>
                                 </div>
-                                <input type="search" placeholder="Search for products" name="s" value="">
-                                <input type="submit" value="">
-                                <div class="searchIcons">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                <input type="search" placeholder="Search for products"   [(ngModel)]="searchText">
+                                <input type="submit" (click)="applyFilter()" value="">
+                                <div class="searchIcons" (click)="applyFilter()" >
+                                    <i class="fa fa-search" aria-hidden="true" (click)="applyFilter()"></i>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+   
 
     <div class="cateGoryList mt-5">
         <div class="container">
@@ -80,6 +82,9 @@
                             </select>
                         </div>
                     </div>
+                    <div *ngIf="productList && productList.length === 0" class="jumbotron noitem">
+                        No Item
+                    </div>
                     <!-- Start Featured Product -->
                     <section class="featuresProducts inner">
                         <div class="row mx80">
@@ -106,8 +111,6 @@
                                     </div>
                                 </div>
                             </div>
-                         
-                               
                             </div>
                     </section>
                     <!-- End Featured Product -->

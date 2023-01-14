@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../common.service';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   subtotal: any;
 
 
-  constructor(public cartService :CartService,public route :Router) { }
+  constructor(public cartService :CartService,public route :Router,public commonservice :CommonService,) { }
 
   ngOnInit() {
       this.subtotaldata();
@@ -36,6 +37,38 @@ export class CartComponent implements OnInit {
     this.cartService.clearData();
   }
   toContinue(){
-   this.route.navigate(["/list-Address"]);
+  
+  //  this.route.navigate(["/list-Address"]);
+  this.paymentCreate();
   }
+
+  paymentCreate() {
+   let userdata= {
+      "amount": "10000",
+      "currency": "INR"
+    }
+      this.commonservice.paymentSendApi(userdata).subscribe(
+        (data) => this.saveResponse(data),
+        (err) => console.log(err)
+      );
+  }
+  saveResponse(data:any){
+    console.log(data)
+    this.rozaConfrimation(data.data);
+  }
+
+  rozaConfrimation(data:any) {
+    let userdata={
+      "razorpay_order_id": data.offer_id,
+      "razorpay_payment_id": data.id,
+      "razorpay_signature": ""
+    }
+       this.commonservice.verifyPaymentApi(userdata).subscribe(
+         (data) => this.saveResponseRoza(data),
+         (err) => console.log(err)
+       );
+   }
+   saveResponseRoza(data:any){
+     console.log(data)
+   }
 }

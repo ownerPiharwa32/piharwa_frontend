@@ -19,6 +19,14 @@ export class CommonService {
   profileApi () {
     return this.http.get(ApiConstants.apiURL + ApiConstants.profileApi);
    }
+
+   paymentSendApi (data:any) {
+    return this.http.post(ApiConstants.apiURL + ApiConstants.paymentApi,data);
+   }
+
+   verifyPaymentApi(data:any) {
+    return this.http.post(ApiConstants.apiURL + ApiConstants.verifyPaymentApi,data);
+   }
    public ProfileData: EventEmitter<any> = new EventEmitter();
    public ProfileDataAll:any;
 

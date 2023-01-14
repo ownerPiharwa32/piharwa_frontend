@@ -69,9 +69,9 @@ import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
   ],
   imports: [
     BrowserModule,HttpClientModule,
-    TreeModule,
+    TreeModule,FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
+    AppRoutingModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },],
