@@ -36,6 +36,7 @@ import { TreeModule } from '@circlon/angular-tree-component';
 import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
 import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
+import { PaymentsComponent } from './Pages/payments/payments.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
     TermsAndConditionsComponent,
     ShippingPolicyComponent,
     ContactUsComponent,
+    PaymentsComponent,
     
   ],
   imports: [
