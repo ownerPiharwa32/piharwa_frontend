@@ -2,7 +2,13 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
+
+import { AuthService } from '../auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginPageComponent } from '../login/login-page/login-page.component';
+
 declare var Razorpay: any;
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -13,7 +19,9 @@ export class CartComponent implements OnInit {
   subtotal: any;
 
 
-  constructor(public cartService :CartService,public route :Router,public commonservice :CommonService,) { }
+  constructor(public cartService :CartService,public router :Router,public commonservice :CommonService,
+    private _authService: AuthService,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
       this.subtotaldata();
@@ -36,6 +44,21 @@ export class CartComponent implements OnInit {
   clearCart() {
     this.cartService.clearData();
   }
+
+  continueToShipping() {
+    console.log("this.commonService.ProfileData 1 ", this.commonservice.ProfileData);
+    const token = this._authService.getToken();
+      console.log("token ", token);
+    if ( token) {
+      this.router.navigate(['/list-Address']);
+    }
+    else {
+      this.dialog.open(LoginPageComponent, {
+        width: '700px',
+      });
+    }
+  }
+
   toContinue(){
   
   //  this.route.navigate(["/list-Address"]);

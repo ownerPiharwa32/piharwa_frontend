@@ -39,6 +39,9 @@ import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { PaymentsComponent } from './Pages/payments/payments.component';
 import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
+
+import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +73,7 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
     ContactUsComponent,
     PaymentsComponent,
     BlogDetailsComponent,
+    confirmDialog,
     BlogListComponent
   ],
   imports: [
@@ -80,6 +84,7 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [confirmDialog]
 })
 export class AppModule { }

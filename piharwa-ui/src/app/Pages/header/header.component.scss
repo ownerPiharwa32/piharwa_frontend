@@ -5,6 +5,14 @@
     display: flex;
     align-items: center;
 
+    .profile-toggle {
+        padding-left: 0px;
+
+        &::after {
+            display: none;
+        }
+    }
+
     @media (max-width: 767px) {
         min-height: auto;
     }
