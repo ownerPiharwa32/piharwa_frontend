@@ -5,6 +5,7 @@ import { CategoryService } from '../category/category.service';
 import { CommonService } from '../common.service';
 import { LoginPageComponent } from '../login/login-page/login-page.component';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
+import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.component';
 
 @Component({
   selector: 'app-header',
@@ -73,6 +74,28 @@ export class HeaderComponent implements OnInit {
     if (this.cartData) {
       this.router.navigate(['/product-cart']);
     }
+  }
+
+  logout() {
+
+    const dialogRef = this.dialog.open(confirmDialog, {
+      data: {
+        message: "Are you sure you want to logout?",
+        buttonText: {
+          ok: 'Yes',
+          cancel: 'No'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        localStorage.clear();
+        window.location.reload();
+      }
+    });//end of dialog
+
+
   }
 
 
