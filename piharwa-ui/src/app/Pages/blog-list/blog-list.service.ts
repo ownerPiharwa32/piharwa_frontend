@@ -9,9 +9,15 @@ export class BlogListService {
 
   constructor(private http: HttpClient) { }
   ngOnInit() {
-  
+
   }
-   blogListApi () {
+  blogListApi() {
     return this.http.get(ApiConstants.apiURL + ApiConstants.blogListApi);
-   }
+  }
+
+  blogDetialsApi(id: any) {
+    return this.http.get(ApiConstants.apiURL + ApiConstants.blogDetailsApi + id);
+  }
+
+
 }
