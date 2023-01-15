@@ -1,0 +1,28 @@
+<div class="breadgeCumMenu">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Blogs</a></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="blog-list">
+    <div class="container">
+        <h1>BLOGS</h1>
+
+        <div class="row mb-12" *ngFor="let lblogs of blogList">
+            <div class="blog-img col-md-3"><img
+                src="{{lblogs.featured_img}}" width="300" height="200">
+            </div>
+            <div class="blog-content col-md-9">
+                <h3>{{lblogs.blogTitle}}</h3>
+                <p>{{lblogs.featured_content}}...<span><a
+                    routerLink="/blogs/{{lblogs._id}}">Read More</a></span></p>
+            </div>
+        </div>
+
+
+    </div>
+</div>

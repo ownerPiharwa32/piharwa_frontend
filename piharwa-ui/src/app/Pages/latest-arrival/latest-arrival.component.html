@@ -12,11 +12,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-3 mb-4">
+            <div class="col-12 col-md-3 mb-4"  *ngFor="let lproduct of latestArrivalProduct">
                 <div class="card h-100">
                     <a href="shop-single.html" class="d-block position-relative">
                         <div class="imgSet">
-                            <img src="../../../assets/img/fe1.jpg" class="card-img-top" alt="Icon" class="img-fluid" />
+                            <img src="{{lproduct.productImg}}" class="card-img-top" alt="Icon" class="img-fluid" />
                         </div>
                         <div class="heartIcon">
                             <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
@@ -26,67 +26,7 @@
                         </div>
                     </a>
                     <div class="card-body ps-0 pr-0">
-                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html" class="d-block position-relative">
-                        <div class="imgSet">
-                            <img src="../../../assets/img/products2.png" class="card-img-top" alt="Icon"
-                                class="img-fluid" />
-                        </div>
-                        <div class="heartIcon">
-                            <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                            <span class="circleStyles"><img src="../../../assets/img/carts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                        </div>
-                    </a>
-                    <div class="card-body ps-0 pr-0">
-                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html" class="d-block position-relative">
-                        <div class="imgSet">
-                            <img src="../../../assets/img/products3.png" class="card-img-top" alt="Icon"
-                                class="img-fluid" />
-                        </div>
-                        <div class="heartIcon">
-                            <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                            <span class="circleStyles"><img src="../../../assets/img/carts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                        </div>
-                    </a>
-                    <div class="card-body ps-0 pr-0">
-                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
-                        <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html" class="d-block position-relative">
-                        <div class="imgSet">
-                            <img src="../../../assets/img/products3.png" class="card-img-top" alt="Icon"
-                                class="img-fluid" />
-                        </div>
-                        <div class="heartIcon">
-                            <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                            <span class="circleStyles"><img src="../../../assets/img/carts.png" class="img-fluid"
-                                    alt="Icon" /></span>
-                        </div>
-                    </a>
-                    <div class="card-body ps-0 pr-0">
-                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">Hanger Saree Wrap (Set of 3)</p>
+                        <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">{{lproduct.productTitle}}</p>
                         <!-- <p class="fs18 fw700 col3 fontStyle1">RS 240.00</p> -->
                     </div>
                 </div>

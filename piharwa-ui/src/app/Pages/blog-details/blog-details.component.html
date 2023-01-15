@@ -1,0 +1,29 @@
+<div class="breadgeCumMenu">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Blogs</a></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="blog-details">
+    <div class="container">
+        <h1>BLOGS</h1>
+
+        <div class="row mb-12">
+            <div class="blog-img col-md-12"><img
+                src="{{blogDetails.featured_img}}" width="500" height="auto">
+            </div>
+        </div>
+        <div class="row mb-12">
+            <div class="blog-content col-md-12">
+                <h3>{{blogDetails.blogTitle}}</h3>
+              <div [innerHTML]="blogDetails.blogDescription"></div>  
+            </div>
+        </div>
+
+
+    </div>
+</div>
