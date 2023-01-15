@@ -36,12 +36,9 @@ import { TreeModule } from '@circlon/angular-tree-component';
 import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
 import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
-<<<<<<< HEAD
 import { PaymentsComponent } from './Pages/payments/payments.component';
-=======
 import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
->>>>>>> c10a5da209b4e70e4afd907c1084edf935fd54d4
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +70,7 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
     ContactUsComponent,
     PaymentsComponent,
     BlogDetailsComponent,
-    
+    BlogListComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
