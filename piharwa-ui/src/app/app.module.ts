@@ -36,6 +36,7 @@ import { TreeModule } from '@circlon/angular-tree-component';
 import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
 import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
+import { PaymentsComponent } from './Pages/payments/payments.component';
 import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
 
@@ -70,9 +71,10 @@ import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
     TermsAndConditionsComponent,
     ShippingPolicyComponent,
     ContactUsComponent,
-    BlogListComponent,
+    PaymentsComponent,
     BlogDetailsComponent,
-    confirmDialog
+    confirmDialog,
+    BlogListComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
