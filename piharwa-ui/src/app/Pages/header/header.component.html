@@ -18,14 +18,15 @@
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">+99</span>
                         <i class="fa fa-fw fa-heart text-dark mr-2 fs28"></i>
                     </a>
-                    <a *ngIf="cartData" class="nav-icon position-relative text-decoration-none" routerLink="/product-cart">
+                    <a class="nav-icon position-relative text-decoration-none" (click)="openCart()">
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">{{cartData.length}}</span>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark fs28 mr-1"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none"  (click)="openLoginWindow()">
+                    <a class="nav-icon position-relative text-decoration-none" (click)="openLoginWindow()">
                         <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
-                        <span class="ms-3 fs21 fw500 col3 fontStyle1" *ngIf="profileLData">{{profileLData.firstName}} {{profileLData.lastName}}</span>
+                        <span class="ms-3 fs21 fw500 col3 fontStyle1" *ngIf="profileLData">{{profileLData.firstName}}
+                            {{profileLData.lastName}}</span>
                     </a>
                 </div>
             </div>
@@ -45,8 +46,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-center m-auto" 
-                id="templatemo_main_nav">
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center m-auto" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between">
                         <li class="nav-item dropdown">
@@ -56,7 +56,8 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li *ngFor="let list of categoryDataList"><a class="dropdown-item" (click)="categoryList(list._id)">{{list.slug}}</a></li>
+                                <li *ngFor="let list of categoryDataList"><a class="dropdown-item"
+                                        (click)="categoryList(list._id)">{{list.slug}}</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -94,7 +95,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" routerLink="/blogs">
-                                Blog 
+                                Blog
                                 <!-- <span><img src="../../../assets/img/down.png" alt="Icon"
                                         class="img-fluid ms-2" /></span> -->
                             </a>
