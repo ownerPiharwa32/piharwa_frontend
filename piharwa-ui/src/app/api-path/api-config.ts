@@ -10,7 +10,7 @@ export const ApiConstants ={
       loginApi:'api/v1/buyers/login',
       otpToken:'api/v1/buyers/verify/otp',
       mainCategoryList:'api/v1/main/category/list',
-      
+      blogListApi: 'api/v1/blog/list',
       // http://piharwa.co.in/api/v1/main/category/list
       // otpToken: 'api/v1/buyers/verify/otp',
       listAddress: 'api/v1/buyer/list/address/details',
