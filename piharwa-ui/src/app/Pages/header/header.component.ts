@@ -5,6 +5,7 @@ import { CategoryService } from '../category/category.service';
 import { CommonService } from '../common.service';
 import { LoginPageComponent } from '../login/login-page/login-page.component';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
+import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.component';
 
 @Component({
   selector: 'app-header',
@@ -18,34 +19,34 @@ export class HeaderComponent implements OnInit {
   cartData: any;
   profileLData: any;
 
-  constructor(public dialog: MatDialog,public cartService :CartService,public router :Router,public categoryService:CategoryService,
-    public commonService:CommonService) {}
+  constructor(public dialog: MatDialog, public cartService: CartService, public router: Router, public categoryService: CategoryService,
+    public commonService: CommonService) { }
 
   openLoginWindow() {
-      const dialogRef = this.dialog.open(LoginPageComponent, {
-        width: '700px',
-      });
-  
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
-    
+    const dialogRef = this.dialog.open(LoginPageComponent, {
+      width: '700px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
   }
 
   ngOnInit(): void {
     this.getCategoryList();
     this.cartData = this.cartService.getItemData()
-    console.log(JSON.stringify(this.cartData));
+    console.log('cartData ', JSON.stringify(this.cartData));
     this.getProfileList();
   }
 
   getProfileList() {
     this.commonService.profileApi().subscribe((data) => this.profileDataList(data));
   }
-  profileDataList(data:any){
+  profileDataList(data: any) {
     // console.log(data)
-    if(data.status === true){
-      this.profileLData= data.data;
+    if (data.status === true) {
+      this.profileLData = data.data;
       // console.log(this.profileLData);
       this.commonService.ProfileDataAll = this.profileLData;
       this.commonService.ProfileData.emit(this.profileLData)
@@ -55,19 +56,47 @@ export class HeaderComponent implements OnInit {
   getCategoryList() {
     this.categoryService.mainCategoryListApi().subscribe((data) => this.getCategoryDataList(data));
   }
-  
 
-  getCategoryDataList(data:any){
+
+  getCategoryDataList(data: any) {
     console.log(data)
-    if(data.status === true){
-      this.categoryDataList= data.data;
+    if (data.status === true) {
+      this.categoryDataList = data.data;
       console.log(this.categoryDataList)
     }
   }
-  categoryList(id:any){
+  categoryList(id: any) {
     console.log(id)
-      this.router.navigate(['/productlist',id]);
+    this.router.navigate(['/productlist', id]);
+  }
+
+  openCart() {
+    if (this.cartData) {
+      this.router.navigate(['/product-cart']);
     }
+  }
+
+  logout() {
+
+    const dialogRef = this.dialog.open(confirmDialog, {
+      data: {
+        message: "Are you sure you want to logout?",
+        buttonText: {
+          ok: 'Yes',
+          cancel: 'No'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        localStorage.clear();
+        window.location.reload();
+      }
+    });//end of dialog
+
+
+  }
 
 
 }

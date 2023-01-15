@@ -36,8 +36,12 @@ import { TreeModule } from '@circlon/angular-tree-component';
 import { TermsAndConditionsComponent } from './Pages/terms-and-conditions/terms-and-conditions.component';
 import { ShippingPolicyComponent } from './Pages/shipping-policy/shipping-policy.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
+import { PaymentsComponent } from './Pages/payments/payments.component';
 import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
+
+import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,9 +71,10 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
     TermsAndConditionsComponent,
     ShippingPolicyComponent,
     ContactUsComponent,
-    BlogListComponent,
+    PaymentsComponent,
     BlogDetailsComponent,
-    
+    confirmDialog,
+    BlogListComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -79,6 +84,7 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [confirmDialog]
 })
 export class AppModule { }
