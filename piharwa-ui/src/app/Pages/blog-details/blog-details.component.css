@@ -1,1 +1,22 @@
-/* No CSS *//*# sourceMappingURL=blog-details.component.css.map */
+.blog-details {
+  text-align: justify;
+  line-height: 26px;
+  color: #8f8f8f;
+  font-family: sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.blog-details .blog-featuredImg {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-details h3 {
+  color: #447d4e;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=blog-details.component.css.map */

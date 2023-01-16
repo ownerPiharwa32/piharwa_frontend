@@ -2,14 +2,14 @@
 <div class="topHeader">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-8 col-4">
+            <div class="col-md-6 col-4">
                 <div class="logoCenter">
                     <a class="navbar-brand text-success logo align-self-center" routerLink="/home">
                         <img src="../assets/img/logot.png" class="img-fluid" />
                     </a>
                 </div>
             </div>
-            <div class="col-md-4 col-8">
+            <div class="col-md-6 col-8">
                 <div class="navbarRight align-items-center d-flex justify-content-end">
                     <!-- <a class="nav-icon" href="#" data-bs-toggle="modal"
                         data-bs-target="#templatemo_search"> -->
@@ -18,14 +18,30 @@
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">+99</span>
                         <i class="fa fa-fw fa-heart text-dark mr-2 fs28"></i>
                     </a>
-                    <a *ngIf="cartData" class="nav-icon position-relative text-decoration-none" routerLink="/product-cart">
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">{{cartData.length}}</span>
+                    <a class="nav-icon position-relative text-decoration-none" (click)="openCart()">
+                        <span *ngIf="cartData"
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">{{ cartData.length }}</span>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark fs28 mr-1"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none"  (click)="openLoginWindow()">
+                    <a *ngIf="!profileLData" class="nav-icon position-relative text-decoration-none" (click)="openLoginWindow()">
                         <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
-                        <span class="ms-3 fs21 fw500 col3 fontStyle1" *ngIf="profileLData">{{profileLData.firstName}} {{profileLData.lastName}}</span>
+                        <!-- <span class="ms-3 fs21 fw500 col3 fontStyle1">
+                            {{ profileLData.firstName }}
+                        </span> -->
+                    </a>
+                    <a *ngIf="profileLData" class="dropdown nav-icon position-relative text-decoration-none">
+                        <a class="nav-link dropdown-toggle profile-toggle" href="#" id="profileDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
+                            <span class="ms-3 fs21 fw500 col3 fontStyle1">
+                                {{ profileLData.firstName }}
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <li>
+                                <a class="dropdown-item" (click)="logout()">Logout</a>
+                            </li>
+                        </ul>
                     </a>
                 </div>
             </div>
@@ -45,35 +61,26 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-center m-auto" 
-                id="templatemo_main_nav">
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center m-auto" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Collections <span><img src="../../../assets/img/down.png" alt="Icon"
+                                Collections
+                                <span><img src="../../../assets/img/down.png" alt="Icon"
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li *ngFor="let list of categoryDataList"><a class="dropdown-item" (click)="categoryList(list._id)">{{list.slug}}</a></li>
+                                <li *ngFor="let list of categoryDataList"><a class="dropdown-item" (click)="categoryList(list._id)">{{list.categoryTitle}}</a></li>
+                              
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Shop <span><img src="../../../assets/img/down.png" alt="Icon"
-                                        class="img-fluid ms-2" /></span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Collections</a></li>
-                                <li><a class="dropdown-item" href="#">Shop</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Lifestyle <span><img src="../../../assets/img/down.png" alt="Icon"
+                                Apparel and sarees
+                                <span><img src="../../../assets/img/down.png" alt="Icon"
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -84,7 +91,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Home Decor <span><img src="../../../assets/img/down.png" alt="Icon"
+                                Lifestyle and Decor
+                                <span><img src="../../../assets/img/down.png" alt="Icon"
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,7 +102,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" routerLink="/blogs">
-                                Blog 
+                                Blog
                                 <!-- <span><img src="../../../assets/img/down.png" alt="Icon"
                                         class="img-fluid ms-2" /></span> -->
                             </a>
@@ -106,7 +114,6 @@
                     </ul>
                 </div>
             </div>
-
         </nav>
     </div>
 </div>
@@ -121,7 +128,7 @@
         </div>
         <form action="" method="get" class="modal-content modal-body border-0 p-0">
             <div class="input-group mb-2">
-                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ..." />
                 <button type="submit" class="input-group-text bg-success text-light">
                     <i class="fa fa-fw fa-search text-white"></i>
                 </button>
