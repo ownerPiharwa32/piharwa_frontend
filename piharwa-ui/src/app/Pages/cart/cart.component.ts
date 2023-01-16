@@ -49,7 +49,7 @@ export class CartComponent implements OnInit {
     const token = this._authService.getToken();
       console.log("token ", token);
     if ( token) {
-      this.router.navigate(['/list-Address']);
+      this.router.navigate(['/payment']);
     }
     else {
       this.dialog.open(LoginPageComponent, {

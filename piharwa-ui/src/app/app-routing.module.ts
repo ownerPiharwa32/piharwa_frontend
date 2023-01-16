@@ -15,6 +15,7 @@ import { ListAddressComponent } from './Pages/add-adress-contact/list-address/li
 import { LoginPageComponent } from './Pages/login/login-page/login-page.component';
 import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component';
 import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
+import { PaymentsComponent } from './Pages/payments/payments.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,9 @@ const routes: Routes = [
   { path: 'shipping-policy', component: ShippingPolicyComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'blogs', component: BlogListComponent },
-  { path: 'blogs/:id', component: BlogDetailsComponent }
+  { path: 'blogs/:id', component: BlogDetailsComponent },
+  { path: 'payment', component: PaymentsComponent }
+
 ];
 
 @NgModule({

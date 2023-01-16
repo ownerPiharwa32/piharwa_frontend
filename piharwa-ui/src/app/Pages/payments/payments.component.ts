@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
+import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
+
+import { AuthService } from '../auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginPageComponent } from '../login/login-page/login-page.component';
+import { ListAddressService } from '../add-adress-contact/list-address/list-address.service';
+
 
 @Component({
   selector: 'app-payments',
@@ -7,52 +15,67 @@ import { CommonService } from '../common.service';
   styleUrls: ['./payments.component.scss']
 })
 export class PaymentsComponent implements OnInit {
+  cartData: any;
+  subtotal: any;
+  address: any;
 
-  
-  constructor(private winRef: CommonService) {}
+  constructor(public cartService :CartService,public router :Router,
+    public commonservice :CommonService,public listAddressService: ListAddressService,
+    private _authService: AuthService,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.createRzpayOrder();
+      this.subtotaldata();
+      this.getCartData();
+      this.getAddressList();
+
+  }
+  getCartData(){
+    this.cartData = this.cartService.getItemData()
+  }
+  removeData(data:any) {
+    this.cartService.deleteItem(data);
+    this.getCartData();
+    this.subtotaldata();
   }
 
-  createRzpayOrder() {
-    // call api to create order_id
-   let order_id='11'
-    this.payWithRazor(order_id);
+  subtotaldata(){
+    this.subtotal =this.cartService.getsubtotalData();
+    console.log(this.subtotal)
+  }
+  clearCart() {
+    this.cartService.clearData();
+  }
+  getAddressList() {
+    this.listAddressService.addressDetailsApi().subscribe((data) => this.getAddressListApi(data));
   }
 
-  payWithRazor(val: any) {
-    const options: any = {
-      key: 'rzp_test_key',
-      amount: 125500, // amount should be in paise format to display Rs 1255 without decimal point
-      currency: 'INR',
-      name: '', // company name or product name
-      description: '',  // product description
-      image: '', // company logo or product image
-      order_id: val, // order_id created by you in backend
-      modal: {
-        // We should prevent closing of the form when esc key is pressed.
-        escape: false,
-      },
-      notes: {
-        // include notes if any
-      },
-      theme: {
-        color: '#0c238a'
-      }
-    };
-    options.handler = ((response: any, error: any) => {
-      options.response = response;
-      console.log(response);
-      console.log(options);
-      // call your backend api to verify payment signature & capture transaction
-    });
-    options.modal.ondismiss = (() => {
-      // handle the case when user closes the form while transaction is in progress
-      console.log('Transaction cancelled.');
-    });
-    const rzp = new this.winRef.nativeWindow.Razorpay(options);
-    rzp.open();
+  getAddressListApi(data: any) {
+    if (data.status === true) {
+      this.address =data.data;
+      console.log(this.address)
+    }
+
+  }
+  continueToShipping() {
+    console.log("this.commonService.ProfileData 1 ", this.commonservice.ProfileData);
+    const token = this._authService.getToken();
+      console.log("token ", token);
+    if ( token) {
+      this.router.navigate(['/payment']);
+    }
+    else {
+      this.dialog.open(LoginPageComponent, {
+        width: '700px',
+      });
+    }
+  }
+  continueToPayment(){
+    this.commonservice.paynow();
   }
 
+
+  addAddress(){
+    this.router.navigate(["/list-Address"]);
+  }
 }

@@ -1,1 +1,66 @@
-<p>payments works!</p>
+<div class="breadgeCumMenu">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Cart</a></li>
+                <li class="breadcrumb-item"><a href="#">Shipping Details</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Payment</a></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="cartDetails mb-5">
+    <div class="container">
+        <div class="cartLists">
+            <div class="row">
+                <div class="col-md-8">  
+                    <div class="col-md-9">
+                        <div class="right-sidebar">
+                          <div class="d-flex align-items-center justify-content-between w-100">
+                          </div>
+                          <div class="mb-4"></div>
+                          <div class="lists-data" *ngFor="let addressList of address">
+                            <div class="row">
+                              <div class="col-md-9">
+                                <p *ngIf="addressList.default === true"><mat-icon>check_circle</mat-icon> </p>
+                                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  ,{{addressList.landmark}}</p>
+                                <p class="mb-1">{{addressList.city}} ,{{addressList.state}}, {{addressList.pincode}}, {{addressList.country}}</p>
+                              </div>
+                              <br/>
+                              <br/>
+                              <h4 style="cursor: pointer;" (click)="addAddress()"> + Add New Address</h4>
+                            </div>
+                          <br/>
+                          <hr/>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <div class="orderSummary">
+                        <div class="fs14 fw600 text-black mb-3">Subtotal</div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="fs14 fw500 col5">Subtotal</div>
+                            <div class="fs14 fw600 col3">₹{{this.subtotal}}</div>
+                        </div>
+                        <!-- <div class="d-flex align-items-center justify-content-between borderBottom2">
+                            <div class="fs14 fw500 col5">Shipping Cost</div>
+                            <div class="fs14 fw600 col3">₹ 300.00</div>
+                        </div> -->
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <div class="fs14 fw500 col5">Total</div>
+                            <div class="fs14 fw600 col3">₹ {{this.subtotal}}</div>
+                        </div>
+                        <div class="summaryBtn">
+                            <button class="explore_button xlSize w-100 d-block" (click)="continueToPayment()"  >
+                                Continue To Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
