@@ -14,7 +14,7 @@ import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.compone
 })
 export class HeaderComponent implements OnInit {
   categoryDataList: any;
-
+  allCategoryList: any;
 
   cartData: any;
   profileLData: any;
@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoryList();
+    this.getAllCategoryList();
     this.cartData = this.cartService.getItemData()
     console.log('cartData ', JSON.stringify(this.cartData));
     this.getProfileList();
@@ -57,6 +58,9 @@ export class HeaderComponent implements OnInit {
     this.categoryService.mainCategoryListApi().subscribe((data) => this.getCategoryDataList(data));
   }
 
+  getAllCategoryList() {
+    this.categoryService.allCategoryListApi().subscribe((data) => this.getAllCategoryDataList(data))
+  }
 
   getCategoryDataList(data: any) {
     console.log(data)
@@ -65,6 +69,16 @@ export class HeaderComponent implements OnInit {
       console.log(this.categoryDataList)
     }
   }
+
+
+  getAllCategoryDataList(data: any) {
+    console.log(data)
+    if (data.status === true) {
+      this.allCategoryList = data.data;
+      console.log(this.allCategoryList,"======================================a")
+    }
+  }
+
   categoryList(id: any) {
     console.log(id)
     this.router.navigate(['/productlist', id]);
