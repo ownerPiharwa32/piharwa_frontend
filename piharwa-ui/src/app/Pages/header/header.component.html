@@ -84,8 +84,8 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Collections</a></li>
-                                <li><a class="dropdown-item" href="#">Shop</a></li>
+                                <li *ngFor="let allCatlist of allCategoryList.piharwaCategories
+                                "><a class="dropdown-item" (click)="categoryList(allCatlist._id)">{{allCatlist.name}}</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -96,8 +96,8 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Collections</a></li>
-                                <li><a class="dropdown-item" href="#">Shop</a></li>
+                                <li *ngFor="let elementalCatlist of allCategoryList.elementCategories
+                                "><a class="dropdown-item" (click)="categoryList(elementalCatlist._id)">{{elementalCatlist.name}}</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
