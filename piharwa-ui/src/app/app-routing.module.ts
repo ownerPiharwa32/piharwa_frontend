@@ -16,6 +16,7 @@ import { LoginPageComponent } from './Pages/login/login-page/login-page.componen
 import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress-contact.component';
 import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { PaymentsComponent } from './Pages/payments/payments.component';
+import { OrderListComponent } from './Pages/order-list/order-list.component';
 
 const routes: Routes = [
   {
@@ -42,8 +43,8 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'blogs', component: BlogListComponent },
   { path: 'blogs/:id', component: BlogDetailsComponent },
-  { path: 'payment', component: PaymentsComponent }
-
+  { path: 'payment', component: PaymentsComponent },
+  { path: 'order-list', component: OrderListComponent },
 ];
 
 @NgModule({

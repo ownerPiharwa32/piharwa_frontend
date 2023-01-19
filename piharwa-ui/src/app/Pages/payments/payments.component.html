@@ -23,7 +23,7 @@
                           <div class="lists-data" *ngFor="let addressList of address">
                             <div class="row">
                               <div class="col-md-9">
-                                <p *ngIf="addressList.default === true"><mat-icon>check_circle</mat-icon> </p>
+                                <p style="font-weight: 600;">Selected Address</p>
                                 <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  ,{{addressList.landmark}}</p>
                                 <p class="mb-1">{{addressList.city}} ,{{addressList.state}}, {{addressList.pincode}}, {{addressList.country}}</p>
                               </div>

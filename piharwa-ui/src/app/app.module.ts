@@ -41,6 +41,7 @@ import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
 
 import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
+import { OrderListComponent } from './Pages/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
     PaymentsComponent,
     BlogDetailsComponent,
     confirmDialog,
-    BlogListComponent
+    BlogListComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
