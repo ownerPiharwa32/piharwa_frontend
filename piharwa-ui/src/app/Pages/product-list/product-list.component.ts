@@ -9,19 +9,28 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+
   productList: any;
   listId: any;
   searchText:any='';
   id:any;
-  constructor(public productService :ProductService, public router :Router,private route: ActivatedRoute,) { }
+  categoryId: string | undefined;
+  title: string | undefined;
+
+  constructor(
+    public productService :ProductService,
+     public router :Router,
+     private route: ActivatedRoute
+     ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     // console.log(id)
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params: any) => {
       this.listId = params['id'];
+      this.categoryId = params['categoryId'];
       // console.log('The id of this route is: ', this.listId);
-      this.getProductList(this.id,this.searchText);
+      this.getProductList(this.listId,this.searchText);
 
     });
   }
@@ -31,12 +40,31 @@ export class ProductListComponent implements OnInit {
     let productdata={
       "page_no": 1,
       "no_record": 10,
-      "productCategoryID": '',
-      "searchText": searchText?searchText:'',
+      "productCategoryID": this.categoryId ? this.categoryId : '',
+      "searchText": searchText ? searchText : '',
       "rootCatId":this.listId
     }
-    this.productService.productListApi(productdata).subscribe((data) => this.getProductListApi(data));
+    this.productService.productListApi(productdata).subscribe((data: any) => {
+      if(data.status === true){
+        this.productList = data.data.productList
+      }
+    });
   }
+
+  onSelectedCategory(category: any) {
+    console.log("category ", category);
+    let productdata = {
+      "page_no": 1,
+      "no_record": 10,
+      "productCategoryID": category._id,
+      "searchText": '',
+      "rootCatId":this.listId
+    }
+    this.title = category.title;
+    this.productService.productListApi(productdata)
+    .subscribe((data: any) => this.getProductListApi(data));
+  }
+
   getProductListApi(data:any){
     if(data.status === true){
       this.productList = data.data.productList

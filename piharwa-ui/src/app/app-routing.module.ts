@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'productlist/:id', component: ProductListComponent },
+  { path: 'productlist/:id/:categoryId', component: ProductListComponent },
   { path: 'product-details/:id', component: ProductDetailsPageComponent },
   { path: 'product-cart', component: CartComponent },
   { path: 'list-Address', component: ListAddressComponent },

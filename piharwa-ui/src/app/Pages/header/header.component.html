@@ -89,7 +89,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li *ngFor="let piharwaCat of allCategoryList?.piharwaCategories">
-                                    <a class="dropdown-item" [routerLink]="['productlist', piharwaCat.rootCategory]">
+                                    <a class="dropdown-item" 
+                                    [routerLink]="['productlist', piharwaCat.rootCategory, piharwaCat._id]">
                                         {{piharwaCat.name}}
                                     </a>
                                 </li>
@@ -104,7 +105,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li *ngFor="let elementCat of allCategoryList?.elementCategories">
-                                    <a class="dropdown-item" [routerLink]="['productlist', elementCat.rootCategory]">
+                                    <a class="dropdown-item"
+                                    [routerLink]="['productlist', elementCat.rootCategory, elementCat._id]">
                                         {{elementCat.name}}
                                     </a>
                                 </li>
