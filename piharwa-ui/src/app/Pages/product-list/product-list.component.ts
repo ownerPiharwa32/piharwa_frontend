@@ -12,16 +12,19 @@ export class ProductListComponent implements OnInit {
 
   productList: any;
   listId: any;
-  searchText:any='';
-  id:any;
+  searchText: any = '';
+  id: any;
   categoryId: string | undefined;
   title: string | undefined;
+  pageSize = 2;
+  totalPages = 0;
+  activePage = 1;
 
   constructor(
-    public productService :ProductService,
-     public router :Router,
-     private route: ActivatedRoute
-     ) { }
+    public productService: ProductService,
+    public router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -30,57 +33,46 @@ export class ProductListComponent implements OnInit {
       this.listId = params['id'];
       this.categoryId = params['categoryId'];
       // console.log('The id of this route is: ', this.listId);
-      this.getProductList(this.listId,this.searchText);
-
-    });
-  }
-
-  
-  getProductList(id:any,searchText:any) {
-    let productdata={
-      "page_no": 1,
-      "no_record": 10,
-      "productCategoryID": this.categoryId ? this.categoryId : '',
-      "searchText": searchText ? searchText : '',
-      "rootCatId":this.listId
-    }
-    this.productService.productListApi(productdata).subscribe((data: any) => {
-      if(data.status === true){
-        this.productList = data.data.productList
-      }
+      this.getProductList();
     });
   }
 
   onSelectedCategory(category: any) {
-    console.log("category ", category);
-    let productdata = {
-      "page_no": 1,
-      "no_record": 10,
-      "productCategoryID": category._id,
-      "searchText": '',
-      "rootCatId":this.listId
-    }
     this.title = category.title;
-    this.productService.productListApi(productdata)
-    .subscribe((data: any) => this.getProductListApi(data));
+    this.categoryId = category._id;
+    this.getProductList();
   }
 
-  getProductListApi(data:any){
-    if(data.status === true){
-      this.productList = data.data.productList
-      console.log(this.productList);
-    }
+  abc = [1,2,3,4,5,6,7,8]
+
+  pageSearch() { }
+
+  getProductList() {
+    this.productService.productListApi({
+      "page_no": this.activePage,
+      "no_record": this.pageSize,
+      "productCategoryID": this.categoryId ? this.categoryId : '',
+      "searchText": this.searchText ? this.searchText : '',
+      "rootCatId": this.listId
+    }).subscribe((data: any) => {
+      if (data.status === true) {
+        this.productList = data.data.productList;
+        this.totalPages = data.data.total_pages;
+      }
+    });
+  }
+
+  gotoDetailProduct(id: any): void {
+    this.router.navigate(['/product-details', id]);
+  }
+
+  applyFilter() {
+    this.getProductList();
 
   }
-  gotoDetailProduct(id:any): void {
-    this.router.navigate(['/product-details',id]);
-  }
-  applyFilter(){
-  console.log(this.searchText);
-  this.getProductList(this.id,this.searchText);
 
-  }
-  clear(){
-    this.getProductList(this.id,'');
+  clear() {
+    this.searchText = '';
+    this.getProductList();
   }
 }
