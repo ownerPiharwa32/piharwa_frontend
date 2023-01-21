@@ -4,7 +4,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Lehengas</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="#">{{productData.productTitle}}</a></li>
+                <li *ngIf="productData && productData.productTitle" class="breadcrumb-item active" aria-current="page"><a href="#">{{productData.productTitle}}</a></li>
             </ol>
         </nav>
     </div>
@@ -56,7 +56,7 @@
 
                         </p>
                     </div>
-                    <div class="d-flex align-items-center mb-4">
+                    <!-- <div class="d-flex align-items-center mb-4">
                         <span>
                             <img src="../../../../assets/img/stars.png" class="img-fluid mr-1" alt="Star Icon" />
                         </span>
@@ -75,7 +75,7 @@
                         <span class="fs20 fw500 text-black">
                             ( {{productData.OverallRating}}Ratings )
                         </span>
-                    </div>
+                    </div> -->
                     <div class="productCount align-items-center mb-4">
                         <form action="#" class="d-flex align-items-center">
                             <div (click)="decrement()" class="qtyminus pointer">-</div>
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div class="totalbyIT mb-5">
+     <!-- <div class="totalbyIT mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -194,13 +194,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
     <div class="proListDetails">
         <div class="container">
             <h1 class="fontStyle2 text-center mb-5">
                 <span class="color_head_black fs48 fw500">You’ll Love These !! </span>
             </h1>
-            <!-- Start Featured Product -->
             <section class="featuresProducts inner">
                 <div class="row">
                     <div class="col-12 col-md-3 mb-4">
@@ -293,8 +292,7 @@
                     </div>
 
                 </div>
-            </section>
-            <!-- End Featured Product -->
+            </section> 
         </div>
-    </div>
+    </div>  -->
 </div>

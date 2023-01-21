@@ -42,7 +42,7 @@ font-weight: 800;
 }
 .searchIcons {
     position: absolute;
-    right: 92px;
+    right: 252px;
     z-index: 999;
     top: 14px;
     color: #fff;
@@ -103,6 +103,7 @@ div {
 			height: 100%;
 			font-size: 17px;
 			border: 1px solid blue;
+			border-radius: 12px;
 			float: left;
 			width: 60%;
 			outline: none;
