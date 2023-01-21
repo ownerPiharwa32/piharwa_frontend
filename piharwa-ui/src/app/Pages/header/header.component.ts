@@ -79,11 +79,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  categoryList(id: any) {
-    console.log(id)
-    this.router.navigate(['/productlist', id]);
-  }
-
   openCart() {
     if (this.cartData) {
       this.router.navigate(['/product-cart']);

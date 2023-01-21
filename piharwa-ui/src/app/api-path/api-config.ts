@@ -5,6 +5,7 @@ export const ApiConstants ={
       featuredProducts: 'api/v1/product/featured-product/list',
       allcategoryList: 'api/v1/categories/list/all',
       latestArrivals: 'api/v1/product/latest-arrival/list',
+      testimonialList: 'api/v1/testimonials/list',
       productlist:'api/v1/product/list',
       singleproduct:'api/v1/product/single-product/',
       registerApi:'api/v1/buyers/register',

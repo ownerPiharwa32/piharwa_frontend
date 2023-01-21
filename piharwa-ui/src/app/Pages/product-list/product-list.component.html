@@ -1,22 +1,16 @@
 <div class="productList">
+
     <div class="bredgedCums">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto">
                     <div class="site-search">
                         <div class="product_search">
-                            <div class="search_form_2" >
-                                <!-- <div class="select_unmate">
-                                    <select name="">
-                                        <option value="">All Categories </option>
-                                        <option value="1">Select option 1</option>
-                                        <option value="2">Select option 2</option>
-                                        <option value="3">Select option 3</option>
-                                    </select>
-                                </div> -->
-                                <input type="search" placeholder="Search for products"   [(ngModel)]="searchText">
+                            <div class="search_form_2">
+                           
+                                <input type="search" placeholder="Search for products" [(ngModel)]="searchText">
                                 <input type="submit" (click)="applyFilter()" value="">
-                                <div class="searchIcons" (click)="applyFilter()" >
+                                <div class="searchIcons" (click)="applyFilter()">
                                     <i class="fa fa-search" aria-hidden="true" (click)="applyFilter()"></i>
                                 </div>
                             </div>
@@ -27,20 +21,55 @@
         </div>
     </div>
 
-   
-
     <div class="cateGoryList mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="productSidebar">
                         <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Product Categories</h3>
-                        <app-category-list [productlistId]="listId"></app-category-list>
+                        <app-category-list [productlistId]="listId"
+                        [categoryId]="categoryId"
+                        (selectedCategory)="onSelectedCategory($event)"></app-category-list>
+                        <!-- <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Filter By Price</h3>
+                        <div class="pricingSlider">
+                            <label for="customRange3" class="form-label">Example range</label>
+                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="fs15 fw500 col5">Price : ₹10,000 - ₹20,000</div>
+                        </div>
+                        <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Filter By Colors</h3>
+                        <div class="colors">
+                            <ul>
+                                <li></li>
+                                <li class="active">
+                                </li>
+                                <li class="color1">
+                                </li>
+                                <li class="color2">
+                                </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <h3 class="fs22 fw600 col5 mt-4 pt-3 mb-4">Filter By Style</h3>
+                        <div class="catUl">
+                            <ul>
+                                <li>
+                                    <div>Lehengas</div>
+                                    <div><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                </li>
+                                <li>
+                                    <div>Sarees</div>
+                                    <div><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                </li>
+                            </ul>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <!-- <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div class="fs14 fw500 col4">Home / Lehengas</div>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="fs14 fw500 col4">
+                            Home / Product List 
+                        <span *ngIf="title"> / {{title}}</span>
+                        </div>
                         <div class="selectDefaults">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Default Sorting</option>
@@ -49,7 +78,7 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
-                    </div> -->
+                    </div> 
                     <div *ngIf="productList && productList.length === 0" class="jumbotron noitem">
                         No Item
                     </div>
@@ -57,17 +86,17 @@
                     <section class="featuresProducts inner">
                         <div class="row mx80">
                             <div class="col-12 col-md-3 mb-4" *ngFor="let product of productList">
-                                <div  (click)="gotoDetailProduct(product._id)"  class="card h-100"  >   
-                                    <a  class="d-block position-relative">
-                                        <div class="imgSet" >
+                                <div (click)="gotoDetailProduct(product._id)" class="card h-100">
+                                    <a class="d-block position-relative">
+                                        <div class="imgSet">
                                             <img src="{{product.productImg}}" class="card-img-top" alt="Icon"
                                                 class="img-fluid" />
                                         </div>
                                     </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
+                                    <div class="card-body px-0">
+                                        <div class="row justify-content-between">
                                             <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}} 
+                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}}
                                                     <!-- (Set of {{product.OverallRating}}) -->
                                                 </p>
                                             </div>
@@ -79,11 +108,27 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
                     </section>
                     <!-- End Featured Product -->
                 </div>
+
+                <div class="col-12 text-right pagination-div">
+                        <i class="fa fa-chevron-left left-page-activation" aria-hidden="true" *ngIf="activePage != 1"
+                             (click)="activePage=activePage-1;getProductList();"></i>
+
+                        <button *ngFor="let item of [].constructor(totalPages); let i = index" class="page-button"
+                        [class.active-page-button] = "i+1 == activePage"
+                            (click)="activePage=i+1;getProductList();">
+                            {{i+1}}
+                        </button>
+
+                        <i class="fa fa-chevron-right right-page-activation" aria-hidden="true" *ngIf="totalPages > activePage"
+                        (click)="activePage=activePage+1;getProductList();"></i>
+                </div>
+
             </div>
+            
         </div>
     </div>
 </div>
