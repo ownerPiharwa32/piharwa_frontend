@@ -7,26 +7,28 @@ import { TestimonialService } from './customer-opinion.service';
   styleUrls: ['./customer-opinion.component.scss']
 })
 export class CustomerOpinionComponent {
-  testimonailDetails: any;
+  testimonialData: any;
+  showTestimonialData: boolean = false;
+  selectedTestimonial: any;
 
-  constructor(public testimonialService: TestimonialService, public router: Router) { }
+  constructor(
+    private testimonialService: TestimonialService, 
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.getTestimonialList();
   }
 
   getTestimonialList() {
-    this.testimonialService.testimonialListApi().subscribe((data) => this.getProductListApi(data));
+    this.testimonialService.testimonialListApi().subscribe((data : any) => {
+      if (data.status === true) {
+        this.testimonialData = data.data
+        this.showTestimonialData = true;
+        this.selectedTestimonial = data.data[0];
+      }
+    });
   }
-
-  getProductListApi(data: any) {
-    if (data.status === true) {
-      this.testimonailDetails = data.data
-      console.log(this.testimonailDetails,"===============================testimonailData");
-    }
-
-  }
-
 
   gotoTestimonial(id:any): void {
     this.router.navigate(['#testimonial-',id]);
