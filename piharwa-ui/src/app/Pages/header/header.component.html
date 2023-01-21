@@ -23,7 +23,8 @@
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">{{ cartData.length }}</span>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark fs28 mr-1"></i>
                     </a>
-                    <a *ngIf="!profileLData" class="nav-icon position-relative text-decoration-none" (click)="openLoginWindow()">
+                    <a *ngIf="!profileLData" class="nav-icon position-relative text-decoration-none"
+                        (click)="openLoginWindow()">
                         <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
                         <!-- <span class="ms-3 fs21 fw500 col3 fontStyle1">
                             {{ profileLData.firstName }}
@@ -72,8 +73,11 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li *ngFor="let list of categoryDataList"><a class="dropdown-item" (click)="categoryList(list._id)">{{list.categoryTitle}}</a></li>
-                              
+                                <li *ngFor="let list of categoryDataList">
+                                    <a class="dropdown-item" [routerLink]="['productlist', list._id]">
+                                        {{list.categoryTitle}}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -84,8 +88,11 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li *ngFor="let allCatlist of allCategoryList.piharwaCategories
-                                "><a class="dropdown-item" (click)="categoryList(allCatlist._id)">{{allCatlist.name}}</a></li>
+                                <li *ngFor="let piharwaCat of allCategoryList?.piharwaCategories">
+                                    <a class="dropdown-item" [routerLink]="['productlist', piharwaCat.rootCategory]">
+                                        {{piharwaCat.name}}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -96,8 +103,11 @@
                                         class="img-fluid ms-2" /></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li *ngFor="let elementalCatlist of allCategoryList.elementCategories
-                                "><a class="dropdown-item" (click)="categoryList(elementalCatlist._id)">{{elementalCatlist.name}}</a></li>
+                                <li *ngFor="let elementCat of allCategoryList?.elementCategories">
+                                    <a class="dropdown-item" [routerLink]="['productlist', elementCat.rootCategory]">
+                                        {{elementCat.name}}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

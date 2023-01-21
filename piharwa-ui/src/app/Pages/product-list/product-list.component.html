@@ -1,11 +1,12 @@
 <div class="productList">
+
     <div class="bredgedCums">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto">
                     <div class="site-search">
                         <div class="product_search">
-                            <div class="search_form_2" >
+                            <div class="search_form_2">
                                 <div class="select_unmate">
                                     <select name="">
                                         <option value="">All Categories </option>
@@ -14,9 +15,9 @@
                                         <option value="3">Select option 3</option> -->
                                     </select>
                                 </div>
-                                <input type="search" placeholder="Search for products"   [(ngModel)]="searchText">
+                                <input type="search" placeholder="Search for products" [(ngModel)]="searchText">
                                 <input type="submit" (click)="applyFilter()" value="">
-                                <div class="searchIcons" (click)="applyFilter()" >
+                                <div class="searchIcons" (click)="applyFilter()">
                                     <i class="fa fa-search" aria-hidden="true" (click)="applyFilter()"></i>
                                 </div>
                             </div>
@@ -26,8 +27,6 @@
             </div>
         </div>
     </div>
-
-   
 
     <div class="cateGoryList mt-5">
         <div class="container">
@@ -89,17 +88,17 @@
                     <section class="featuresProducts inner">
                         <div class="row mx80">
                             <div class="col-12 col-md-3 mb-4" *ngFor="let product of productList">
-                                <div  (click)="gotoDetailProduct(product._id)"  class="card h-100"  >   
-                                    <a  class="d-block position-relative">
-                                        <div class="imgSet" >
+                                <div (click)="gotoDetailProduct(product._id)" class="card h-100">
+                                    <a class="d-block position-relative">
+                                        <div class="imgSet">
                                             <img src="{{product.productImg}}" class="card-img-top" alt="Icon"
                                                 class="img-fluid" />
                                         </div>
                                     </a>
-                                    <div class="card-body px-0"> 
-                                        <div class="row justify-content-between"> 
+                                    <div class="card-body px-0">
+                                        <div class="row justify-content-between">
                                             <div class="col-md-9">
-                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}} 
+                                                <p class="fs13 fw500 col5 fontStyle1">{{product.productTitle}}
                                                     <!-- (Set of {{product.OverallRating}}) -->
                                                 </p>
                                             </div>
@@ -111,7 +110,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
                     </section>
                     <!-- End Featured Product -->
                 </div>
