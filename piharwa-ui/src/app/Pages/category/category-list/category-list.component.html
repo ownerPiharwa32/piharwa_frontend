@@ -1,4 +1,4 @@
 <div class="catUl">
-    <tree-root [nodes]="categoryList" (activate)="onEvent($event)"
+    <tree-root #tree [nodes]="categoryList" (activate)="onEvent($event)"
     [focused]="true" [options]="options"></tree-root>
 </div>
