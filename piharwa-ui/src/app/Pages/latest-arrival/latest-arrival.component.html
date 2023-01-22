@@ -13,17 +13,17 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-3 mb-4"  *ngFor="let lproduct of latestArrivalProduct">
-                <div class="card h-100">
+                <div class="card h-100" (click)="gotoDetailProduct(lproduct.id)" >
                     <a href="shop-single.html" class="d-block position-relative">
                         <div class="imgSet">
                             <img src="{{lproduct.productImg}}" class="card-img-top" alt="Icon" class="img-fluid" />
                         </div>
-                        <div class="heartIcon">
+                        <!-- <div class="heartIcon">
                             <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
                                     alt="Icon" /></span>
                             <span class="circleStyles"><img src="../../../assets/img/carts.png" class="img-fluid"
                                     alt="Icon" /></span>
-                        </div>
+                        </div> -->
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">{{lproduct.productTitle}}</p>

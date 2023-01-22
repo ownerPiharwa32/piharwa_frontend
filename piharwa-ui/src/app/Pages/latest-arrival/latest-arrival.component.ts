@@ -22,9 +22,12 @@ export class LatestArrivalComponent {
 getLatestProductsList(data:any){
   if (data.status === true) {
     this.latestArrivalProduct = data.data
-    console.log(this.latestArrivalProduct,"==========latestArrival");
+    console.log(this.latestArrivalProduct)
   }
+}
 
+gotoDetailProduct(id: any): void {
+  this.router.navigate(['/product-details', id]);
 }
 
 }

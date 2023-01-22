@@ -10,7 +10,8 @@ import { CartService } from './cart-service/cart.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-
+  imageObject=[{}];
+  
   id!:any;
   productData: any;
   items: any;
@@ -27,7 +28,17 @@ export class ProductDetailsPageComponent implements OnInit {
   getProductdetialsApi(data:any){
     if(data.status === true){
       this.productData = data.data
-      // console.log(this.productData);
+      console.log( this.productData)
+      this.productData.thumbnailImgs.forEach((element: any) => {
+        let obj ={
+          image: element,
+          thumbImage: element,
+          title: ''
+        }
+        console.log(element)
+        this.imageObject.unshift(obj)
+      });
+      console.log( this.imageObject)
     }
   }
 
@@ -72,5 +83,6 @@ export class ProductDetailsPageComponent implements OnInit {
   // }
   addQty(item:any){
   }
+
 }
 // routerLink="/product-cart"

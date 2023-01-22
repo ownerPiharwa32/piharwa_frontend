@@ -42,6 +42,8 @@ import { BlogDetailsComponent } from './Pages/blog-details/blog-details.componen
 
 import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
 import { OrderListComponent } from './Pages/order-list/order-list.component';
+import { LoaderComponent } from './Pages/common-page/loader/loader.component';
+import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,8 @@ import { OrderListComponent } from './Pages/order-list/order-list.component';
     BlogDetailsComponent,
     confirmDialog,
     BlogListComponent,
-    OrderListComponent
+    OrderListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -85,7 +88,9 @@ import { OrderListComponent } from './Pages/order-list/order-list.component';
     AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
     
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [confirmDialog]
 })
