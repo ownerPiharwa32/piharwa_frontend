@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="newTitles mt-5">Welcome <span>Akshat !!</span></h2>
+    <!-- <h2 class="newTitles mt-5">Welcome <span>Akshat !!</span></h2> -->
     <div class="row pt-4 mb-4">
       <div class="col-md-3">
         <div class="flex-shrink-0 p-3 bg-white sidebars">
@@ -18,13 +18,13 @@
             </li>
             <li class="border-top my-3"></li>
             <li>
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse " routerLink="/order-list"
                 data-bs-target="#orders-collapse" aria-expanded="false">
                 <span class="me-2 color-green"><i class="fa fa-first-order" aria-hidden="true"></i></span>Orders
               </button>
             </li>
             <li>
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" (click)="logout()"
                 data-bs-target="#orders-collapse" aria-expanded="false">
                 <span class="me-2 color-green"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout
               </button>
@@ -43,8 +43,11 @@
             <div class="row">
               <div class="col-md-9">
                 <p *ngIf="addressList.default === true"><mat-icon>check_circle</mat-icon> </p>
-                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  ,{{addressList.landmark}}</p>
-                <p class="mb-1">{{addressList.city}} ,{{addressList.state}}, {{addressList.pincode}}, {{addressList.country}}</p>
+                <p>{{addressList.firstName}} {{addressList.lastName}}</p>
+                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  {{addressList.landmark}}</p>
+                <p class="mb-1">City - {{addressList.city}} State -{{addressList.state}},</p>
+                  <p>Pincode-{{addressList.pincode}}, Country-{{addressList.country}}</p> 
+                  <p> MobileNo {{addressList.mobileNo}}</p>
               </div>
               <div class="col-md-3 text-end">
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

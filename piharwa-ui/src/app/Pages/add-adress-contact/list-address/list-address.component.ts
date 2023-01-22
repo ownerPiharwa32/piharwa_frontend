@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.component';
 import { DeletePopupComponent } from '../../common-page/delete-popup/delete-popup.component';
 import { CommonService } from '../../common.service';
 import { AddAdressContactComponent } from '../add-adress-contact.component';
@@ -25,7 +26,27 @@ export class ListAddressComponent implements OnInit {
   getAddressList() {
     this.listAddressService.addressDetailsApi().subscribe((data) => this.getAddressListApi(data));
   }
+  
+  logout() {
 
+    const dialogRef = this.dialog.open(confirmDialog, {
+      data: {
+        message: "Are you sure you want to logout?",
+        buttonText: {
+          ok: 'Yes',
+          cancel: 'No'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        localStorage.clear();
+        window.location.reload();
+      }
+    });//end of dialog
+
+  }
   getAddressListApi(data: any) {
     if (data.status === true) {
       this.address =data.data;

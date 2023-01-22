@@ -24,8 +24,11 @@
                             <div class="row">
                               <div class="col-md-9">
                                 <p style="font-weight: 600;">Selected Address</p>
-                                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  ,{{addressList.landmark}}</p>
-                                <p class="mb-1">{{addressList.city}} ,{{addressList.state}}, {{addressList.pincode}}, {{addressList.country}}</p>
+                                <p>{{addressList.firstName}} {{addressList.lastName}}</p>
+                                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  {{addressList.landmark}}</p>
+                                <p class="mb-1">City - {{addressList.city}} State -{{addressList.state}},</p>
+                                <p>Pincode-{{addressList.pincode}}, Country-{{addressList.country}}</p> 
+                                <p> MobileNo {{addressList.mobileNo}}</p>
                               </div>
                               <br/>
                               <br/>
