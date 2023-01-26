@@ -13,7 +13,12 @@ export class ListAddressService {
   }
    addressDetailsApi () {
     return this.http.get(ApiConstants.apiURL + ApiConstants.listAddress);
+  }
+  
+  defaultAddressApi() {
+    return this.http.get(ApiConstants.apiURL + ApiConstants.defaultAddress);
    }
+
    saveAddress(data:any){
     return this.http.post(ApiConstants.apiURL + ApiConstants.addaddress,data);
    }
