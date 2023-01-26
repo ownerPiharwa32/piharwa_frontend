@@ -1,6 +1,6 @@
 export const ApiConstants ={
-      // apiURL : 'http://piharwa.co.in/',
-      apiURL : 'http://localhost:3001/',
+      apiURL : 'http://piharwa.co.in/',
+      // apiURL : 'http://localhost:3001/',
       categorylist: 'api/v1/category/list',
       featuredProducts: 'api/v1/product/featured-product/list',
       allcategoryList: 'api/v1/categories/list/all',
