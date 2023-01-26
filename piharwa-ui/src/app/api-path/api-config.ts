@@ -1,6 +1,6 @@
 export const ApiConstants ={
-      apiURL : 'http://piharwa.co.in/',
-      
+      // apiURL : 'http://piharwa.co.in/',
+      apiURL : 'http://localhost:3001/',
       categorylist: 'api/v1/category/list',
       featuredProducts: 'api/v1/product/featured-product/list',
       allcategoryList: 'api/v1/categories/list/all',
@@ -22,6 +22,7 @@ export const ApiConstants ={
       deleteAddress:'api/v1/buyer/delete/address/details',
       profileApi:'api/v1/buyers/details',
       createOrderId:'api/v1/checkout/order/create',
-      verifyPaymentApi:'api/v1/checkout/payment/verify'
+      verifyPaymentApi: 'api/v1/checkout/payment/verify',
+      orderListApi: 'api/v1/buyer/order/list'
       // /api/v1/buyer/delete/address/details/{addressId}
 }
