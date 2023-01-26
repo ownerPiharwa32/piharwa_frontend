@@ -38,7 +38,7 @@ export class ProductDetailsPageComponent implements OnInit {
         console.log(element)
         this.imageObject.unshift(obj)
       });
-      console.log( this.imageObject)
+      console.log('imageObject', this.imageObject)
     }
   }
 
@@ -63,6 +63,9 @@ export class ProductDetailsPageComponent implements OnInit {
   // console.log(totalvalue)
    let productdata ={
     _id :productData._id,
+    SellerStoreID: productData.SellerStoreID,
+    productCategoryID: productData.productCategoryID,
+    rootCategoryId: productData.rootCategoryId,
     productTitle:productData.productTitle,
     price:productData.price,
     quantity:this.quantity,

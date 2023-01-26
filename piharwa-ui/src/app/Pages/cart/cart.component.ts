@@ -59,7 +59,8 @@ export class CartComponent implements OnInit {
   }
 
   toContinue(){
-    this.commonservice.paynow();
+    console.log("toContinue");
+    // this.commonservice.paynow();
   //  this.route.navigate(["/list-Address"]);
   }
 }
