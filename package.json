@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@angular/platform-browser": "^14.2.6"
+    "@angular/platform-browser": "^14.2.6",
+    "razorpay": "^2.8.4"
   }
 }
