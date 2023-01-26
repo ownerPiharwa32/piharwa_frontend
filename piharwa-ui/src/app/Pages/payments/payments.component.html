@@ -2,8 +2,8 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Product</a></li>
                 <li class="breadcrumb-item"><a href="#">Cart</a></li>
-                <li class="breadcrumb-item"><a href="#">Shipping Details</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><a href="#">Payment</a></li>
             </ol>
         </nav>
@@ -20,22 +20,19 @@
                           <div class="d-flex align-items-center justify-content-between w-100">
                           </div>
                           <div class="mb-4"></div>
-                          <div class="lists-data" *ngFor="let addressList of address">
+                          <div class="lists-data">
                             <div class="row">
                               <div class="col-md-9">
-                                <p style="font-weight: 600;">Selected Address</p>
-                                <p>{{addressList.firstName}} {{addressList.lastName}}</p>
-                                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  {{addressList.landmark}}</p>
-                                <p class="mb-1">City - {{addressList.city}} State -{{addressList.state}},</p>
-                                <p>Pincode-{{addressList.pincode}}, Country-{{addressList.country}}</p> 
-                                <p> MobileNo {{addressList.mobileNo}}</p>
+                                <p>{{address.firstName}} {{address.lastName}}</p>
+                                <p class="mb-1">{{address.address_line_one}}, {{address.address_line_two}}  {{address.landmark}}</p>
+                                <p class="mb-1">City - {{address.city}} State -{{address.state}},</p>
+                                <p>Pincode-{{address.pincode}}, Country-{{address.country}}</p> 
+                                <p> MobileNo {{address.mobileNo}}</p>
                               </div>
                               <br/>
                               <br/>
                               <h4 style="cursor: pointer;" (click)="addAddress()"> + Add New Address</h4>
                             </div>
-                          <br/>
-                          <hr/>
                           </div>
                         </div>
                       </div>

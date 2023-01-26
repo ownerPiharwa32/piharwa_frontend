@@ -82,14 +82,14 @@ export class PaymentsComponent implements OnInit {
     this.cartService.clearData();
   }
   getAddressList() {
-    this.listAddressService.addressDetailsApi().subscribe((data) => this.getAddressListApi(data));
+    this.listAddressService.defaultAddressApi().subscribe((data) => this.getDefaultAddressApi(data));
   }
 
-  getAddressListApi(data: any) {
+  getDefaultAddressApi(data: any) {
     if (data.status === true) {
       this.address = data.data;
       console.log("this.address ", this.address);
-      console.log(this.address)
+      console.log(this.address,"==============================")
     }
 
   }

@@ -17,6 +17,7 @@ export const ApiConstants ={
       // http://piharwa.co.in/api/v1/main/category/list
       // otpToken: 'api/v1/buyers/verify/otp',
       listAddress: 'api/v1/buyer/list/address/details',
+      defaultAddress: 'api/v1/buyer/default/address/details',
       addaddress:'api/v1/buyer/add/address/details',
       updateAddress:'api/v1/buyer/edit/address/details',
       deleteAddress:'api/v1/buyer/delete/address/details',
