@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, HostListener, Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ApiConstants } from '../api-path/api-config';
 
 function _window(): any {
@@ -44,6 +45,13 @@ export class CommonService {
   paymentId = "";
   error = "";
   title = 'piharwa shop';
+
+  private previousUrl: BehaviorSubject<string> = 
+  new BehaviorSubject<string>('');
+  public previousUrl$: Observable<string> = this.previousUrl.asObservable();
+  setPreviousUrl(previousUrl: string) {
+    this.previousUrl.next(previousUrl);
+  }
 
 
 }
