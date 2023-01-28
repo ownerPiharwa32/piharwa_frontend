@@ -14,8 +14,6 @@ export const ApiConstants ={
       mainCategoryList:'api/v1/main/category/list',
       blogListApi: 'api/v1/blog/list',
       blogDetailsApi: 'api/v1/blog/single-blog/',
-      // http://piharwa.co.in/api/v1/main/category/list
-      // otpToken: 'api/v1/buyers/verify/otp',
       listAddress: 'api/v1/buyer/list/address/details',
       defaultAddress: 'api/v1/buyer/default/address/details',
       addaddress:'api/v1/buyer/add/address/details',
