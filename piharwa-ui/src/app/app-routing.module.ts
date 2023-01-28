@@ -21,7 +21,7 @@ import { OrderListComponent } from './Pages/order-list/order-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: WrongRouteComponent,
+    component: HomepageComponent,
   },
   // {
   //   path: '**',

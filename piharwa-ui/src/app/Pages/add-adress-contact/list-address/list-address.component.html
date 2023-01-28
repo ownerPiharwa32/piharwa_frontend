@@ -43,11 +43,11 @@
             <div class="row">
               <div class="col-md-9">
                 <p *ngIf="addressList.default === true"><mat-icon>check_circle</mat-icon> </p>
-                <p>{{addressList.firstName}} {{addressList.lastName}}</p>
-                <p class="mb-1">{{addressList.address_line_one}}, {{addressList.address_line_two}}  {{addressList.landmark}}</p>
+                <p><strong>Name : </strong> {{addressList.firstName}} {{addressList.lastName}}</p>
+                <p class="mb-1"><strong>Address : </strong> {{addressList.address_line_one}}, {{addressList.address_line_two}}  {{addressList.landmark}}</p>
                 <p class="mb-1">City - {{addressList.city}} State -{{addressList.state}},</p>
                   <p>Pincode-{{addressList.pincode}}, Country-{{addressList.country}}</p> 
-                  <p> MobileNo {{addressList.mobileNo}}</p>
+                  <p><strong>MobileNo : </strong> {{addressList.mobileNo}}</p>
               </div>
               <div class="col-md-3 text-end">
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
+import { CommonService } from '../../common.service';
 import { LoginService } from '../login.service';
 import { CartService } from '../../products-page/product-details-page/cart-service/cart.service';
 
@@ -21,6 +22,7 @@ export class LoginPageComponent implements OnInit {
   sginupForm!: FormGroup;
   loginForm!: FormGroup;
   verifyOtpFlag: boolean = false;
+  previousUrl:any;
 
 
   constructor( 
@@ -31,6 +33,7 @@ export class LoginPageComponent implements OnInit {
     public authService: AuthService,
     private activatedRoute : ActivatedRoute,
     public dialogRef: MatDialogRef<LoginPageComponent>,
+    public commonService: CommonService,
     @Inject(MAT_DIALOG_DATA) data:any) {}
 
   close(): void {
@@ -40,8 +43,14 @@ export class LoginPageComponent implements OnInit {
     this.singupForm();
     this.loginFormData();
     this.verifyOtpFlag = false;
+        // Or subscribe to it here
+        this.commonService.previousUrl$.subscribe((previousUrl: string) => {
+          console.log('previous url: ', previousUrl);
+          this.previousUrl = previousUrl;
+        });
   }
 
+  
    checkPage(flag:any){
     if(flag ==='login'){
       this.loginFlag = true;
@@ -191,7 +200,7 @@ export class LoginPageComponent implements OnInit {
       if (cartData.length > 0 ){
         this.addProductsToCart(cartData);
       } else {
-        this.myRoute.navigateByUrl('/home');
+        this.myRoute.navigateByUrl(this.previousUrl);
       }
     }
     if (data.status === false) {
@@ -211,7 +220,7 @@ export class LoginPageComponent implements OnInit {
     this.cartService.addToCartOnBackend({
       "productDetails": sendData
     }).subscribe((response: any) => {
-      this.myRoute.navigateByUrl('/home');
+      this.myRoute.navigateByUrl(this.previousUrl);
     });
   }
 }

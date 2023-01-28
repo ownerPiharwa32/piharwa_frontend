@@ -82,14 +82,14 @@ export class PaymentsComponent implements OnInit {
     this.cartService.clearData();
   }
   getAddressList() {
-    this.listAddressService.addressDetailsApi().subscribe((data) => this.getAddressListApi(data));
+    this.listAddressService.defaultAddressApi().subscribe((data) => this.getDefaultAddressApi(data));
   }
 
-  getAddressListApi(data: any) {
+  getDefaultAddressApi(data: any) {
     if (data.status === true) {
       this.address = data.data;
       console.log("this.address ", this.address);
-      console.log(this.address)
+      console.log(this.address,"==============================")
     }
 
   }
@@ -113,16 +113,16 @@ export class PaymentsComponent implements OnInit {
 
     let sendData = {
       "cartId": "63d2496e04a97e9a3432460a",
-      "firstName": this.address[0].firstName,
-      "lastName": this.address[0].lastName,
-      "mobileNo": this.address[0].mobileNo,
-      "address_line_one": this.address[0].address_line_one,
-      "address_line_two": this.address[0].address_line_two,
-      "landmark": this.address[0].landmark,
-      "city": this.address[0].city,
-      "state": this.address[0].state,
-      "country": this.address[0].country,
-      "pincode": this.address[0].pincode,
+      "firstName": this.address.firstName,
+      "lastName": this.address.lastName,
+      "mobileNo": this.address.mobileNo,
+      "address_line_one": this.address.address_line_one,
+      "address_line_two": this.address.address_line_two,
+      "landmark": this.address.landmark,
+      "city": this.address.city,
+      "state": this.address.state,
+      "country": this.address.country,
+      "pincode": this.address.pincode,
       "amount": 0,
       "currency": "INR",
       "productDetails": <any>[]
