@@ -4,7 +4,8 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Lehengas</a></li>
-                <li *ngIf="productData && productData.productTitle" class="breadcrumb-item active" aria-current="page"><a href="#">{{productData.productTitle}}</a></li>
+                <li *ngIf="productData && productData.productTitle" class="breadcrumb-item active" aria-current="page">
+                    <a href="#">{{productData.productTitle}}</a></li>
             </ol>
         </nav>
     </div>
@@ -28,12 +29,13 @@
                                 </div>
 
                             </div> -->
-                            <div *ngIf="imageObject.length>1" class="productCarousel" style="width: 99.5%; text-align:center;margin:0px; padding:30px;">
+                            <div *ngIf="imageObject.length>1" class="productCarousel"
+                                style="width: 99.5%; text-align:center;margin:0px; padding:30px;">
                                 <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
-                                  [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider>
-                              </div>
+                                    [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider>
+                            </div>
                         </div>
-                       
+
                         <!-- <div class="carousel-item">
                             <img src="..." class="d-block w-100" alt="...">
                         </div> -->
@@ -55,7 +57,7 @@
                     <h2 class="fs36 fw700 col3 mb-3">{{productData.productTitle}}</h2>
                     <div class="priceInfo">
                         <del class="fs17 fw300 mb-2" *ngIf="productData.allowDiscount">₹ {{productData.price}}</del>
-                        <p class="fs24 fw600 col3">₹ 
+                        <p class="fs24 fw600 col3">₹
                             {{productData.allowDiscount === true ? productData.discountPrice : productData.price}}
 
 
@@ -84,7 +86,7 @@
                     <div class="productCount align-items-center mb-4">
                         <form action="#" class="d-flex align-items-center">
                             <div (click)="decrement()" class="qtyminus pointer">-</div>
-                            <input min="0" type="text" name="quantity" value="{{quantity}}" class="qty">
+                            <input min="0" type="text" name="quantity" value="{{quantity}}" class="qty" readonly>
                             <div (click)="increment()" class="qtyplus pointer">+</div>
                         </form>
                         <div class="ms-4">
@@ -144,7 +146,7 @@
             </div>
         </div>
     </div>
-     <!-- <div class="totalbyIT mb-5">
+    <!-- <div class="totalbyIT mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">

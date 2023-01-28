@@ -41,6 +41,8 @@ import { BlogListComponent } from './Pages/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './Pages/blog-details/blog-details.component';
 
 import { confirmDialog } from './shared/dialog-box/confirm/confirm.component';
+import { messageDialog } from './shared/dialog-box/message/message.component';
+
 import { OrderListComponent } from './Pages/order-list/order-list.component';
 import { LoaderComponent } from './Pages/common-page/loader/loader.component';
 import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
@@ -77,6 +79,7 @@ import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader
     PaymentsComponent,
     BlogDetailsComponent,
     confirmDialog,
+    messageDialog,
     BlogListComponent,
     OrderListComponent,
     LoaderComponent
@@ -92,6 +95,6 @@ import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [confirmDialog]
+  entryComponents: [confirmDialog, messageDialog]
 })
 export class AppModule { }

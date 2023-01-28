@@ -7,6 +7,7 @@ import { CartService } from '../products-page/product-details-page/cart-service/
 import { AuthService } from '../auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginPageComponent } from '../login/login-page/login-page.component';
+import { json } from 'stream/consumers';
 
 
 @Component({
@@ -15,40 +16,122 @@ import { LoginPageComponent } from '../login/login-page/login-page.component';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cartData: any;
+  cartData: any = <any>[];
   subtotal: any;
   @ViewChild(PaymentsComponent) patment!: PaymentsComponent;
 
-  constructor(public cartService :CartService,public router :Router,public commonservice :CommonService,
+  constructor(
+    private commonService: CommonService,
+    public cartService: CartService,
+    public router: Router,
     private _authService: AuthService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
-      this.subtotaldata();
-      this.getCartData();
-  }
-  getCartData(){
-    this.cartData = this.cartService.getItemData()
-  }
-  removeData(data:any) {
-    this.cartService.deleteItem(data);
     this.getCartData();
-    this.subtotaldata();
   }
 
-  subtotaldata(){
-    this.subtotal =this.cartService.getsubtotalData();
-    console.log(this.subtotal)
-  }
-  clearCart() {
-    this.cartService.clearData();
+  getCartData() {
+    if (localStorage.getItem('LoggedInUser')) {
+      this.cartService.getCartDataFromBackend()
+        .subscribe((resposne: any) => {
+          this.cartData = [];
+          resposne.data.forEach((element: any) => {
+            this.cartData.push({
+              _id: element.productId,
+              productTitle: element.productTitle,
+              price: element.price,
+              quantity: element.quantity,
+              total: element.price * element.quantity,
+              pimage: element.productImg,
+              sizes: element.sizes,
+              cartId: element._id
+            });
+          });
+          localStorage.setItem('userCart', JSON.stringify(this.cartData));
+          this.cartService.subtotal();
+          this.subtotaldata();
+        });
+    }
+    else {
+      this.cartData = this.cartService.getItemData();
+      this.cartService.subtotal();
+      this.subtotaldata();
+    }
+
   }
 
-  continueToShipping() {
-    console.log("this.commonService.ProfileData 1 ", this.commonservice.ProfileData);
+  removeData(product: any) {
+    if (localStorage.getItem('LoggedInUser')) {
+      this.cartService.deleteFromCartOnBackend(product._id)
+        .subscribe((resposne: any) => {
+          this.cartService.deleteItem(product);
+          this.getCartData();
+        });
+    } else {
+      this.cartService.deleteItem(product);
+      this.getCartData();
+    }
+
+  }
+
+  updateQuantity(product: any) {
+    if (localStorage.getItem('LoggedInUser')) {
+      this.cartService.updateCartOnBackend({
+        "cartId": product.cartId,
+        "productId": product._id,
+        "quantity": product.quantity,
+        "sizes": "NA"
+      })
+        .subscribe((resposne: any) => {
+          this.getCartData();
+        });
+    } else {
+      this.cartData.forEach((cartProduct: any) => {
+        if(cartProduct._id === product._id) {
+          cartProduct.quantity = product.quantity;
+        }
+      });
+      localStorage.setItem('userCart', JSON.stringify(this.cartData));
+      this.getCartData();
+    }
+  }
+
+  increment(product: any) {
+    if (product.quantity > 4) {
+      this.commonService.openSnackBar("You can add maximum 4 quantity", 'Dismiss');
+    }
+    else {
+      product.quantity += 1;
+      this.updateQuantity(product);
+    }
+  }
+
+  decrement(product: any) {
+    if (product.quantity !== 0) {
+      product.quantity -= 1;
+      this.updateQuantity(product);
+    }
+  }
+
+  subtotaldata() {
+    this.subtotal = this.cartService.getsubtotalData();
+  }
+
+  // clearCart() {
+  //   this.cartService.clearData();
+  // }
+
+  continueToShipping(): any {
+
+    if(this.cartData.length > 3) {
+      this.commonService.openSnackBar("Maximum 3 products can be placed", 'Dismiss');
+      return false;
+    }
+
     const token = this._authService.getToken();
-      console.log("token ", token);
-    if ( token) {
+    if (token) {
       this.router.navigate(['/payment']);
     }
     else {
@@ -58,9 +141,8 @@ export class CartComponent implements OnInit {
     }
   }
 
-  toContinue(){
-    console.log("toContinue");
-    // this.commonservice.paynow();
-  //  this.route.navigate(["/list-Address"]);
+  toContinue() {
+    // this.commonService.paynow();
+    //  this.route.navigate(["/list-Address"]);
   }
 }

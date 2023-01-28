@@ -80,9 +80,10 @@
                                 </div>
                                 <div class="productCount align-items-center">
                                     <form action="#" class="d-flex align-items-center">
-                                        <!-- <div class="qtyminus pointer">-</div> -->
-                                        <input type="text" name="quantity" value="{{cartitem.quantity}}" class="qty">
-                                        <!-- <div class="qtyplus pointer">+</div> -->
+                                        <div (click)="decrement(cartitem)" class="qtyminus pointer">-</div>
+                                        <input type="text" name="quantity" value="{{cartitem.quantity}}" class="qty"
+                                        (change)="updateQuantity(cartitem)" readonly>
+                                        <div (click)="increment(cartitem)" class="qtyplus pointer">+</div>
                                     </form>
                                     <div class="deleteBtn ms-4 ps-1"(click)="removeData(cartitem)" >
                                         <img src="../../../assets/img/delete.png" alt="User" width="17" height="20"
@@ -101,6 +102,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div *ngIf="cartData?.length == 0">
+                        <h1 class="text-center" style="color: red;">Cart is empty.</h1>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
