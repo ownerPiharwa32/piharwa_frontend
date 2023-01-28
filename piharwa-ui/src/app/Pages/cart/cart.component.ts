@@ -36,7 +36,6 @@ export class CartComponent implements OnInit {
     if (localStorage.getItem('LoggedInUser')) {
       this.cartService.getCartDataFromBackend()
         .subscribe((resposne: any) => {
-          console.log("cart data ", resposne);
           this.cartData = [];
           resposne.data.forEach((element: any) => {
             this.cartData.push({
@@ -67,7 +66,6 @@ export class CartComponent implements OnInit {
     if (localStorage.getItem('LoggedInUser')) {
       this.cartService.deleteFromCartOnBackend(product._id)
         .subscribe((resposne: any) => {
-          console.log("resposne ", resposne);
           this.cartService.deleteItem(product);
           this.getCartData();
         });
@@ -79,7 +77,6 @@ export class CartComponent implements OnInit {
   }
 
   updateQuantity(product: any) {
-    console.log("updateQuantity ", product);
     if (localStorage.getItem('LoggedInUser')) {
       this.cartService.updateCartOnBackend({
         "cartId": product.cartId,
@@ -88,7 +85,6 @@ export class CartComponent implements OnInit {
         "sizes": "NA"
       })
         .subscribe((resposne: any) => {
-          console.log("resposne ", resposne);
           this.getCartData();
         });
     } else {
@@ -103,7 +99,6 @@ export class CartComponent implements OnInit {
   }
 
   increment(product: any) {
-    console.log("increment ", product);
     if (product.quantity > 4) {
       this.commonService.openSnackBar("You can add maximum 4 quantity", 'Dismiss');
     }
@@ -114,7 +109,6 @@ export class CartComponent implements OnInit {
   }
 
   decrement(product: any) {
-    console.log("decrement ", product);
     if (product.quantity !== 0) {
       product.quantity -= 1;
       this.updateQuantity(product);
@@ -123,17 +117,20 @@ export class CartComponent implements OnInit {
 
   subtotaldata() {
     this.subtotal = this.cartService.getsubtotalData();
-    console.log(this.subtotal)
   }
 
   // clearCart() {
   //   this.cartService.clearData();
   // }
 
-  continueToShipping() {
-    console.log("this.commonService.ProfileData 1 ", this.commonService.ProfileData);
+  continueToShipping(): any {
+
+    if(this.cartData.length > 3) {
+      this.commonService.openSnackBar("Maximum 3 products can be placed", 'Dismiss');
+      return false;
+    }
+
     const token = this._authService.getToken();
-    console.log("token ", token);
     if (token) {
       this.router.navigate(['/payment']);
     }
@@ -145,7 +142,6 @@ export class CartComponent implements OnInit {
   }
 
   toContinue() {
-    console.log("toContinue");
     // this.commonService.paynow();
     //  this.route.navigate(["/list-Address"]);
   }

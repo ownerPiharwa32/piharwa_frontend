@@ -68,7 +68,7 @@ export class CartService {
 
   getItemData() {
     var value = localStorage.getItem('userCart');
-    return value && JSON.parse(value);
+    return (value && JSON.parse(value)) || [];
   }
 
   subtotal() {

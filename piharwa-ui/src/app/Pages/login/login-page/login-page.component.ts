@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { LoginService } from '../login.service';
+import { CartService } from '../../products-page/product-details-page/cart-service/cart.service';
 
 @Component({
   selector: 'app-login-page',
@@ -22,9 +23,11 @@ export class LoginPageComponent implements OnInit {
   verifyOtpFlag: boolean = false;
 
 
-  constructor( private formBuilder: FormBuilder, private snackBar: MatSnackBar,
+  constructor( 
+    private formBuilder: FormBuilder, private snackBar: MatSnackBar,
     private myRoute: Router,
     private dataService: LoginService,
+    public cartService: CartService,
     public authService: AuthService,
     private activatedRoute : ActivatedRoute,
     public dialogRef: MatDialogRef<LoginPageComponent>,
@@ -183,11 +186,32 @@ export class LoginPageComponent implements OnInit {
       this.openSnackBar(data.message, 'Dismiss');
       this.loginForm.reset();
       this.authService.sendToken( this.loginData.accessToken);
-      this.close()
-      this.myRoute.navigateByUrl('/home');
+      this.close();
+      let cartData = this.cartService.getItemData();
+      if (cartData.length > 0 ){
+        this.addProductsToCart(cartData);
+      } else {
+        this.myRoute.navigateByUrl('/home');
+      }
     }
     if (data.status === false) {
       this.openSnackBar(data.message, 'Dismiss');
     }
+  }
+
+  addProductsToCart(cartData: any){
+    let sendData: { "productId": any; "quantity": any; "sizes": any; }[] = [];
+    cartData.forEach((element: any) => {
+      sendData.push({
+        "productId": element._id,
+        "quantity": element.quantity,
+        "sizes": element.sizes
+      });
+    });
+    this.cartService.addToCartOnBackend({
+      "productDetails": sendData
+    }).subscribe((response: any) => {
+      this.myRoute.navigateByUrl('/home');
+    });
   }
 }

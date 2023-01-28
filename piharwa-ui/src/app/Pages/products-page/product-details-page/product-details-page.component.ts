@@ -38,17 +38,14 @@ export class ProductDetailsPageComponent implements OnInit {
   getProductdetialsApi(data: any) {
     if (data.status === true) {
       this.productData = data.data
-      console.log(this.productData)
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,
           thumbImage: element,
           title: ''
         }
-        console.log(element)
         this.imageObject.unshift(obj)
       });
-      console.log('imageObject', this.imageObject)
     }
   }
 
@@ -74,9 +71,6 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   addtoCart(productData: any): any {
-
-    console.log("productData ", productData);
-
 
     if(this.cartData.length >= 3 ){
       this.commonService.openSnackBar("You can add maximum 3 product in a cart", 'Dismiss');
@@ -126,6 +120,20 @@ export class ProductDetailsPageComponent implements OnInit {
           });
         }
       });
+    } else {
+      let totalvalue = this.productData.price * this.quantity
+          let productdata = {
+            _id: productData._id,
+            // productCategoryID: productData.productCategoryID,
+            productTitle: productData.productTitle,
+            price: productData.price,
+            quantity: this.quantity,
+            total: totalvalue,
+            pimage: productData.productImg,
+            sizes: productData.productDetails[0].sizes
+          }
+          this.cartService.addProductToCart(productdata);
+          this.myRoute.navigate(["/product-cart"]);
     }
   }
 
