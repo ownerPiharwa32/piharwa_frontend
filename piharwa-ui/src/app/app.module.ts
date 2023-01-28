@@ -46,6 +46,7 @@ import { messageDialog } from './shared/dialog-box/message/message.component';
 import { OrderListComponent } from './Pages/order-list/order-list.component';
 import { LoaderComponent } from './Pages/common-page/loader/loader.component';
 import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
+import { ProfileInfoComponent } from './Pages/profile-info/profile-info.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader
     messageDialog,
     BlogListComponent,
     OrderListComponent,
-    LoaderComponent
+    LoaderComponent,
+    ProfileInfoComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

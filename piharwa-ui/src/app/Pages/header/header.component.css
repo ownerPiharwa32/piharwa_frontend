@@ -10,6 +10,14 @@
           align-items: center;
 }
 
+.topHeader .profile-toggle {
+  padding-left: 0px;
+}
+
+.topHeader .profile-toggle::after {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .topHeader {
     min-height: auto;

@@ -1,0 +1,21 @@
+.sidebars {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0.78288px 6.26303px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.78288px 6.26303px rgba(0, 0, 0, 0.25);
+  border-radius: 7.82878px;
+}
+
+.profile-info {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0.78288px 6.26303px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.78288px 6.26303px rgba(0, 0, 0, 0.25);
+  border-radius: 7.82878px;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+}
+
+.profile-info .profile-title {
+  color: #00953E !important;
+  font-weight: bold;
+}
+/*# sourceMappingURL=profile-info.component.css.map */
