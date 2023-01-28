@@ -31,15 +31,16 @@
                     <h1 class="mb-4 pt-4 mb-md-5 profile-title">Profile Information</h1>
                     <div class="row mb-4">
                         <div class="col-md-2"><strong>Name : </strong></div>
-                        <div class="col-md-10">Amit</div>
+                        <div class="col-md-10">{{profileData.firstName + ' ' + profileData.lastName
+                        }}</div>
                     </div>
                     <div class="row mb-4">
                         <div class="col-md-2"><strong>Mobile No : </strong></div>
-                        <div class="col-md-10">+91 <span>9893273970</span></div>
+                        <div class="col-md-10">+91 <span>{{profileData.mobileNo}}</span></div>
                     </div>
                     <div class="row mb-4 pb-5">
                         <div class="col-md-2"><strong>Email : </strong></div>
-                        <div class="col-md-10">vamit7631@gmail.com</div>
+                        <div class="col-md-10">{{profileData.emailId}}</div>
                     </div>
                 </div>
             </div>
