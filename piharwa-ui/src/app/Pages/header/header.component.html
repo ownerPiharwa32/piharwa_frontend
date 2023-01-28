@@ -77,7 +77,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li *ngFor="let list of categoryDataList">
-                                    <a class="dropdown-item" [routerLink]="['productlist', list._id]">
+                                    <a class="dropdown-item" [href]="['productlist/'+ list._id]">
                                         {{list.categoryTitle}}
                                     </a>
                                 </li>
