@@ -17,6 +17,7 @@ import { AddAdressContactComponent } from './Pages/add-adress-contact/add-adress
 import { WrongRouteComponent } from './Pages/wrong-route/wrong-route.component';
 import { PaymentsComponent } from './Pages/payments/payments.component';
 import { OrderListComponent } from './Pages/order-list/order-list.component';
+import { ProfileInfoComponent } from './Pages/profile-info/profile-info.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'blogs/:id', component: BlogDetailsComponent },
   { path: 'payment', component: PaymentsComponent },
   { path: 'order-list', component: OrderListComponent },
+  { path: 'account-information', component: ProfileInfoComponent}
 ];
 
 @NgModule({
