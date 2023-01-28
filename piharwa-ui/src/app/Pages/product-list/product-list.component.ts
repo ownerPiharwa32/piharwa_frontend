@@ -19,6 +19,7 @@ export class ProductListComponent implements OnInit {
   pageSize = 10;
   totalPages = 0;
   activePage = 1;
+  productSort = 0;
 
   constructor(
     public productService: ProductService,
@@ -53,7 +54,8 @@ export class ProductListComponent implements OnInit {
       "no_record": this.pageSize,
       "productCategoryID": this.categoryId ? this.categoryId : '',
       "searchText": this.searchText ? this.searchText : '',
-      "rootCatId": this.listId
+      "rootCatId": this.listId,
+      "productSort": this.productSort
     }).subscribe((data: any) => {
       if (data.status === true) {
         this.productList = data.data.productList;
@@ -65,6 +67,12 @@ export class ProductListComponent implements OnInit {
   gotoDetailProduct(id: any): void {
     this.router.navigate(['/product-details', id]);
   }
+
+  sortProducts(event: any) {
+    this.productSort = event.target.value
+    this.getProductList();
+  }
+
 
   applyFilter() {
     this.getProductList();

@@ -71,10 +71,10 @@
                         <span *ngIf="title"> / {{title}}</span>
                         </div>
                         <div class="selectDefaults">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Featured</option>
-                                <option value="1">Price: High to Low</option>
-                                <option value="2">Price: Low to High</option>
+                            <select class="form-select" aria-label="Default select example"  (change)="sortProducts($event)" >
+                                <option selected value="0">Featured</option>
+                                <option value="-1">Price: High to Low</option>
+                                <option value="1">Price: Low to High</option>
                                 <!-- <option value="3">Three</option> -->
                             </select>
                         </div>
