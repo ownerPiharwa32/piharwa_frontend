@@ -38,6 +38,7 @@ ul.list-unstyled li ul li > a {
 
 ul.list-unstyled li {
   font-size: 17px;
+  cursor: pointer;
 }
 
 .right-sidebar {
