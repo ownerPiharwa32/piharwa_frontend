@@ -1,0 +1,19 @@
+.msg-div {
+  font-weight: normal;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.action-div {
+  margin-bottom: 8px;
+  display: flex;
+  height: 100px;
+  width: 400px;
+  justify-content: space-around;
+  align-items: center;
+
+  button {
+    width: 40%;
+    margin-bottom: 5px;
+  }
+}

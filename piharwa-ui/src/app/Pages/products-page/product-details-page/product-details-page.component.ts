@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProductService } from '../../product-list/product.service';
 import { CartService } from './cart-service/cart.service';
+import { MatDialog } from '@angular/material/dialog';
+import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.component';
+import { messageDialog } from 'src/app/shared/dialog-box/message/message.component';
+import { CommonService } from '../../common.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -10,27 +14,33 @@ import { CartService } from './cart-service/cart.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-  imageObject=[{}];
-  
-  id!:any;
+  imageObject = [{}];
+
+  id!: any;
   productData: any;
   items: any;
-  constructor(private route: ActivatedRoute,public productService :ProductService,private cartService: CartService,public myRoute :Router) {}
+  cartData: any;
+
+  constructor(private route: ActivatedRoute, public productService: ProductService, private cartService: CartService, public myRoute: Router,
+    private commonService: CommonService,
+    private dialog: MatDialog
+  ) { }
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id')
+    let id = this.route.snapshot.paramMap.get('id');
+    this.cartData = this.cartService.getItemData();
     this.getProductDetials(id);
     // this.items = this.cartService.getItems();
   }
-  
-  getProductDetials(id:any) {
+
+  getProductDetials(id: any) {
     this.productService.productDetialsApi(id).subscribe((data) => this.getProductdetialsApi(data));
   }
-  getProductdetialsApi(data:any){
-    if(data.status === true){
+  getProductdetialsApi(data: any) {
+    if (data.status === true) {
       this.productData = data.data
-      console.log( this.productData)
+      console.log(this.productData)
       this.productData.thumbnailImgs.forEach((element: any) => {
-        let obj ={
+        let obj = {
           image: element,
           thumbImage: element,
           title: ''
@@ -43,14 +53,19 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   increment() {
-    this.quantity += 1;
+    if (this.quantity === 4) {
+      this.commonService.openSnackBar("You can add maximum 4 quantity", 'Dismiss');
+    }
+    else {
+      this.quantity += 1;
+    }
   }
 
   decrement() {
-    if(this.quantity === 0){
-          this.quantity=0
-    }else {
-        this.quantity -= 1;
+    if (this.quantity === 0) {
+      this.quantity = 0
+    } else {
+      this.quantity -= 1;
     }
   }
 
@@ -58,23 +73,62 @@ export class ProductDetailsPageComponent implements OnInit {
     this.quantity = 0;
   }
 
-  addtoCart(productData:any){
-  let totalvalue= this.productData.price*this.quantity
-  // console.log(totalvalue)
-   let productdata ={
-    _id :productData._id,
-    SellerStoreID: productData.SellerStoreID,
-    productCategoryID: productData.productCategoryID,
-    rootCategoryId: productData.rootCategoryId,
-    productTitle:productData.productTitle,
-    price:productData.price,
-    quantity:this.quantity,
-    total:totalvalue,
-    pimage:productData.productImg
-   }
-   this.cartService.addProductToCart(productdata);
-   this.myRoute.navigate(["/product-cart"]);
+  addtoCart(productData: any): any {
+
+    console.log("productData ", productData);
+
+
+    if(this.cartData.length >= 3 ){
+      this.commonService.openSnackBar("You can add maximum 3 product in a cart", 'Dismiss');
+      return;
+    }
+
+    if (!productData.productDetails[0].stockAvailability) {
+      this.dialog.open(messageDialog, {
+        data: {
+          message: "Stock is not available. Please try after some time."
+        }
+      });
+      return false;
+    }
+
+    if (localStorage.getItem('LoggedInUser')) {
+      this.cartService.addToCartOnBackend({
+        "productDetails": [
+          {
+            "productId": productData._id,
+            "quantity": this.quantity,
+            "sizes": productData.productDetails[0].sizes
+          }
+        ]
+      }).subscribe((response: any) => {
+
+        if (response.status) {
+          let totalvalue = this.productData.price * this.quantity
+          let productdata = {
+            _id: productData._id,
+            // productCategoryID: productData.productCategoryID,
+            productTitle: productData.productTitle,
+            price: productData.price,
+            quantity: this.quantity,
+            total: totalvalue,
+            pimage: productData.productImg,
+            sizes: productData.productDetails[0].sizes
+          }
+          this.cartService.addProductToCart(productdata);
+          this.myRoute.navigate(["/product-cart"]);
+        }
+        else {
+          this.dialog.open(messageDialog, {
+            data: {
+              message: response.message
+            }
+          });
+        }
+      });
+    }
   }
+
   // deleteItem(item:any){
   //   this.cartService.deleteItem(item);
   //   let domItem  = document.getElementById(`cart-item`+item.product.id);
@@ -84,7 +138,7 @@ export class ProductDetailsPageComponent implements OnInit {
   //   },1000);
 
   // }
-  addQty(item:any){
+  addQty(item: any) {
   }
 
 }

@@ -22,6 +22,10 @@ export const ApiConstants ={
       deleteAddress:'api/v1/buyer/delete/address/details',
       profileApi:'api/v1/buyers/details',
       createOrderId:'api/v1/checkout/order/create',
-      verifyPaymentApi:'api/v1/checkout/payment/verify'
+      verifyPaymentApi:'api/v1/checkout/payment/verify',
+      addToCart: 'api/v1/cart/add/details',
+      getCartList: 'api/v1/cart/list',
+      updateCart: 'api/v1/cart/update/details',
+      deleteFromCart: 'api/v1/cart/delete/details/',
       // /api/v1/buyer/delete/address/details/{addressId}
 }
