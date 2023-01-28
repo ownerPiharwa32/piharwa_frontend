@@ -18,4 +18,22 @@
   color: #00953E !important;
   font-weight: bold;
 }
+
+ul.list-unstyled li ul li {
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+ul.list-unstyled li ul li > a.active {
+  color: #00953E !important;
+}
+
+ul.list-unstyled li ul li > a {
+  text-decoration: none;
+}
+
+ul.list-unstyled li {
+  font-size: 17px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=profile-info.component.css.map */
