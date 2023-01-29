@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CategoryService } from '../category/category.service';
+import { CommonService } from '../common.service';
 import { ProductService } from './product.service';
 
 @Component({
@@ -20,11 +21,13 @@ export class ProductListComponent implements OnInit {
   totalPages = 0;
   activePage = 1;
   productSort = 0;
+  previousUrl: any;
+  routeLengthCheck: any;
 
   constructor(
     public productService: ProductService,
     public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,public commonService:CommonService
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +39,17 @@ export class ProductListComponent implements OnInit {
       // console.log('The id of this route is: ', this.listId);
       this.getProductList();
     });
+    this.commonService.previousUrl$.subscribe((previousUrl: string) => {
+      console.log('previous url: ', previousUrl);
+      this.previousUrl = previousUrl;
+    });
+     let lengthRoute= this.previousUrl .split('/');
+     let routeArr=[];
+     routeArr.push(lengthRoute);
+     this.routeLengthCheck =routeArr[0].length
+     console.log(routeArr)
+
+     console.log(this.routeLengthCheck)
   }
 
   onSelectedCategory(category: any) {
