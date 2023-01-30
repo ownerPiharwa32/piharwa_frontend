@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   id: any;
   categoryId: string | undefined;
   title: string | undefined;
-  pageSize = 10;
+  pageSize = 12;
   totalPages = 0;
   activePage = 1;
   productSort = 0;

@@ -110,7 +110,7 @@
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
                                     <li *ngFor="let elementCat of filterArr"> 
                                         <div class="row">
-                                        <div class="col-md-6" *ngFor="let value of elementCat">
+                                        <div class="col-md-4" *ngFor="let value of elementCat">
                                         <a class="dropdown-item" 
                                         [routerLink]="['productlist', value.rootCategory, value._id]">
                                             {{value.name}}
