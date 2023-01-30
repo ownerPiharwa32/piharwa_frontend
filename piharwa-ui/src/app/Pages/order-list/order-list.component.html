@@ -10,9 +10,9 @@
               </button>
               <div class="collapse show" id="home-collapse" style="">  
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li routerLink="/account-information">Account Information</li>
-                  <li routerLink="/order-list">Orders</li>
-                </ul>
+                  <li class="settingListing" routerLink="/account-information"><i class="fa fa-info-circle settingIcons"></i> <span>Account Information</span></li>
+    <li class="orderListing" routerLink="/order-list"><i class="fa fa-list settingIcons" ></i> <span>Orders</span></li>
+              </ul>
               </div>
             </li>
             <li class="border-top my-3"></li>
@@ -28,7 +28,7 @@
       <div class="col-md-9">
         <div class="order-lists">  
           <div class="container">  
-            <h1 class="mb-4 mb-md-5 order-titles">Orders</h1>   
+            <h1 class="mb-4 mb-md-5 order-titles">Order Information</h1>   
             <div *ngIf="orderDetails">
             <div class="card mb-3 order-card" *ngFor="let orderItems of orderDetails">  
               <div class="card-header px-4">

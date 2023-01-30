@@ -162,10 +162,23 @@ h1.order-titles {
   font-weight: 600;
   font-size: 25px;
   line-height: 30px; 
-  color: #333333;  
+  color: #00953E;  
 }
 @media (max-width: 767px) {
   .btn-order, .btn-return {
     margin-right: auto;
   }
+}
+
+.settingIcons{
+  margin-right: 10px;
+  color: #00953E;
+}
+.settingListing{
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+      padding-top: 15px;
+}
+.orderListing{
+  padding-top: 15px;
 }

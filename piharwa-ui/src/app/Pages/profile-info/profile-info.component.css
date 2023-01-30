@@ -36,4 +36,19 @@ ul.list-unstyled li {
   font-size: 17px;
   cursor: pointer;
 }
+
+.settingIcons {
+  margin-right: 10px;
+  color: #00953E;
+}
+
+.settingListing {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.orderListing {
+  padding-top: 15px;
+}
 /*# sourceMappingURL=profile-info.component.css.map */
