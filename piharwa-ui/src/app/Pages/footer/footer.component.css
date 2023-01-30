@@ -43,4 +43,16 @@
 .mr2 {
   margin-right: 15px;
 }
+
+@media screen and (max-width: 768px) {
+  .copyright {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .footer-feeds {
+    text-align: center !important;
+    font-size: 10px;
+  }
+}
 /*# sourceMappingURL=footer.component.css.map */
