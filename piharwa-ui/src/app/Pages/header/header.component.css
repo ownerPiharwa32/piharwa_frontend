@@ -183,4 +183,19 @@
   background-color: 0;
   width: 500px !important;
 }
+
+ul.profileMenuitems {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+ul.profileMenuitems li a {
+  border-bottom: 1px solid #eee !important;
+  padding: 10px 10px;
+}
+
+.profileicons {
+  margin-right: 10px;
+  color: #00953E;
+}
 /*# sourceMappingURL=header.component.css.map */
