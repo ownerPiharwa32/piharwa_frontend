@@ -194,7 +194,8 @@ export class LoginPageComponent implements OnInit {
       this.loginData = data;
       this.openSnackBar(data.message, 'Dismiss');
       this.loginForm.reset();
-      this.authService.sendToken( this.loginData.accessToken);
+      this.authService.sendToken(this.loginData.accessToken);
+      window.location.reload();
       this.close();
       let cartData = this.cartService.getItemData();
       if (cartData.length > 0 ){
