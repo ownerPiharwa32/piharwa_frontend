@@ -25,7 +25,7 @@
               </div> 
               <div class="col-md-12">
                 <button  (click)="onLogin()" mat-raised-button color="primary" class="d-block w-100 mt-4">Login</button>
-                <div class="mt-4 col1 text-center fs16 fw400 mb-4">Forgot your password ? Reset now</div>
+                <div (click)="onForgetPassword()" class="mt-4 col1 text-center fs16 fw400 mb-4">Forgot your password ? Reset now</div>
               </div>
               <div class="col-md-12"> 
                 <button (click)="checkPage('otp')" mat-stroked-button class="d-block w-100 mb-4">REQUEST OTP</button>
