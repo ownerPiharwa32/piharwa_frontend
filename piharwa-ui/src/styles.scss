@@ -920,7 +920,7 @@ form {
             display: flex;
             justify-content: center; 
             align-items: center; 
-            min-height: 570px;   
+            // min-height: 570px;   
             @media (max-width: 767px) {
                 flex: 100%;
                 min-height: auto;

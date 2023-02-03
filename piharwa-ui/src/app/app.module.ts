@@ -47,6 +47,7 @@ import { OrderListComponent } from './Pages/order-list/order-list.component';
 import { LoaderComponent } from './Pages/common-page/loader/loader.component';
 import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
 import { ProfileInfoComponent } from './Pages/profile-info/profile-info.component';
+import { ForgetPasswordComponent } from './Pages/forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,7 @@ import { ProfileInfoComponent } from './Pages/profile-info/profile-info.componen
     BlogListComponent,
     OrderListComponent,
     LoaderComponent,
-    ProfileInfoComponent,MyPipe
+    ProfileInfoComponent,MyPipe, ForgetPasswordComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

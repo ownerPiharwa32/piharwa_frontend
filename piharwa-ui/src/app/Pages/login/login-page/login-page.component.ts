@@ -1,12 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { CommonService } from '../../common.service';
 import { LoginService } from '../login.service';
 import { CartService } from '../../products-page/product-details-page/cart-service/cart.service';
+import { ForgetPasswordComponent } from '../../forget-password/forget-password.component';
 
 @Component({
   selector: 'app-login-page',
@@ -26,7 +27,7 @@ export class LoginPageComponent implements OnInit {
 
 
   constructor( 
-    private formBuilder: FormBuilder, private snackBar: MatSnackBar,
+    private formBuilder: FormBuilder, private snackBar: MatSnackBar,public dialog: MatDialog,
     private myRoute: Router,
     private dataService: LoginService,
     public cartService: CartService,
@@ -207,6 +208,23 @@ export class LoginPageComponent implements OnInit {
     if (data.status === false) {
       this.openSnackBar(data.message, 'Dismiss');
     }
+  }
+
+  onForgetPassword(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(ForgetPasswordComponent, {
+      data: {
+        message: "Are you sure you want to logout?",
+        buttonText: {
+          ok: 'Yes',
+          cancel: 'No'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+    
+    });//end of dialog
   }
 
   addProductsToCart(cartData: any){
