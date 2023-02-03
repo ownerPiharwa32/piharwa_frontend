@@ -76,7 +76,7 @@ export class HeaderComponent implements OnInit {
   getAllCategoryDataList(data: any) {
     if (data.status === true) {
       this.allCategoryList = data.data;
-      this.filterArr= this.sliceIntoChunks(this.allCategoryList.elementCategories,4)
+      this.filterArr= this.sliceIntoChunks(this.allCategoryList.elementCategories,3)
     }
   }
 

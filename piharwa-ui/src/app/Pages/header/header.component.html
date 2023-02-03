@@ -38,12 +38,13 @@
                                 {{ profileLData.firstName }}
                             </span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                        <ul class="dropdown-menu profileMenuitems" aria-labelledby="profileDropdown">
                             <li>
-                                <a class="dropdown-item" routerLink="/account-information">My Profile</a>
+                                <a class="dropdown-item" routerLink="/account-information"> <i class='fas fa-user-circle profileicons'></i> <span>My Profile</span></a>
                             </li>
                             <li>
-                                <a class="dropdown-item" (click)="logout()">Logout</a>
+                                <a class="dropdown-item" (click)="logout()">
+                                    <i class='fas fa-sign-out-alt profileicons'></i> <span>Logout</span></a>
                             </li>
                         </ul>
                     </a>
@@ -110,7 +111,7 @@
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
                                     <li *ngFor="let elementCat of filterArr"> 
                                         <div class="row">
-                                        <div class="col-md-6" *ngFor="let value of elementCat">
+                                        <div class="col-md-4" *ngFor="let value of elementCat">
                                         <a class="dropdown-item" 
                                         [routerLink]="['productlist', value.rootCategory, value._id]">
                                             {{value.name}}
