@@ -86,7 +86,7 @@
                     <section class="featuresProducts inner">
                         <div class="row mx80">
                             <div class="col-12 col-md-3 mb-4" *ngFor="let product of productList">
-                                <div (click)="gotoDetailProduct(product._id)" class="card h-100">
+                                <div (click)="gotoDetailProduct(product._id)" class="card h-100" style="cursor: pointer;">
                                     <a class="d-block position-relative">
                                         <div class="imgSet">
                                             <img src="{{product.productImg}}" class="card-img-top" alt="Icon"
