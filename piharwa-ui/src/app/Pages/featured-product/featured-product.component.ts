@@ -14,8 +14,12 @@ export class FeaturedProductComponent  {
     
     ngOnInit(): void {
         this.getProductList();
+  }
+  
+    gotoDetailProduct(id: any): void {
+      this.router.navigate(['/product-details', id]);
     }
-
+  
     getProductList() {
         this.featuredproductService.featuredproductListApi().subscribe((data) => this.getProductListApi(data));
     }
@@ -23,7 +27,6 @@ export class FeaturedProductComponent  {
     getProductListApi(data:any){
         if (data.status === true) {
           this.featuredProduct = data.data
-          console.log(this.featuredProduct);
         }
     
       }

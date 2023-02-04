@@ -15,7 +15,7 @@
         <div class="row mx80">
             <div class="col-12 col-sm-6 col-md-4 mb-4" *ngFor="let fproduct of featuredProduct">
                 <div class="card h-100">
-                    <a href="shop-single.html" class="d-block position-relative">
+                    <a (click)="gotoDetailProduct(fproduct.id)" class="d-block position-relative">
                         <div class="imgSet">
                             <img src="{{fproduct.productImg}}" class="card-img-top" alt="Icon" class="img-fluid" />
                         </div>
