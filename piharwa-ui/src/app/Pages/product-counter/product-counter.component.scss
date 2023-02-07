@@ -38,3 +38,16 @@
 .lineH15 {
     line-height: 15px; 
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .counter_wapper{
+        border-radius: 0px;
+        .fs40{
+            font-size: 14px !important;
+        }
+        .fs13{
+            font-size: 11px !important;
+        }
+    }
+
+  }

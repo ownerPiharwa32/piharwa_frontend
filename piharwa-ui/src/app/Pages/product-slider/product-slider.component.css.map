@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAeI,gBAfY,CAeZ,QAAQ,AAAA,YAAY,CAAC;EACjB,WAAW,EAAE,cAAc;EAC3B,YAAY,EAAE,cAAc;CAC/B",
+    "mappings": "AAAA,AAgBI,gBAhBY,CAgBZ,QAAQ,AAAA,YAAY,CAAC;EACjB,WAAW,EAAE,cAAc;EAC3B,YAAY,EAAE,cAAc;CAC/B;;AAGL,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,KAAK;EAC3D,AAAA,gBAAgB,CAAC;IACb,OAAO,EAAE,IAAI;GAChB",
     "sources": [
         "product-slider.component.scss"
     ],
