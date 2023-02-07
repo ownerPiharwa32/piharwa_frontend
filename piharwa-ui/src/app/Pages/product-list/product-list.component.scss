@@ -274,6 +274,15 @@ div {
 	}
 }
 
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.site-search{
+		display: none;
+	}
+    .productSidebar{
+		display: none;
+	}
+}
+
 @media (max-width: 767.98px) { 
   .site-search {
     width: 100%;
