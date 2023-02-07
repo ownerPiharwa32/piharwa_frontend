@@ -65,12 +65,12 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div class="fs14 fw500 col4">
-                            Home / Product List 
+                    <div class="row mb-4">
+                        <div class="fs14 fw500 col-md-9 col-12">
+                            Home / Products 
                         <span *ngIf="title"> / {{title}}</span>
                         </div>
-                        <div class="selectDefaults">
+                        <div class="selectDefaults col-md-3 col-12">
                             <select class="form-select" aria-label="Default select example"  (change)="sortProducts($event)" >
                                 <option selected value="0">Featured</option>
                                 <option value="-1">Price: High to Low</option>
@@ -85,7 +85,7 @@
                     <!-- Start Featured Product -->
                     <section class="featuresProducts inner">
                         <div class="row mx80">
-                            <div class="col-12 col-md-3 mb-4" *ngFor="let product of productList">
+                            <div class="col-6 col-md-3 mb-4" *ngFor="let product of productList">
                                 <div (click)="gotoDetailProduct(product._id)" class="card h-100" style="cursor: pointer;">
                                     <a class="d-block position-relative">
                                         <div class="imgSet">
