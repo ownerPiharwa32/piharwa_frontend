@@ -13,18 +13,18 @@
             </div>
         </div>
         <div class="row mx80">
-            <div class="col-12 col-sm-6 col-md-4 mb-4" *ngFor="let fproduct of featuredProduct">
+            <div class="col-6 col-sm-6 col-md-4 mb-4" *ngFor="let fproduct of featuredProduct">
                 <div class="card h-100">
                     <a (click)="gotoDetailProduct(fproduct.id)" class="d-block position-relative">
                         <div class="imgSet">
                             <img src="{{fproduct.productImg}}" class="card-img-top" alt="Icon" class="img-fluid" />
                         </div>
-                        <div class="heartIcon">
+                        <!-- <div class="heartIcon">
                             <span class="circleStyles"><img src="../../../assets/img/hearts.png" class="img-fluid"
                                     alt="Icon" /></span>
                             <span class="circleStyles"><img src="../../../assets/img/carts.png" class="img-fluid"
                                     alt="Icon" /></span>
-                        </div>
+                        </div> -->
                     </a>
                     <div class="card-body ps-0 pr-0">
                         <p class="fs19 fw500 col5 fontStyle1 mt-3 mb-1">{{fproduct.productTitle}} (Set of 3)</p>
