@@ -82,18 +82,18 @@ ul.list-unstyled li {
 }
 
 .order-txt1 h4 {
-  font-family: 'Montserrat';
+  font-family: sans-serif;
   font-style: normal;
-  font-weight: 600;
   font-size: 15px;
   color: #00953E;
+  margin-bottom: 5px;
 }
 
 .order-txt1 p {
   color: #333333;
-  font-family: 'Montserrat';
+  font-family: sans-serif;
   font-style: normal;
-  font-weight: 600;
+  letter-spacing: 1px;
   font-size: 15px;
 }
 
@@ -129,7 +129,7 @@ ul.list-unstyled li {
 }
 
 h3.h3-titles {
-  font-family: 'Montserrat';
+  font-family: sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20.7801px;
@@ -191,12 +191,12 @@ h3.h3-titles {
 }
 
 h1.order-titles {
-  font-family: 'Montserrat';
+  font-family: sans-serif;
   font-style: normal;
-  font-weight: 600;
   font-size: 25px;
   line-height: 30px;
   color: #00953E;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 767px) {
@@ -218,5 +218,36 @@ h1.order-titles {
 
 .orderListing {
   padding-top: 15px;
+}
+
+.razorpayId {
+  margin-bottom: 5px;
+}
+
+.paymentstatus {
+  background-color: #00953E;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 26px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .order-container {
+    padding: 0px;
+  }
+  .order-total {
+    text-align: right;
+  }
+  .razorpayDetails {
+    margin-top: 20px;
+  }
+  .order-item-title {
+    font-size: 12px !important;
+    line-height: 20px;
+  }
+  .btn-order {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=order-list.component.css.map */
