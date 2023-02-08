@@ -27,30 +27,30 @@
       </div>
       <div class="col-md-9">
         <div class="order-lists">  
-          <div class="container">  
+          <div class="container order-container">  
             <h1 class="mb-4 mb-md-5 order-titles">Order Information</h1>   
             <div *ngIf="orderDetails">
             <div class="card mb-3 order-card" *ngFor="let orderItems of orderDetails">  
-              <div class="card-header px-4">
+              <div class="card-header px-2">
                   <div class="row align-items-end">
-                    <div class="col-md-6">
-                      <div class="d-flex">
-                        <div class="order-txt1">
+                    <div class="col-md-8 col-12">
+                      <div class="row">
+                        <div class="col-md-6 col-6 order-txt1">
                             <h4>Order Placed</h4>
-                            <p class="mb-0">{{ orderItems.createdAt }}</p>
+                            <p class="mb-0">{{ orderItems.createdAt | date:'medium' }}</p>
                         </div>
-                        <div class="order-txt1 ms-5">
+                        <div class="col-md-6 col-6 order-txt1 order-total">
                             <h4>Order Total</h4>
                             <p class="mb-0">₹ {{ orderItems.amount }}</p>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4 razorpayDetails">
                       <div class="d-flex align-items-center justify-content-md-end order-txt2 mt-auto">  
                           <h5 class="mb-0">Order Details</h5>
                           <span class="mx-3">|</span>
                           <div class="select-one"> 
-                                {{orderItems._id}}<br>{{orderItems.paymentStatus}}
+                                <div class="razorpayId">{{orderItems._id}}</div><span class="paymentstatus">{{orderItems.paymentStatus}}</span>
                           </div>
                       </div>
                     </div>  
@@ -60,13 +60,13 @@
                 <div class="row">
                   <div class="col-md-9">
                     <div class="row">
-                      <div class="col-sm-3">
+                      <div class="col-sm-3 col-4">
                         <div class="img-box1">
                           <img src="{{ subItems.productImg }}" class="img-fluid" alt="Product" />  
                         </div>
                       </div>
-                      <div class="col-sm-9">
-                        <h3 class="h3-titles text-center text-sm-left mt-3 mt-sm-0 mb-3 mb-sm-0">{{ subItems.productTitle }}</h3>
+                      <div class="col-sm-9 col-8">
+                        <h3 class="h3-titles text-center text-sm-left mt-3 mt-sm-0 mb-3 mb-sm-0 order-item-title">{{ subItems.productTitle }}</h3>
                       </div>
                     </div>
                   </div>

@@ -66,11 +66,11 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row mb-4">
-                        <div class="fs14 fw500 col-md-9 col-12">
+                        <div class="bredgedCrumbs1 fs14 fw500 col-md-9 col-12">
                             Home / Products 
                         <span *ngIf="title"> / {{title}}</span>
                         </div>
-                        <div class="selectDefaults col-md-3 col-12">
+                        <div class="selectDefaults col-md-3 col-12 productfilters">
                             <select class="form-select" aria-label="Default select example"  (change)="sortProducts($event)" >
                                 <option selected value="0">Featured</option>
                                 <option value="-1">Price: High to Low</option>
