@@ -242,12 +242,19 @@ h1.order-titles {
   .razorpayDetails {
     margin-top: 20px;
   }
+  .razorpayDetails .select-one {
+    text-align: right;
+  }
   .order-item-title {
     font-size: 12px !important;
     line-height: 20px;
   }
   .btn-order {
     width: 100%;
+  }
+  .order-titles {
+    text-align: center;
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=order-list.component.css.map */
