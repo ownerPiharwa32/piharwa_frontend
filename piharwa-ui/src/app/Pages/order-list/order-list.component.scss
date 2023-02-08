@@ -202,6 +202,9 @@ h1.order-titles {
   }
   .razorpayDetails{
     margin-top: 20px;
+    .select-one{
+      text-align: right;
+    }
   }
 
   .order-item-title{
@@ -210,5 +213,9 @@ h1.order-titles {
   }
   .btn-order{
     width: 100%;
+  }
+  .order-titles{
+    text-align: center;
+    margin-top: 40px;
   }
 }
