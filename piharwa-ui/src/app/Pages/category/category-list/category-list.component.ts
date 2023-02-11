@@ -4,7 +4,9 @@ import {
   OnInit,
   Output,
   EventEmitter,
-  ViewChild
+  ViewChild,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 import { CategoryService } from '../category.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
@@ -48,7 +50,7 @@ const TREE_DATA: FoodNode[] = [
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.scss']
 })
-export class CategoryListComponent implements OnInit {
+export class CategoryListComponent implements OnInit,OnChanges {
 
 
   @Input() productlistId: any;
@@ -63,6 +65,7 @@ export class CategoryListComponent implements OnInit {
   ) { 
     this.route.params.subscribe((params: any) => {
       this.categoryId = params['categoryId'];
+      console.log(this.categoryId)
       this.setActiveNode();
     });
   }
@@ -73,11 +76,14 @@ export class CategoryListComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.getCategoryList(this.productlistId);
+    this.getCategoryList(this.productlistId,this.categoryId?this.categoryId :null);
   }
-
-  getCategoryList(productlistId: any) {
-    this.categoryService.categoryListApi(productlistId)
+  ngOnChanges(changes: SimpleChanges): void{
+    console.log(changes)
+    this.getCategoryList(this.productlistId,this.categoryId?this.categoryId :null);
+  }
+  getCategoryList(productlistId: any,categoryId:any) {
+    this.categoryService.categoryListApi(productlistId,categoryId)
       .subscribe((data: any) => {
         if (data.status === true) {
           this.categoryList = data.data;
