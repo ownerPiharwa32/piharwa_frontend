@@ -17,7 +17,7 @@
 .featuresProducts .card .imgSet {
   position: relative;
   display: block;
-  max-height: 350px;
+  max-height: 380px;
   border-radius: 10px;
   overflow: hidden;
 }
