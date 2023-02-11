@@ -23,7 +23,7 @@ export class ProfileInfoComponent implements OnInit {
   getProfileDetailsApi(data:any){
     if (data.status === true) {
       this.profileData = data.data
-      console.log(this.profileData,"=====================profileData");
+      //console.log(this.profileData,"=====================profileData");
     }
 
   }

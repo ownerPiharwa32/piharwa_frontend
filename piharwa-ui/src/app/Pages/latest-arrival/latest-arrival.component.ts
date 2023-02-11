@@ -22,7 +22,7 @@ export class LatestArrivalComponent {
 getLatestProductsList(data:any){
   if (data.status === true) {
     this.latestArrivalProduct = data.data
-    console.log(this.latestArrivalProduct)
+    //console.log(this.latestArrivalProduct)
   }
 }
 

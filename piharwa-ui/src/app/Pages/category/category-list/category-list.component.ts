@@ -13,38 +13,7 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { ActivatedRoute } from '@angular/router';
 
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
 
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [
-      { name: 'Apple' },
-      { name: 'Banana' },
-      { name: 'Fruit loops' },
-    ]
-  }, {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          { name: 'Broccoli' },
-          { name: 'Brussel sprouts' },
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          { name: 'Pumpkins' },
-          { name: 'Carrots' },
-        ]
-      },
-    ]
-  },
-];
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
@@ -63,12 +32,8 @@ export class CategoryListComponent implements OnInit,OnChanges {
     private route: ActivatedRoute,
     private categoryService: CategoryService
   ) { 
-    this.route.params.subscribe((params: any) => {
-      this.categoryId = params['categoryId'];
-      console.log(this.categoryId)
-      this.setActiveNode();
-    });
   }
+  categoryListArr: any = [];
 
   categoryList: any = [];
   options = {
@@ -76,27 +41,48 @@ export class CategoryListComponent implements OnInit,OnChanges {
   };
 
   ngOnInit() {
-    this.getCategoryList(this.productlistId,this.categoryId?this.categoryId :null);
+    // this.getCategoryList(this.productlistId);
   }
   ngOnChanges(changes: SimpleChanges): void{
-    console.log(changes)
-    this.getCategoryList(this.productlistId,this.categoryId?this.categoryId :null);
+    this.route.params.subscribe((params: any) => {
+      this.categoryId = params['categoryId'];
+      //console.log(this.categoryId)
+      this.setActiveNode();
+    });
+     this.getCategoryList(this.productlistId);
   }
-  getCategoryList(productlistId: any,categoryId:any) {
-    this.categoryService.categoryListApi(productlistId,categoryId)
+  getCategoryList(productlistId:any) {
+    this.categoryService.categoryListApi(productlistId)
       .subscribe((data: any) => {
         if (data.status === true) {
           this.categoryList = data.data;
+          let cate =data.data
           this.setActiveNode();
+          if(this.categoryId  === undefined){
+            this.categoryListArr= this.categoryList;
+          }
+          else{
+            this.callNewCate(cate)
+          }
         }
       });
+  }
+  callNewCate(categoryList:any){
+    this.categoryListArr=[];
+    for (let index = 0; index <categoryList.length; index++) {
+      const element = this.categoryList[index];
+      if(element.id === this.categoryId ){
+        this.categoryListArr=element.children;
+      }
+    }
+    console.log( this.categoryListArr);
   }
 
   setActiveNode(){
     if (this.categoryId) {
       setTimeout(() => {
         const someNode = this.tree.treeModel.getNodeById(this.categoryId);
-        someNode.setActiveAndVisible();
+        // someNode.setActiveAndVisible();
       }, 100);
     }
   }
@@ -116,7 +102,6 @@ export class CategoryListComponent implements OnInit,OnChanges {
     const title = titleArr.reverse().join(' / ');
     const selectedCategory = event.node.data;
     selectedCategory.title = title;
-
     this.selectedCategory.emit(selectedCategory);
   }
 

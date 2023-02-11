@@ -23,7 +23,7 @@ export class BlogDetailsComponent implements OnInit {
   getBlogdetailsApi(data:any){
     if(data.status === true){
       this.blogDetails = data.data
-      console.log(this.blogDetails,"details Blog=====================");
+      //console.log(this.blogDetails,"details Blog=====================");
     }
   }
 

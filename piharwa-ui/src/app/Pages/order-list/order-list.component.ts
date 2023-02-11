@@ -26,7 +26,7 @@ export class OrderListComponent implements OnInit {
 
   getOrderListApi(data: any) {
     if (data.status === true) {
-      console.log(data.data,"order DAta")
+      //console.log(data.data,"order DAta")
       this.orderDetails = data.data;
     } 
   }

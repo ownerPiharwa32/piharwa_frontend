@@ -19,8 +19,8 @@ export class AppComponent {
       ).subscribe((event: NavigationEnd) => {
          this.previousUrl = this.currentUrl;
          this.currentUrl = event.url;
-         console.log(this.previousUrl)
-         console.log(this.currentUrl)
+        //  console.log(this.previousUrl)
+         //console.log(this.currentUrl)
 
          this.commonService.setPreviousUrl( this.currentUrl )
       });

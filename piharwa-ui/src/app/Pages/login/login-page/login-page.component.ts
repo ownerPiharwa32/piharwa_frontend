@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit {
     this.verifyOtpFlag = false;
         // Or subscribe to it here
         this.commonService.previousUrl$.subscribe((previousUrl: string) => {
-          console.log('previous url: ', previousUrl);
+          //console.log('previous url: ', previousUrl);
           this.previousUrl = previousUrl;
         });
   }
@@ -135,7 +135,7 @@ export class LoginPageComponent implements OnInit {
     let userData = {
       username: this.loginForm['controls']['username'].value,
     };
-    // console.log(userData,'aaa');
+    // //console.log(userData,'aaa');
       this.dataService.loginApi(userData).subscribe(
         (data) => this.otpDialog(data,userData),
         (err) => console.log(err)
@@ -143,7 +143,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   otpDialog(data:any,name:any){
-   console.log(data)
+   //console.log(data)
    this.verifyOtpFlag = true;
   }
   verifyOtp(){
@@ -182,7 +182,7 @@ export class LoginPageComponent implements OnInit {
   }
   onLogin() {
     let userData = this.loginForm.value;
-    // console.log(userData);
+    // //console.log(userData);
       this.dataService.loginApi(userData).subscribe(
         (data) => this.logindialog(data),
         (err) => console.log(err)
@@ -191,7 +191,7 @@ export class LoginPageComponent implements OnInit {
 
   logindialog(data: any) {
     if (data.status === true) {
-      console.log(data)
+      //console.log(data)
       this.loginData = data;
       this.openSnackBar(data.message, 'Dismiss');
       this.loginForm.reset();

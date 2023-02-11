@@ -29,8 +29,8 @@ export class PaymentsComponent implements OnInit {
     "image": "https://www.javachinna.com/wp-content/uploads/2020/02/android-chrome-512x512-1.png",
     "order_id": "",
     "handler": function (response: any) {
-      console.log("component handler response ", response);
-      console.log("razorpay_signature ", response.gateway);
+      //console.log("component handler response ", response);
+      //console.log("razorpay_signature ", response.gateway);
       var event = new CustomEvent("payment.success",
         {
           detail: response,
@@ -76,7 +76,7 @@ export class PaymentsComponent implements OnInit {
 
   subtotaldata() {
     this.subtotal = this.cartService.getsubtotalData();
-    console.log(this.subtotal)
+    //console.log(this.subtotal)
   }
   clearCart() {
     this.cartService.clearData();
@@ -88,15 +88,15 @@ export class PaymentsComponent implements OnInit {
   getDefaultAddressApi(data: any) {
     if (data.status === true) {
       this.address = data.data;
-      console.log("this.address ", this.address);
-      console.log(this.address,"==============================")
+      //console.log("this.address ", this.address);
+      //console.log(this.address,"==============================")
     }
 
   }
   continueToShipping() {
-    console.log("this.commonService.ProfileData 1 ", this.commonservice.ProfileData);
+    //console.log("this.commonService.ProfileData 1 ", this.commonservice.ProfileData);
     const token = this._authService.getToken();
-    console.log("token ", token);
+    //console.log("token ", token);
     if (token) {
       this.router.navigate(['/payment']);
     }
@@ -109,7 +109,7 @@ export class PaymentsComponent implements OnInit {
 
   createOrderId() {
 
-    console.log("this.address ", this.address);
+    //console.log("this.address ", this.address);
 
     let sendData = {
       "cartId": "63d2496e04a97e9a3432460a",
@@ -160,28 +160,28 @@ export class PaymentsComponent implements OnInit {
     this.options.prefill.email = "";
     this.options.prefill.contact = personalDetails.mobileNo;
     this.options.order_id = cartResposne.data.razorpayOrderId;
-    console.log("this.options ", this.options);
+    //console.log("this.options ", this.options);
     var rzp1 = new Razorpay(this.options);
     rzp1.open();
 
     rzp1.on('payment.failed', function (response: any) {
       // Todo - store this information in the server
-      console.log(response.error.code);
-      console.log(response.error.description);
-      console.log(response.error.source);
-      console.log(response.error.step);
-      console.log(response.error.reason);
-      console.log(response.error.metadata.order_id);
-      console.log(response.error.metadata.payment_id);
+      //console.log(response.error.code);
+      //console.log(response.error.description);
+      //console.log(response.error.source);
+      //console.log(response.error.step);
+      //console.log(response.error.reason);
+      //console.log(response.error.metadata.order_id);
+      //console.log(response.error.metadata.payment_id);
     }
     );
   }
 
   @HostListener('window:payment.success', ['$event'])
   onPaymentSuccess(event: any): void {
-    console.log("event.detail ", event.detail);
+    //console.log("event.detail ", event.detail);
     this.commonservice.verifyPaymentApi(event.detail).subscribe((response: any) => {
-      console.log("response ", response);
+      //console.log("response ", response);
       if(response.status) {
         localStorage.setItem('userCart', '[{}]');
         this.router.navigate(["/order-list"]);
