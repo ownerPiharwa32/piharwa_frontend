@@ -26,7 +26,9 @@ export class CommonService {
   profileApi() {
     return this.http.get(ApiConstants.apiURL + ApiConstants.profileApi);
   }
-
+  homePageCategoriesApi() {
+    return this.http.get(ApiConstants.apiURL + ApiConstants.homePagecategories);
+  }
   createOrderId(data: any) {
     return this.http.post(ApiConstants.apiURL + ApiConstants.createOrderId, data);
   }

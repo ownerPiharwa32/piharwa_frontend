@@ -1,5 +1,5 @@
 export const ApiConstants ={
-      apiURL : 'http://prod.piharwa.com/',
+      apiURL : 'https://prod.piharwa.com/',
       // apiURL : 'http://localhost:3001/',
       categorylist: 'api/v1/category/list',
       featuredProducts: 'api/v1/product/featured-product/list',
@@ -27,5 +27,6 @@ export const ApiConstants ={
       getCartList: 'api/v1/cart/list',
       updateCart: 'api/v1/cart/update/details',
       deleteFromCart: 'api/v1/cart/delete/details/',
+      homePagecategories:'api/v1/featured/categories/list'
       // /api/v1/buyer/delete/address/details/{addressId}
 }
