@@ -32,11 +32,9 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    // console.log(id)
     this.route.params.subscribe((params: any) => {
       this.listId = params['id'];
       this.categoryId = params['categoryId'];
-      // console.log('The id of this route is: ', this.listId);
       this.getProductList();
     });
     this.commonService.previousUrl$.subscribe((previousUrl: string) => {
@@ -57,11 +55,7 @@ export class ProductListComponent implements OnInit {
     this.categoryId = category._id;
     this.getProductList();
   }
-
-  abc = [1,2,3,4,5,6,7,8]
-
-  pageSearch() { }
-
+ 
   getProductList() {
     this.productService.productListApi({
       "page_no": this.activePage,

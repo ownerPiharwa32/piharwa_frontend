@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgImageSliderComponent } from 'ng-image-slider';
+import { CommonService } from '../common.service';
 
 @Component({
     selector: 'app-product-slider',
@@ -6,34 +9,42 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./product-slider.component.scss']
 })
 export class ProductSliderComponent implements OnInit {
-
-    constructor() { }
-
+    constructor(public _commonService :CommonService, public router: Router,) { }
+    imageObject=[];
     ngOnInit(): void {
+        this.getProductCategories();
     }
-    imageObject = [{
-        image: '../../../assets/img/gal5.png',
-        thumbImage: '../../../assets/img/gal5.png',
-        title: 'Bar Accessories'
-    }, {
-        image: '../../../assets/img/gal2.png',
-        thumbImage: '../../../assets/img/gal2.png',
-        title: 'Lehnga'
-    }, {
-        image: '../../../assets/img/gal1.png',
-        thumbImage: '../../../assets/img/gal1.png',
-        title: 'Saree'
-    }, {
-        image: '../../../assets/img/gal3.png',
-        thumbImage: '../../../assets/img/gal3.png',
-        title: 'Glasswares'
-    }, {
-        image: '../../../assets/img/gal4.png',
-        thumbImage: '../../../assets/img/gal4.png',  
-        title: 'Furnitures'
-    }, {
-        image: '../../../assets/img/gal2.png',
-        thumbImage: '../../../assets/img/gal2.png',
-        title: 'Lehnga'
-    }];
+    getProductCategories() {
+        this._commonService.homePageCategoriesApi().subscribe((data) => this.getProductdetialsApi(data));
+      }
+
+      getProductdetialsApi(data:any){
+        console.log(data)
+        let productData= data.data;
+       let newJson = productData.map((rec:any) => {
+            return {
+              'title': rec.name,
+              'image': rec.categoryImage ,
+              'thumbImage': rec.categoryImage,
+              'rootid': rec.rootCategory,
+              'id': rec._id,
+               }
+            })
+            console.log(newJson)
+            this.imageObject=newJson;
+      }
+
+
+    imgClick(event:any){
+        console.log(event)
+        this.imageObject.forEach((arrayItem, index, fullArray)=> {
+            if(index === event){
+                console.log(arrayItem['id'])
+                let rootId=arrayItem['rootid'];
+                let id=arrayItem['id'];
+                this.router.navigate(['/productlist/' +rootId+'/'+id]);
+            }
+        });
+      
+    }
 }
