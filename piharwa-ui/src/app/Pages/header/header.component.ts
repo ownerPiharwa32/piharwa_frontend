@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   cartData: any;
   profileLData: any;
   filterArr:any;
-
+  piharwaCategories: any;
   constructor(public dialog: MatDialog, public cartService: CartService, public router: Router, public categoryService: CategoryService,
     public commonService: CommonService) { }
 
@@ -70,12 +70,14 @@ export class HeaderComponent implements OnInit {
   getCategoryDataList(data: any) {
     if (data.status === true) {
       this.categoryDataList = data.data;
+      console.log("rrrrrrrrrrrrrrrrrrrrrrrrrrrrr", this.categoryDataList)
     }
   }
 
   getAllCategoryDataList(data: any) {
     if (data.status === true) {
       this.allCategoryList = data.data;
+      this.piharwaCategories= this.sliceIntoChunks(this.allCategoryList.piharwaCategories,3)
       this.filterArr= this.sliceIntoChunks(this.allCategoryList.elementCategories,3)
     }
   }
