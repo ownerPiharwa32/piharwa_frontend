@@ -38,16 +38,16 @@ export class ProductListComponent implements OnInit {
       this.getProductList();
     });
     this.commonService.previousUrl$.subscribe((previousUrl: string) => {
-      console.log('previous url: ', previousUrl);
+      //console.log('previous url: ', previousUrl);
       this.previousUrl = previousUrl;
     });
      let lengthRoute= this.previousUrl .split('/');
      let routeArr=[];
      routeArr.push(lengthRoute);
      this.routeLengthCheck =routeArr[0].length
-     console.log(routeArr)
+     //console.log(routeArr)
 
-     console.log(this.routeLengthCheck)
+     //console.log(this.routeLengthCheck)
   }
 
   onSelectedCategory(category: any) {

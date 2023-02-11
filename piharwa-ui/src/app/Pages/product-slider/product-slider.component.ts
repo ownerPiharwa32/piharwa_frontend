@@ -19,7 +19,7 @@ export class ProductSliderComponent implements OnInit {
       }
 
       getProductdetialsApi(data:any){
-        console.log(data)
+        //console.log(data)
         let productData= data.data;
        let newJson = productData.map((rec:any) => {
             return {
@@ -30,16 +30,16 @@ export class ProductSliderComponent implements OnInit {
               'id': rec._id,
                }
             })
-            console.log(newJson)
+            //console.log(newJson)
             this.imageObject=newJson;
       }
 
 
     imgClick(event:any){
-        console.log(event)
+        //console.log(event)
         this.imageObject.forEach((arrayItem, index, fullArray)=> {
             if(index === event){
-                console.log(arrayItem['id'])
+                //console.log(arrayItem['id'])
                 let rootId=arrayItem['rootid'];
                 let id=arrayItem['id'];
                 this.router.navigate(['/productlist/' +rootId+'/'+id]);

@@ -21,7 +21,7 @@ export class BlogListComponent implements OnInit {
   getblogList(data:any){
     if (data.status === true) {
       this.blogList = data.data
-      console.log(this.blogList,"==========blogList");
+      //console.log(this.blogList,"==========blogList");
     }
   
   }

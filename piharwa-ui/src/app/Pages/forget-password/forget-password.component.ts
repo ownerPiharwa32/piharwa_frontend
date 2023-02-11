@@ -65,7 +65,7 @@ export class ForgetPasswordComponent implements OnInit {
     let userData = {
       username: this.loginForm['controls']['username'].value,
     };
-    // console.log(userData,'aaa');
+    // //console.log(userData,'aaa');
       this.dataService.loginApi(userData).subscribe(
         (data) => this.otpDialog(data,userData),
         (err) => console.log(err)
@@ -73,7 +73,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
 
   otpDialog(data:any,name:any){
-   console.log(data)
+   //console.log(data)
    this.verifyOtpFlag = true;
   }
   verifyOtp(){
@@ -97,7 +97,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
   onForgetPassword() {
     let userData = this.loginForm.value;
-    // console.log(userData);
+    // //console.log(userData);
       this.dataService.loginApi(userData).subscribe(
         (data) => this.logindialog(data),
         (err) => console.log(err)

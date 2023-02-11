@@ -64,7 +64,7 @@ export class ListAddressComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
+      // //console.log('The dialog was closed');
       this.getAddressList();
     });
   }
@@ -79,7 +79,7 @@ export class ListAddressComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
+      // //console.log('The dialog was closed');
       this.getAddressList();
     });
   }
@@ -111,7 +111,7 @@ export class ListAddressComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
+      // //console.log('The dialog was closed');
       if (result === 'yes') {
         this.deleteAddress(addressList);
       }
@@ -119,7 +119,7 @@ export class ListAddressComponent implements OnInit {
   }
   deleteAddress(addressList: any) {
     addressList.default = true;
-    // console.log(addressList)
+    // //console.log(addressList)
     this.listAddressService.deleteaddress(addressList._id).subscribe(
       (data) => this.saveResponse(data),
       (err) => console.log(err)

@@ -11,8 +11,8 @@ export class CategoryService {
   ngOnInit() {
   
   }
-  categoryListApi (productlistId:any,categoryId:any) {
-    return this.http.get(ApiConstants.apiURL + ApiConstants.categorylist+'/'+productlistId+'/'+categoryId);
+  categoryListApi (productlistId:any) {
+    return this.http.get(ApiConstants.apiURL + ApiConstants.categorylist+'/'+productlistId);
    }
    mainCategoryListApi(){
     return this.http.get(ApiConstants.apiURL + ApiConstants.mainCategoryList);
