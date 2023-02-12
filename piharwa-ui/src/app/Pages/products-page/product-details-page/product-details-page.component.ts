@@ -14,12 +14,13 @@ import { CommonService } from '../../common.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-  imageObject = [{}];
+  imageObject :any= [];
 
   id!: any;
   productData: any;
   items: any;
   cartData: any;
+  productImg:any=[];
 
   constructor(private route: ActivatedRoute, public productService: ProductService, private cartService: CartService, public myRoute: Router,
     private commonService: CommonService,
@@ -38,6 +39,14 @@ export class ProductDetailsPageComponent implements OnInit {
   getProductdetialsApi(data: any) {
     if (data.status === true) {
       this.productData = data.data
+      console.log( this.productData)
+      this.productImg.unshift(this.productData.productImg);
+      let obj1 = {
+        image: this.productData.productImg,
+        thumbImage: this.productData.productImg,
+        title: ''
+      }
+      this.imageObject.push(obj1)
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,
@@ -47,6 +56,17 @@ export class ProductDetailsPageComponent implements OnInit {
         this.imageObject.unshift(obj)
       });
     }
+  }
+
+  imgClick(indexValue:any){
+    console.log( this.imageObject)
+    this.productImg=[];
+     this.imageObject.forEach((arrayItem:any, index:any, fullArray:any)=> {
+      if(indexValue === index){
+          console.log(arrayItem)
+          this.productImg.unshift(arrayItem.image);
+      }
+   });
   }
 
   increment() {
