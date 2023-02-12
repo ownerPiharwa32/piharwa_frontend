@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import { PaymentsComponent } from '../payments/payments.component';
 import { CartService } from '../products-page/product-details-page/cart-service/cart.service';
+import { ListAddressService } from '../add-adress-contact/list-address/list-address.service';
 
 import { AuthService } from '../auth.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,11 +19,13 @@ import { json } from 'stream/consumers';
 export class CartComponent implements OnInit {
   cartData: any = <any>[];
   subtotal: any;
+  address: any = <any>[]; 
   @ViewChild(PaymentsComponent) patment!: PaymentsComponent;
 
   constructor(
     private commonService: CommonService,
     public cartService: CartService,
+    public listAddressService: ListAddressService,
     public router: Router,
     private _authService: AuthService,
     private dialog: MatDialog
@@ -123,6 +126,24 @@ export class CartComponent implements OnInit {
   //   this.cartService.clearData();
   // }
 
+
+  getAddressList() {
+    this.listAddressService.addressDetailsApi().subscribe((data) => this.getAddressListApi(data));
+  }
+
+  getAddressListApi(data: any) {
+    if (data.status === true) {
+      this.address = data.data;
+      if (this.address.length > 0) {
+         this.router.navigate(['/payment']);
+      } else {
+        this.router.navigate(['/list-Address']);
+      }
+     
+    }
+
+  }
+
   continueToShipping(): any {
 
     if(this.cartData.length > 3) {
@@ -132,7 +153,7 @@ export class CartComponent implements OnInit {
 
     const token = this._authService.getToken();
     if (token) {
-      this.router.navigate(['/payment']);
+      this.getAddressList();
     }
     else {
       this.dialog.open(LoginPageComponent, {
