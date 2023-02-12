@@ -136,7 +136,7 @@ export class ProductDetailsPageComponent implements OnInit {
             _id: productData._id,
             // productCategoryID: productData.productCategoryID,
             productTitle: productData.productTitle,
-            price: productData.price,
+            price: productData.allowDiscount === true ? productData.discountPrice : productData.price,
             quantity: this.quantity,
             total: totalvalue,
             pimage: productData.productImg,
@@ -154,12 +154,12 @@ export class ProductDetailsPageComponent implements OnInit {
         }
       });
     } else {
-      let totalvalue = this.productData.price * this.quantity
+      let totalvalue = productData.allowDiscount === true ? productData.discountPrice : productData.price * this.quantity
           let productdata = {
             _id: productData._id,
             // productCategoryID: productData.productCategoryID,
             productTitle: productData.productTitle,
-            price: productData.price,
+            price: productData.allowDiscount === true ? productData.discountPrice : productData.price,
             quantity: this.quantity,
             total: totalvalue,
             pimage: productData.productImg,
