@@ -438,3 +438,19 @@ form {
         display: none;
     }
 }
+.container12 {
+    border: 1px solid black;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .container12 img {
+    width: 100%;
+    height: 100%;
+        transition: all 2s ease-in-out;
+  }
+  
+  .container12:hover img {
+        transform: scale(4,5);
+        cursor: zoom-in;
+  }

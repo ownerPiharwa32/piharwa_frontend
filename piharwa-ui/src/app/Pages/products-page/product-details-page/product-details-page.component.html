@@ -15,8 +15,8 @@
         <div class="row mb-5">
             <div class="col-md-5 col-5">
                 <div class="productImg">
-                    <div>
-                        <img src={{productData.productImg}} class="img-fluid w-100" alt="Icon" />
+                    <div class="container12">
+                        <img src={{productImg[0]}} class="img-fluid w-100" alt="Icon" />
                     </div>
 
                 </div>
@@ -31,7 +31,7 @@
                             </div> -->
                             <div *ngIf="imageObject.length>1" class="productCarousel"
                                 style="width: 99.5%; text-align:center;margin:0px; padding:30px;">
-                                <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
+                                <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1" [animationSpeed]="2" (imageClick)="imgClick($event)" [imagePopup]="false"
                                     [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider>
                             </div>
                         </div>
