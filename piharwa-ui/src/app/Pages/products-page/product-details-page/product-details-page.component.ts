@@ -7,6 +7,13 @@ import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.compone
 import { messageDialog } from 'src/app/shared/dialog-box/message/message.component';
 import { CommonService } from '../../common.service';
 
+
+interface SliderImage {
+  image: string,
+  thumbImage: string,
+  title: string
+}
+
 @Component({
   selector: 'app-product-details-page',
   templateUrl: './product-details-page.component.html',
@@ -14,17 +21,29 @@ import { CommonService } from '../../common.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-  imageObject = [{}];
+  imageObject: SliderImage[] = [];
 
   id!: any;
   productData: any;
   items: any;
   cartData: any;
 
-  constructor(private route: ActivatedRoute, public productService: ProductService, private cartService: CartService, public myRoute: Router,
+  enableZoom: boolean = true;
+  previewImageSrc: any;
+  zoomImageSrc: any;
+  isMobile : boolean = false;
+
+  constructor(
+    private route: ActivatedRoute, 
+    public productService: ProductService, private cartService: CartService, public myRoute: Router,
     private commonService: CommonService,
     private dialog: MatDialog
-  ) { }
+  ) { 
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      this.isMobile = true
+    }
+  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     this.cartData = this.cartService.getItemData();
@@ -37,16 +56,30 @@ export class ProductDetailsPageComponent implements OnInit {
   }
   getProductdetialsApi(data: any) {
     if (data.status === true) {
-      this.productData = data.data
+      this.productData = data.data;
+      this.previewImageSrc = this.productData.productImg;
+      this.zoomImageSrc = this.productData.productImg;
+
+      this.imageObject.unshift({
+        image: this.productData.productImg,
+        thumbImage: this.productData.productImg,
+        title: ''
+      });
+
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,
           thumbImage: element,
           title: ''
         }
-        this.imageObject.unshift(obj)
+        this.imageObject.unshift(obj);
       });
     }
+  }
+
+  changeImage(index: number){
+    this.previewImageSrc = this.imageObject[index].image;
+    this.zoomImageSrc = this.imageObject[index].image;
   }
 
   increment() {
