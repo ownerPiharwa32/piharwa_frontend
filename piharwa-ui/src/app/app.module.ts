@@ -48,6 +48,7 @@ import { LoaderComponent } from './Pages/common-page/loader/loader.component';
 import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
 import { ProfileInfoComponent } from './Pages/profile-info/profile-info.component';
 import { ForgetPasswordComponent } from './Pages/forget-password/forget-password.component';
+import { NgxImgZoomModule } from "ngx-img-zoom";
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { ForgetPasswordComponent } from './Pages/forget-password/forget-password
     BrowserModule, HttpClientModule,
     TreeModule,FormsModule,
     ReactiveFormsModule,
+    NgxImgZoomModule,
     AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
     
   ],

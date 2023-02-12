@@ -21,10 +21,22 @@ export class ProductDetailsPageComponent implements OnInit {
   items: any;
   cartData: any;
 
-  constructor(private route: ActivatedRoute, public productService: ProductService, private cartService: CartService, public myRoute: Router,
+  enableZoom: boolean = true;
+  previewImageSrc: any;
+  zoomImageSrc: any;
+  isMobile : boolean = false;
+
+  constructor(
+    private route: ActivatedRoute, 
+    public productService: ProductService, private cartService: CartService, public myRoute: Router,
     private commonService: CommonService,
     private dialog: MatDialog
-  ) { }
+  ) { 
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      this.isMobile = true
+    }
+  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     this.cartData = this.cartService.getItemData();
@@ -37,7 +49,11 @@ export class ProductDetailsPageComponent implements OnInit {
   }
   getProductdetialsApi(data: any) {
     if (data.status === true) {
-      this.productData = data.data
+      this.productData = data.data;
+      this.previewImageSrc = this.productData.productImg;
+      this.zoomImageSrc = this.productData.productImg;
+
+      this.imageObject.unshift(this.productData.productImg);
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,

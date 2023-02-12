@@ -14,11 +14,17 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-5 col-5">
-                <div class="productImg">
+                <div class="productImg" *ngIf="!isMobile">
+                    <ngx-img-zoom class="w-100" [zoomImageSrc]="zoomImageSrc" [previewImageSrc]="previewImageSrc"
+                        [imgStyle]="'width:400px; max-width:100%; height:500px; bottom:0;  left:0;  right:0;  top:0;  margin:0 auto; border:1px solid #dcdcdc;'"
+                        [resultStyle]="'width:600px; height:600px; background-repeat: no-repeat; z-index: 2; position:absolute;-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); top: 0;left: 100%;'"
+                        [lensStyle]="'width:55px; height:55px'" [containerStyle]="">
+                    </ngx-img-zoom>
+                </div>
+                <div class="productImg" *ngIf="isMobile">
                     <div>
                         <img src={{productData.productImg}} class="img-fluid w-100" alt="Icon" />
                     </div>
-
                 </div>
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -31,8 +37,8 @@
                             </div> -->
                             <div *ngIf="imageObject.length>1" class="productCarousel"
                                 style="width: 99.5%; text-align:center;margin:0px; padding:30px;">
-                                <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
-                                    [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider>
+                                <!-- <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
+                                    [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider> -->
                             </div>
                         </div>
 
