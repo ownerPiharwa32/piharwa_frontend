@@ -7,6 +7,13 @@ import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.compone
 import { messageDialog } from 'src/app/shared/dialog-box/message/message.component';
 import { CommonService } from '../../common.service';
 
+
+interface SliderImage {
+  image: string,
+  thumbImage: string,
+  title: string
+}
+
 @Component({
   selector: 'app-product-details-page',
   templateUrl: './product-details-page.component.html',
@@ -14,7 +21,7 @@ import { CommonService } from '../../common.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-  imageObject = [{}];
+  imageObject: SliderImage[] = [];
 
   id!: any;
   productData: any;
@@ -53,16 +60,26 @@ export class ProductDetailsPageComponent implements OnInit {
       this.previewImageSrc = this.productData.productImg;
       this.zoomImageSrc = this.productData.productImg;
 
-      this.imageObject.unshift(this.productData.productImg);
+      this.imageObject.unshift({
+        image: this.productData.productImg,
+        thumbImage: this.productData.productImg,
+        title: ''
+      });
+
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,
           thumbImage: element,
           title: ''
         }
-        this.imageObject.unshift(obj)
+        this.imageObject.unshift(obj);
       });
     }
+  }
+
+  changeImage(index: number){
+    this.previewImageSrc = this.imageObject[index].image;
+    this.zoomImageSrc = this.imageObject[index].image;
   }
 
   increment() {
