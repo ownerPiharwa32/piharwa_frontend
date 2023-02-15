@@ -83,8 +83,8 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   increment() {
-    if (this.quantity === 4) {
-      this.commonService.openSnackBar("You can add maximum 4 quantity", 'Dismiss');
+    if (this.quantity === 1) {
+      this.commonService.openSnackBar("You can add maximum 1 quantity", 'Dismiss');
     }
     else {
       this.quantity += 1;
@@ -92,8 +92,8 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   decrement() {
-    if (this.quantity === 0) {
-      this.quantity = 0
+    if (this.quantity === 1) {
+      this.quantity = 1
     } else {
       this.quantity -= 1;
     }
@@ -105,8 +105,8 @@ export class ProductDetailsPageComponent implements OnInit {
 
   addtoCart(productData: any): any {
 
-    if(this.cartData.length >= 3 ){
-      this.commonService.openSnackBar("You can add maximum 3 product in a cart", 'Dismiss');
+    if(this.cartData.length > 1 ){
+      this.commonService.openSnackBar("You can add maximum 1 product in a cart", 'Dismiss');
       return;
     }
 
