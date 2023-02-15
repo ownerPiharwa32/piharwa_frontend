@@ -7,6 +7,13 @@ import { confirmDialog } from 'src/app/shared/dialog-box/confirm/confirm.compone
 import { messageDialog } from 'src/app/shared/dialog-box/message/message.component';
 import { CommonService } from '../../common.service';
 
+
+interface SliderImage {
+  image: string,
+  thumbImage: string,
+  title: string
+}
+
 @Component({
   selector: 'app-product-details-page',
   templateUrl: './product-details-page.component.html',
@@ -14,7 +21,7 @@ import { CommonService } from '../../common.service';
 })
 export class ProductDetailsPageComponent implements OnInit {
   public quantity: number = 1;
-  imageObject :any= [];
+  imageObject: SliderImage[] = [];
 
   id!: any;
   productData: any;
@@ -22,10 +29,22 @@ export class ProductDetailsPageComponent implements OnInit {
   cartData: any;
   productImg:any=[];
 
-  constructor(private route: ActivatedRoute, public productService: ProductService, private cartService: CartService, public myRoute: Router,
+  enableZoom: boolean = true;
+  previewImageSrc: any;
+  zoomImageSrc: any;
+  isMobile : boolean = false;
+
+  constructor(
+    private route: ActivatedRoute, 
+    public productService: ProductService, private cartService: CartService, public myRoute: Router,
     private commonService: CommonService,
     private dialog: MatDialog
-  ) { }
+  ) { 
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      this.isMobile = true
+    }
+  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     this.cartData = this.cartService.getItemData();
@@ -38,35 +57,30 @@ export class ProductDetailsPageComponent implements OnInit {
   }
   getProductdetialsApi(data: any) {
     if (data.status === true) {
-      this.productData = data.data
-      console.log( this.productData)
-      this.productImg.unshift(this.productData.productImg);
-      let obj1 = {
+      this.productData = data.data;
+      this.previewImageSrc = this.productData.productImg;
+      this.zoomImageSrc = this.productData.productImg;
+
+      this.imageObject.unshift({
         image: this.productData.productImg,
         thumbImage: this.productData.productImg,
         title: ''
-      }
-      this.imageObject.push(obj1)
+      });
+
       this.productData.thumbnailImgs.forEach((element: any) => {
         let obj = {
           image: element,
           thumbImage: element,
           title: ''
         }
-        this.imageObject.unshift(obj)
+        this.imageObject.unshift(obj);
       });
     }
   }
 
-  imgClick(indexValue:any){
-    console.log( this.imageObject)
-    this.productImg=[];
-     this.imageObject.forEach((arrayItem:any, index:any, fullArray:any)=> {
-      if(indexValue === index){
-          console.log(arrayItem)
-          this.productImg.unshift(arrayItem.image);
-      }
-   });
+  changeImage(index: number){
+    this.previewImageSrc = this.imageObject[index].image;
+    this.zoomImageSrc = this.imageObject[index].image;
   }
 
   increment() {
@@ -123,7 +137,7 @@ export class ProductDetailsPageComponent implements OnInit {
             _id: productData._id,
             // productCategoryID: productData.productCategoryID,
             productTitle: productData.productTitle,
-            price: productData.price,
+            price: productData.allowDiscount === true ? productData.discountPrice : productData.price,
             quantity: this.quantity,
             total: totalvalue,
             pimage: productData.productImg,
@@ -141,12 +155,12 @@ export class ProductDetailsPageComponent implements OnInit {
         }
       });
     } else {
-      let totalvalue = this.productData.price * this.quantity
+      let totalvalue = productData.allowDiscount === true ? productData.discountPrice : productData.price * this.quantity
           let productdata = {
             _id: productData._id,
             // productCategoryID: productData.productCategoryID,
             productTitle: productData.productTitle,
-            price: productData.price,
+            price: productData.allowDiscount === true ? productData.discountPrice : productData.price,
             quantity: this.quantity,
             total: totalvalue,
             pimage: productData.productImg,

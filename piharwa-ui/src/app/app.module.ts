@@ -48,7 +48,7 @@ import { LoaderComponent } from './Pages/common-page/loader/loader.component';
 import { LoaderInterceptor } from './Pages/common-page/loader-intercepert/loader.interceptor';
 import { ProfileInfoComponent } from './Pages/profile-info/profile-info.component';
 import { ForgetPasswordComponent } from './Pages/forget-password/forget-password.component';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { NgxImgZoomModule } from "ngx-img-zoom";
 
 @NgModule({
   declarations: [
@@ -92,7 +92,8 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     BrowserModule, HttpClientModule,
     TreeModule,FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,NgxImageZoomModule
+    NgxImgZoomModule,
+    AppRoutingModule,FormsModule,NgImageSliderModule,BrowserAnimationsModule,MaterialModule,
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },

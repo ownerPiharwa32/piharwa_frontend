@@ -14,42 +14,30 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-5 col-5">
-                <div class="productImg">
-                    <div class="container12">
-                        <img src={{productImg[0]}} class="img-fluid w-100" alt="Icon" />
+                <div class="productImg" *ngIf="!isMobile">
+                    <ngx-img-zoom class="w-100" [zoomImageSrc]="zoomImageSrc" [previewImageSrc]="previewImageSrc"
+                        [imgStyle]="'width:525px; max-width:100%; height:580px; bottom:0;  left:0;  right:0;  top:0;  margin:0 auto; border:1px solid #dcdcdc;'"
+                        [resultStyle]="'width:600px; height:600px; background-repeat: no-repeat; z-index: 2; position:absolute;-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); top: 0;left: 100%;'"
+                        [lensStyle]="'width:55px; height:55px'" [containerStyle]="">
+                    </ngx-img-zoom>
+                </div>
+                <div class="productImg" *ngIf="isMobile">
+                    <div>
+                        <img src={{productData.productImg}} class="img-fluid w-100" alt="Icon" />
                     </div>
-
                 </div>
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" *ngIf="productData">
-                            <!-- <div class="row justify-content-center m-auto">
-                                <div class="col-md-3" *ngFor="let image of productData.thumbnailImgs ">
-                                    <img src={{image}} class="d-block w-100 img-fluid" alt="Slider 1" />
-                                </div>
-
-                            </div> -->
+                        <div class="carousel-item active">
                             <div *ngIf="imageObject.length>1" class="productCarousel"
-                                style="width: 99.5%; text-align:center;margin:0px; padding:30px;">
-                                <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1" [animationSpeed]="2" (imageClick)="imgClick($event)" [imagePopup]="false"
-                                    [imageSize]="{width: '20%', height: 100}" slideImage="1"></ng-image-slider>
+                                style="width: 100%; text-align:center;">
+                                <ng-image-slider #nav [images]="imageObject" [animationSpeed]="2"
+                                    (imageClick)="changeImage($event)" [imagePopup]="false" [infinite]="false"
+                                    [autoSlide]="1" [imageSize]="{width: '25%', height:100}" slideImage="1">
+                                </ng-image-slider>
                             </div>
                         </div>
-
-                        <!-- <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                        </div> -->
                     </div>
-                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button> -->
                 </div>
             </div>
             <div class="col-md-7">
