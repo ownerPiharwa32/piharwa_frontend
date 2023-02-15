@@ -5,7 +5,9 @@
             <div class="col-md-6 col-4">
                 <div class="logoCenter">
                     <a class="navbar-brand text-success logo align-self-center" routerLink="/home">
-                        <img src="../assets/img/logot.png" class="img-fluid" />
+                        <img src="assets/img/logot.png" class="img-fluid" />
+                        <span class="lineLogo"></span>
+                        <img src="assets/img/elementslogo.png" class="img-fluid" />
                     </a>
                 </div>
             </div>
@@ -113,7 +115,7 @@
                             </a>
                            
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
-                                    <li *ngFor="let elementCat of piharwaCategories"> 
+                                    <li *ngFor="let elementCat of  filterArr"> 
                                         <div class="row">
                                         <div class="col-md-4" *ngFor="let value of elementCat">
                                         <a class="dropdown-item" 
@@ -134,7 +136,7 @@
                             </a>
                            
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
-                                    <li *ngFor="let elementCat of filterArr"> 
+                                    <li *ngFor="let elementCat of piharwaCategories"> 
                                         <div class="row">
                                         <div class="col-md-4" *ngFor="let value of elementCat">
                                         <a class="dropdown-item" 

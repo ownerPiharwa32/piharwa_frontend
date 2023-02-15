@@ -14,21 +14,25 @@
           <form class="form"  [formGroup]="loginForm" novalidate class="form" autocomplete="off">
             <div class="row">
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your Email id / Mobile Number</mat-label>
                   <input matInput   formControlName="username" type="text" placeholder="Enter your Email id/ Mobile Number" value="" />
+                  <mat-error *ngIf="loginForm['controls']['username'].invalid">{{ErrorMessage('Valid Email id / Mobile Number')}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your password</mat-label>
                   <input matInput  formControlName="password" type="password" placeholder="Enter your Password" value="" />  
+                  <mat-error *ngIf="loginForm['controls']['password'].invalid">{{ErrorMessage('password')}}</mat-error>
                 </mat-form-field>
               </div> 
               <div class="col-md-12">
-                <button  (click)="onLogin()" mat-raised-button color="primary" class="d-block w-100 mt-4">Login</button>
+                <button [disabled]="!loginForm.valid"  (click)="onLogin()" mat-raised-button color="primary" class="d-block w-100 mt-4">Login</button>
                 <div (click)="onForgetPassword()" class="mt-4 col1 text-center fs16 fw400 mb-4">Forgot your password ? Reset now</div>
               </div>
               <div class="col-md-12"> 
-                <button (click)="checkPage('otp')" mat-stroked-button class="d-block w-100 mb-4">REQUEST OTP</button>
+                <button  (click)="checkPage('otp')" mat-stroked-button class="d-block w-100 mb-4">REQUEST OTP</button>
                 <div  (click)="checkPage('singup')" class="mt-4 col1 text-center fs16 fw600 mt-5">New Here ? Create an account</div>
               </div>
             </div>
@@ -48,29 +52,34 @@
           <form class="form"  [formGroup]="loginForm" novalidate class="form" autocomplete="off">
             <div class="row">
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your Email id / Mobile Number</mat-label>
                   <input matInput   formControlName="username" type="text" placeholder="Enter your Email id/ Mobile Number" value="" />
+                  <mat-error *ngIf="loginForm['controls']['username'].invalid">{{ErrorMessage('Valid Email id / Mobile Number')}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-12"> 
-                <button  (click)="sendOtp()" mat-stroked-button class="d-block w-100 mb-4">SEND OTP</button>
+                <button (click)="sendOtp()" mat-stroked-button class="d-block w-100 mb-4">SEND OTP</button>
                 <div  (click)="checkPage('singup')" class="mt-4 col1 text-center fs16 fw600 mt-5">New Here ? Create an account</div>
               </div>
             </div>
+          </form>
 
             <div *ngIf="verifyOtpFlag">
+              <form class="form"  novalidate class="form" autocomplete="off">
               <div class="row">
                 <div class="col-md-12">
-                  <mat-form-field>
-                    <input matInput   formControlName="otp" type="text" placeholder="Enter OTP" value="" />
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter OTP</mat-label>
+                    <input matInput  name="otpToken1" #otpToken type="text" placeholder="Enter OTP" value=""  required/>
                   </mat-form-field>
                 </div>
                 <div class="col-md-12"> 
-                  <button  (click)="verifyOtp()" mat-stroked-button class="d-block w-100 mb-4">VERIFY OTP</button>
+                  <button  (click)="verifyOtp(otpToken.value)"  mat-stroked-button class="d-block w-100 mb-4">VERIFY OTP</button>
                 </div>
               </div>
+              </form>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -88,28 +97,35 @@
           <form class="form"  [formGroup]="sginupForm" novalidate class="form" autocomplete="off">
             <div class="row">
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input matInput type="text"  formControlName="firstName" placeholder="Enter your First name" value="" />
+                  <mat-error *ngIf="sginupForm['controls']['firstName'].invalid">{{ErrorMessage('Valid firstName')}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input matInput  type="text"   formControlName="lastName" placeholder="Enter your Last name" value="" />
+                  <mat-error *ngIf="sginupForm['controls']['lastName'].invalid">{{ErrorMessage('Valid lastName')}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input matInput   type="number"   formControlName="mobileNo" placeholder="Enter your Mobile No." value="" />
+                  <mat-error *ngIf="sginupForm['controls']['mobileNo'].invalid">{{ErrorMessage('Valid Mobile Number')}}</mat-error>
+
                 </mat-form-field>
               </div>
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input matInput  type="email"    formControlName="emailId" placeholder="Enter your Email id" value="" />
+                  <mat-error *ngIf="sginupForm['controls']['emailId'].invalid">{{ErrorMessage('Valid Email iD')}}</mat-error>
+
                 </mat-form-field>
               </div>
               <div class="col-md-12">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input matInput  type="password"   formControlName="password" placeholder="Enter desired Password" value="" />
+                  <mat-error *ngIf="sginupForm['controls']['password'].invalid">{{ErrorMessage('Valid password')}}</mat-error>
                 </mat-form-field>
               </div>
               <!-- <div class="col-md-12">
@@ -118,7 +134,7 @@
                 </mat-form-field>
               </div> -->
               <div class="col-md-12">
-                <button mat-raised-button (click)="onSignup()" color="primary" class="d-block w-100 mt-1">Sign Up</button>
+                <button mat-raised-button [disabled]="!sginupForm.valid" (click)="onSignup()" color="primary" class="d-block w-100 mt-1">Sign Up</button>
                 <div (click)="checkPage('login')" class="mt-4 col1 text-center fs16 fw600">Already a user ? Log In</div>
               </div>
             </div>
