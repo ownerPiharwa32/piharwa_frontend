@@ -102,8 +102,8 @@ export class CartComponent implements OnInit {
   }
 
   increment(product: any) {
-    if (product.quantity > 4) {
-      this.commonService.openSnackBar("You can add maximum 4 quantity", 'Dismiss');
+    if (product.quantity === 1) {
+      this.commonService.openSnackBar("You can add maximum 1 quantity", 'Dismiss');
     }
     else {
       product.quantity += 1;
@@ -112,7 +112,7 @@ export class CartComponent implements OnInit {
   }
 
   decrement(product: any) {
-    if (product.quantity !== 0) {
+    if (product.quantity !== 1) {
       product.quantity -= 1;
       this.updateQuantity(product);
     }
