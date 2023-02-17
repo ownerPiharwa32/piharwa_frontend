@@ -115,12 +115,12 @@
                             </a>
                            
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
-                                    <li *ngFor="let elementCat of  filterArr"> 
+                                    <li *ngFor="let elementCat1 of  piharwaCategories"> 
                                         <div class="row">
-                                        <div class="col-md-4" *ngFor="let value of elementCat">
+                                        <div class="col-md-4" *ngFor="let value1 of elementCat1">
                                         <a class="dropdown-item" 
-                                        [routerLink]="['productlist', value.rootCategory, value._id]">
-                                            {{value.name}}
+                                        [routerLink]="['productlist', value1.rootCategory, value1._id]">
+                                            {{value1.name}}
                                         </a>
                                         </div>
                                         </div>
@@ -136,7 +136,7 @@
                             </a>
                            
                             <ul class="dropdown-menu lifemenu " aria-labelledby="navbarDropdown">
-                                    <li *ngFor="let elementCat of piharwaCategories"> 
+                                    <li *ngFor="let elementCat of filterArr"> 
                                         <div class="row">
                                         <div class="col-md-4" *ngFor="let value of elementCat">
                                         <a class="dropdown-item" 
