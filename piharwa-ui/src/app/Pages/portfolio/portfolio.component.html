@@ -9,18 +9,21 @@
             </div>
         </div>
         <div id="gallery-lightbox" class="row mx80" data-toggle="modal" data-target="#exampleModal">
-            <div class="col-6 col-md-4 col-lg-4 p-0">
-                <img class="w-100" src="../../../assets/img/gallery1.jpeg" alt="First slide"
+            <div class="col-6 col-md-6 col-lg-6 p-0" *ngFor="let homeproducts of homeDecorProduct">
+                <a (click)="gotoDetailProduct(homeproducts._id)" class="d-block position-relative">
+                <img class="w-100" src="{{homeproducts.productImg}}" alt="First slide"
                     data-target="#carouselExample" data-slide-to="0">
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-4 p-0">
+           
+            <!-- <div class="col-6 col-md-4 col-lg-4 p-0">
                 <img class="w-100" src="../../../assets/img/gallery2.jpeg" alt="First slide"
                     data-target="#carouselExample" data-slide-to="0">
             </div>
             <div class="col-6 col-md-4 col-lg-4 p-0">
                 <img class="w-100" src="../../../assets/img/gallery3.png" alt="First slide"
                     data-target="#carouselExample" data-slide-to="1">
-            </div>
+            </div> 
             <div class="col-4 col-md-4 col-lg-4 p-0">
                 <img class="w-100" src="../../../assets/img/gallery4.png" alt="First slide"
                     data-target="#carouselExample" data-slide-to="2">
@@ -32,7 +35,7 @@
             <div class="col-4 col-md-4 col-lg-4 p-0">
                 <img class="w-100" src="../../../assets/img/gallery6.jpeg" alt="First slide"
                     data-target="#carouselExample" data-slide-to="3">
-            </div>
+            </div>-->
         </div>
         <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
             <button type="button" class="close m-0 p-3 text-white position-absolute right-0" data-dismiss="modal"
