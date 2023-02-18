@@ -27,6 +27,7 @@ export const ApiConstants ={
       getCartList: 'api/v1/cart/list',
       updateCart: 'api/v1/cart/update/details',
       deleteFromCart: 'api/v1/cart/delete/details/',
-      homePagecategories:'api/v1/featured/categories/list'
+      homePagecategories: 'api/v1/featured/categories/list',
+      homeDecorList: 'api/v1/product/home-decor/list'
       // /api/v1/buyer/delete/address/details/{addressId}
 }
