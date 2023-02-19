@@ -33,6 +33,10 @@ export class CommonService {
     return this.http.post(ApiConstants.apiURL + ApiConstants.createOrderId, data);
   }
 
+  sendMailForContact(data: any) {
+    return this.http.post(ApiConstants.apiURL + ApiConstants.contactEmail, data)
+  }
+
   verifyPaymentApi(data: any) {
     return this.http.post(ApiConstants.apiURL + ApiConstants.verifyPaymentApi, data);
   }

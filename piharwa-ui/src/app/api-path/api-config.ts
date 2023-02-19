@@ -28,6 +28,7 @@ export const ApiConstants ={
       updateCart: 'api/v1/cart/update/details',
       deleteFromCart: 'api/v1/cart/delete/details/',
       homePagecategories: 'api/v1/featured/categories/list',
-      homeDecorList: 'api/v1/product/home-decor/list'
+      homeDecorList: 'api/v1/product/home-decor/list',
+      contactEmail: 'api/v1/contact/email'
       // /api/v1/buyer/delete/address/details/{addressId}
 }
