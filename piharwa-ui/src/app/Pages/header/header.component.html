@@ -8,7 +8,7 @@
                         <!-- <img src="assets/img/logot.png" class="img-fluid" />
                         <span class="lineLogo"></span>
                         <img src="assets/img/elementslogo.png" class="img-fluid" /> -->
-                        <img src="assets/img/piharwa_logo.png" class="img-fluid" />
+                        <img src="assets/img/piharwa_logo.png" class="img-fluid" alt="piharwa-logo" />
                     </a>
                 </div>
             </div>
@@ -21,18 +21,18 @@
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">+99</span>
                         <i class="fa fa-fw fa-heart text-dark mr-2 fs28"></i>
                     </a> -->
-                    <a class="nav-icon position-relative text-decoration-none" (click)="openCart()">
+                    <div class="nav-icon position-relative text-decoration-none" (click)="openCart()">
                         <span *ngIf="cartData"
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill badgetop">{{ cartData.length }}</span>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark fs28 mr-1"></i>
-                    </a>
-                    <a *ngIf="!profileLData" class="nav-icon position-relative text-decoration-none"
+                    </div>
+                    <div *ngIf="!profileLData" class="nav-icon position-relative text-decoration-none"
                         (click)="openLoginWindow()">
                         <i class="fa fa-fw fa-user text-dark mr-3 fs28"></i>
                         <!-- <span class="ms-3 fs21 fw500 col3 fontStyle1">
                             {{ profileLData.firstName }}
                         </span> -->
-                    </a>
+                    </div>
                     <a *ngIf="profileLData" class="dropdown nav-icon position-relative text-decoration-none">
                         <a class="nav-link dropdown-toggle profile-toggle" href="#" id="profileDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
