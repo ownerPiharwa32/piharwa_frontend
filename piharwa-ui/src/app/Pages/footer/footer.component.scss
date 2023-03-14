@@ -62,9 +62,13 @@
     .footer-logo2{
         display: block;
         width: 100%;
+        mix-blend-mode: multiply;
     }
     .footer-logo {
         display: none;
+    }
+    .footer-para1{
+        text-align: justify;
     }
 
 }
