@@ -53,10 +53,22 @@
     padding-left: 20px;
 }
 
+.footer-logo2{
+    display: none;
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .footer-logo2{
+        display: block;
+        width: 100%;
+        mix-blend-mode: multiply;
+    }
     .footer-logo {
-        width: 40%;
+        display: none;
+    }
+    .footer-para1{
+        text-align: justify;
     }
 
 }

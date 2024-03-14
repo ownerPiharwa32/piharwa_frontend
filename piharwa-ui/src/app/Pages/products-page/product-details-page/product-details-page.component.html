@@ -16,7 +16,7 @@
             <div class="col-md-5 col-sm-5">
                 <div class="productImg" *ngIf="!isMobile">
                     <ngx-img-zoom class="w-100" [zoomImageSrc]="zoomImageSrc" [previewImageSrc]="previewImageSrc"
-                        [imgStyle]="'width:525px; max-width:100%; height:580px; bottom:0;  left:0;  right:0;  top:0;  margin:0 auto; border:1px solid #dcdcdc;'"
+                        [imgStyle]="'width:100%; max-width:100%; height:580px; bottom:0;  left:0;  right:0;  top:0;  margin:0 auto; border:1px solid #dcdcdc;'"
                         [resultStyle]="'width:600px; height:600px; background-repeat: no-repeat; z-index: 2; position:absolute;-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); top: 0;left: 100%;'"
                         [lensStyle]="'width:150px; height:140px'" [containerStyle]="">
                     </ngx-img-zoom>
@@ -33,7 +33,7 @@
                                 style="width: 100%; text-align:center;">
                                 <ng-image-slider #nav [images]="imageObject" [animationSpeed]="2"
                                     (imageClick)="changeImage($event)" [imagePopup]="false" [infinite]="false"
-                                    [autoSlide]="1" [imageSize]="{width: '25%', height:150}" slideImage="1">
+                                    [autoSlide]="1" [imageSize]="{width: '13.5%', height:90}" slideImage="1">
                                 </ng-image-slider>
                             </div>
                         </div>
